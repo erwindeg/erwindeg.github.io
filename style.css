@@ -73,7 +73,7 @@ margin:0;
 }
 
 .text-box-work-page {
-	margin: 195px auto 0;
+	margin: 50px auto 0;
 }
 
 .text-box-work-page h2 {
@@ -88,7 +88,6 @@ margin:0;
 }
 
 .title-work-page {
-	color: #70A9A1;
 	margin: 0 auto;
 	text-align: center;
     margin: 24px;
@@ -99,11 +98,340 @@ margin:0;
 .second-title {
 	font-size: 24px;
 	font-weight: 300;
-	color: #70A9A1;
 	margin: 0 0 50px 0;
 }
 
 .work-page-text {
 	width: 385px;
 	margin: 0 auto;
+}
+
+@media (min-width: 1681px){
+	
+	#main-work {
+		height: 1001px;
+	}
+	
+	.section-work {
+		height: 100%;
+	}
+	
+	#header-work {
+	    height: 0;
+	}
+		
+	.work-container-image {
+	    height: 100%;
+	}
+		
+	header {
+		height: 1025px;
+	}
+	
+	.title-container {
+		top: 470px;
+	}
+		
+	.text-box-work-page {
+	    margin: 50px auto 0;
+	}
+	
+	.go-left, 
+	.go-right {
+	    top: 520px;
+	}
+	
+	.image-work {
+	    width: 600px;
+	    height: 550px;
+	}
+	
+	.wrap-experience h3{
+		font-size: 18px;
+	}
+	
+	.wrap-experience p {
+		font-size: 15px;
+	}
+	
+	.quote p {
+		font-size: 20px;
+		width: 450px;
+	}
+	
+	#name-quote {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 1441px) and (max-width: 1680px){
+	
+	#main-work {
+		height: 851px;
+	}
+	
+	.section-work {
+		height: 100%;
+	}
+	
+	#header-work {
+	    height: 0;
+	}
+		
+	.work-container-image {
+	    height: 100%;
+	}
+	
+	header {
+		height: 867px;
+	}
+	
+	.title-container {
+		top: 400px;
+	}
+	
+	.go-left, 
+	.go-right {
+	    top: 420px;
+	}
+	
+	.text-box-work-page {
+	    margin: 50px auto 0;
+	}
+	
+	.work-philips {
+	    margin: 225px auto 0;
+	}
+}
+
+@media (min-width: 569px) and (max-width: 1100px) {
+	header{
+		height: 967px;
+	}
+		
+	.wrap {
+	    width: 33%;
+	}
+	
+	.text-about-right {
+	    margin: 0 -70px 0 10px;
+	}
+	
+	.text-about {
+		width: 320px;
+	}
+	
+	.title-container {
+	    top: 400px;
+	}
+	
+	.text-about p {
+	    padding: 20px 10px 0 0;
+	}
+	
+	.text-about {
+	    width: 340px;
+	}
+	
+	.text-about-right {
+	    margin: 0 -20px 0 40px;
+	}
+	
+	.work-container-image, .work-container-text {
+		display: block;
+		width: 100%;
+	}
+	
+	.work-philips {
+	    margin: 65px auto 0;
+	    position: initial;
+		width: 100%;
+	}
+	
+	.work-container-text {
+		background-color: #e8e8e8;
+		height: 80%;
+	}
+	
+	.text-box-work-page {
+	    margin: -25px auto 0;
+	    padding: 55px 0 0 0;
+	}
+	
+	.section-work {
+	    background-color: white;
+		height: 70%;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+	main {
+	    margin: 30px auto 10px;
+	}
+	
+	#work {
+		margin: 30px 0 0 0;
+	}
+	
+	header {
+		height: 517px;
+	}
+	
+	.hr-top {
+	    margin: 20px auto;
+	    width: 150px;
+		height: 1px;
+	}
+
+	.nav-title {
+		left: 20px;
+	}
+		
+    nav {
+	    font-size: 10px;
+	}
+
+	nav ul li {
+    	width: 65px;
+	}
+	
+	nav ul li a {
+    	font-size: 12px;
+	}
+
+	nav ul {
+    	margin-left: 22px;
+		right: 10px;
+	}
+
+	.logo {
+		margin-left: -9px;
+	}
+
+	.title-container {
+	    top: 225px;
+	}
+
+	.text-title p {
+    	font-size: 12px;
+	    margin: 0 0 0 6px;
+	}
+
+	h1 {
+	    font-size: 20px;
+	    margin: 0;
+	}
+
+    .h2-work {
+    	margin-bottom: 30px;
+	}
+
+    hr {
+    	width: 135px;
+    	margin: 20px 0 0 110px;
+	}
+
+	button {
+		margin: 30px 0;
+	}
+	
+	.quote p {
+		width: 200px;
+	}
+
+	.wrap {
+    	display: block;
+    	width: 100%;
+	}
+
+	.wrap-experience h3 {
+    	color: #70A9A1;
+	}
+
+	.hr-experience {
+		width: 55px;
+		margin: 20px 0 0 135px;
+	}
+
+	.text-about{
+		padding: 20px;
+		width: 300px;
+	}
+	
+	.text-about p {
+	    padding: 20px 0 0 0;
+	}
+		
+	.text-about-right {
+		margin: 50px 0 0 0;
+	}
+
+	.profielfoto {
+    	width: 215px;
+    	height: 215px;
+	}
+
+	.contact p {
+    	width: 280px;
+    	margin: 30px auto 0;
+	}
+
+	.mail-icon, .linkedin-icon {
+    	margin: 0 0 5px 0;
+	}
+
+	.wrap-experience p {
+    	margin: -18px auto 0;
+	}
+	
+	.work-container-image, .work-container-text {
+		display: block;
+		width: 100%;
+	}
+	
+	.work-philips {
+	    margin: 75px auto 0;
+	    position: initial;
+		width: 100%;
+	}
+	
+	.work-container-text {
+		background-color: #e8e8e8;
+		height: 80%;
+	}
+	
+	.text-box-work-page {
+	    margin: -25px auto 0;
+	    padding: 25px 0 0 0;
+	}
+	
+	.section-work {
+	    background-color: white;
+		height: 45%;
+	}
+	
+	.image-work {
+	    width: 300px;
+	    height: 250px;
+	}
+	
+	.go-left, .go-right {
+	    top: 353px;
+	}
+	
+	.work-page-text {
+	    width: 285px;
+	}
+	
+	.text-work-items {
+		font-size: 12px;
+	}
+	
+	.work-container-text {
+	    height: 104%;
+	}
+	
+	.second-title {
+	    margin: 0 0 25px 0;
+	}
 }
