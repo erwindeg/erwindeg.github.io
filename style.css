@@ -15,6 +15,7 @@ margin:0;
 .view-animate-container {
   position:relative;
   height:100%;
+  width:100%;
   background:#eee;
   border:1px solid black;
   overflow:hidden;
@@ -73,8 +74,8 @@ margin:0;
 .work-container-image,
 .work-container-text {
 	display: inline-block;
-   width: 80%;
-    height: 80%;
+   /*width: 80%;
+    height: 80%;*/
     vertical-align: top;
 }
 
