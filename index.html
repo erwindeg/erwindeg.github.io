@@ -11,6 +11,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js"></script>
     <script src="app.js"></script>
+	<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"http://erwindeg.github.io/1.jpg",
+				"http://erwindeg.github.io/2.jpg",
+				"http://erwindeg.github.io/3.jpg",
+				"http://erwindeg.github.io/4.jpg",
+				"http://erwindeg.github.io/5.jpg"
+			)
+		//--><!]]>
+	</script>
+</div>
   </head>
 
 <body ng-controller="MainCtrl">

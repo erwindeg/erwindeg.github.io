@@ -12,7 +12,7 @@ app.run(function($rootScope, $window) {
   //console.log(next);
     $rootScope.direction = 'rtl';
    // console.log(arguments);
-    if (current && next && (current.params.page > next.params.page)) {
+    if (current && next && ((!(current.params.page ==5 && next.params.page==1) && (current.params.page > next.params.page)) || (current.params.page==1 && next.params.page==5))) {
       $rootScope.direction = 'ltr';  
     }
     // back
@@ -27,7 +27,7 @@ app.controller('MainCtrl', function($scope,$routeParams,$location) {
 	$scope.next = function() {
 		var index = $routeParams.page*1+1;
 		if(index > 5){
-			index = 5;
+			index = 1;
 		}
 	
 		$location.path('/'+(index));
@@ -36,7 +36,7 @@ app.controller('MainCtrl', function($scope,$routeParams,$location) {
 	$scope.back = function() {
 		var index = $routeParams.page*1-1;
 		if(index < 1){
-			index = 1;
+			index = 5;
 		}
 	
 		$location.path('/'+(index));
