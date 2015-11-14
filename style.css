@@ -29,7 +29,7 @@ margin:0;
   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
  
   display:block;
-  /*width:100%;*/
+  width:100%;
   border-left:1px solid black;
  
   position:absolute;
@@ -90,7 +90,7 @@ margin:0;
 
 .work-page-text p {
     margin: 0 0 20px 0;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .title-work-page {
