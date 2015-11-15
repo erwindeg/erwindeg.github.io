@@ -9,6 +9,11 @@ padding:0;
 margin:0;
 }
 
+.button {
+  height: 50px;
+  Widrh: 75px;
+}
+
 .view-animate-container {
   position:relative;
   height:100%;/*
