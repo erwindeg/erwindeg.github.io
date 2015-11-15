@@ -13,8 +13,12 @@ margin:0;
   height: 150px;
   width: 250px;
   font-size: 26px;
+position: absolute;
 }
 
+.button-container {
+  text-align:center;
+}
 .view-animate-container {
   position:relative;
   height:100%;/*
