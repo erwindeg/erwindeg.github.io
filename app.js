@@ -1,30 +1,23 @@
-var app = angular.module('swipe', [
-  'ngRoute',
-  'ngAnimate',
-  'ngTouch'
-]);
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
-app.run(function($rootScope, $window) {
-  // publish current transition direction on rootScope
-  $rootScope.direction = 'ltr';
-  // listen change start events
-  $rootScope.$on('$routeChangeStart', function(event, next, current) {
-  //console.log(next);
-    $rootScope.direction = 'rtl';
-   // console.log(arguments);
-    if (current && next && ((!(current.params.page ==5 && next.params.page==1) && (current.params.page > next.params.page)) || (current.params.page==1 && next.params.page==5))) {
-      $rootScope.direction = 'ltr';  
-    }
-    // back
-   // $rootScope.back = function() {
-     // $window.history.back();
-    //}
-  });
+app.config(function($routeProvider) {
+    $routeProvider
+    	.when('/', {
+			templateUrl: 'home.html',
+			controller: 'MainCtrl',
+			redirectTo: '/1'
+		  })
+		.when('/:page', {
+			templateUrl: 'home.html',
+			controller: 'MainCtrl',
+		});
+
 });
 
-app.controller('MainCtrl', function($scope,$routeParams,$location) {
+app.controller('MainCtrl', function($scope,$routeParams,$location,$rootScope) {
 	$scope.page = $routeParams.page;
 	$scope.next = function() {
+		$rootScope.pageClass = 'page-content-rtl';
 		var index = $routeParams.page*1+1;
 		if(index > 5){
 			index = 1;
@@ -34,6 +27,7 @@ app.controller('MainCtrl', function($scope,$routeParams,$location) {
 	}
 	
 	$scope.back = function() {
+		$rootScope.pageClass = 'page-content-ltr';
 		var index = $routeParams.page*1-1;
 		if(index < 1){
 			index = 5;
@@ -41,17 +35,4 @@ app.controller('MainCtrl', function($scope,$routeParams,$location) {
 	
 		$location.path('/'+(index));
 	}
-});
-
-app.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    templateUrl: 'home.html',
-	controller: 'MainCtrl',
-    depth:1,
-	redirectTo: '/1'
-  }).when('/:page', {
-    templateUrl: 'home.html',
-    controller: 'MainCtrl',
-	depth:2
-  })
 });

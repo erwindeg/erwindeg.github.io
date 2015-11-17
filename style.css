@@ -1,119 +1,113 @@
-/* Put your css in here */
-
-
-body, html {
-width:100%;
-height:100%;
-overflow: hidden;
-padding:0;
-margin:0;
+/* BASE STYLES
+============================================================================= */
+html         { overflow-y:hidden; }
+.page        { 
+	bottom:0; app
+	padding-top:200px;
+	position:absolute; 
+	text-align:center;
+	top:0;  
+	width:100%; 
 }
 
-.button {
-  height: 150px;
-  width: 250px;
-  font-size: 26px;
-}
+.page h1    { font-size:60px; }
+.page a     { margin-top:50px; }
+#about      { color:#333; position:absolute; text-align:center; top:50px; width:100%; }
 
-.button-container {
-  text-align:center;
-}
-.view-animate-container {
-  position:relative;
-  height:100%;/*
-  background:#eee;*/
-  border:1px solid black;
-  overflow:hidden;
-}
- 
-.view-animate {
-  padding:10px;
-}
- 
-.view-animate.ng-enter, .view-animate.ng-leave {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
- 
-  display:block;
-  width:100%;
-  border-left:1px solid black;
- 
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  padding:10px;
-}
- 
-.rtl .view-animate.ng-enter {
-  -webkit-transform: translate3d(100%, 0, 0);
-}
-.rtl .view-animate.ng-enter.ng-enter-active {
-  -webkit-transform: translate3d(0, 0, 0);
-}
-.rtl .view-animate.ng-leave.ng-leave-active {
-  -webkit-transform: translate3d(-100%, 0, 0);
-}
-
-.ltr .view-animate.ng-enter {
-  -webkit-transform: translate3d(-100%, 0, 0);
-}
-.ltr .view-animate.ng-enter.ng-enter-active {
-  -webkit-transform: translate3d(0, 0, 0);
-}
-.ltr .view-animate.ng-leave.ng-leave-active {
-  -webkit-transform: translate3d(100%, 0, 0);
-}
-
+.text,
 .image{
 	width: 750px;
     height: 500px;
-    border: none;
-	
-	display: block;
-    margin-left: auto;
+	margin-left: auto;
     margin-right: auto;
 }
 
-.work-container-image,
-.work-container-text {
-	display: inline-block;
-    width: 100%;
-    height: 100%;
-    vertical-align: top;
+/* PAGES
+============================================================================= */
+
+.page-content 	{} 
+
+
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+.page-content-rtl.ng-leave        {
+    -webkit-animation:slideOutLeft 0.5s both ease-in;
+	-moz-animation:slideOutLeft 0.5s both ease-in;
+	animation:slideOutLeft 0.5s both ease-in;   
+}
+.page-content-rtl.ng-enter 		{  
+    -webkit-animation:slideInRight 0.5s both ease-in;
+	-moz-animation:slideInRight 0.5s both ease-in;
+	animation:slideInRight 0.5s both ease-in;    
 }
 
-.text-box-work-page {
-	margin: 50px auto 0;
+.page-content-ltr.ng-leave        {
+    -webkit-animation:slideOutRight 0.5s both ease-in;
+	-moz-animation:slideOutRight 0.5s both ease-in;
+	animation:slideOutRight 0.5s both ease-in;   
+}
+.page-content-ltr.ng-enter 		{  
+    -webkit-animation:slideInLeft 0.5s both ease-in;
+	-moz-animation:slideInLeft 0.5s both ease-in;
+	animation:slideInLeft 0.5s both ease-in;    
 }
 
-.text-box-work-page h2 {
-	font-size: 40px;
-	text-align: left;
-	margin: 0 0 10px 0;
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
 }
 
-.work-page-text p {
-    margin: 0 0 20px 0;
-    font-size: 32px;
+
+/* slide out to the left */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
 }
 
-.title-work-page {
-	margin: 0 auto;
-	text-align: center;
-    margin: 24px;
-    font-size: 32px;
-	font-family: Pacifico, Verdana, sans-serif;
+/* slide in from the left */
+@keyframes slideInLeft {
+	from 	{ transform:translateX(-100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInLeft {
+	from 	{ -moz-transform:translateX(-100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInLeft {
+	from 	{ -webkit-transform:translateX(-100%); }
+	to 		{ -webkit-transform: translateX(0); }
 }
 
-.second-title {
-	font-size: 24px;
-	font-weight: 300;
-	margin: 0 0 50px 0;
+
+/* slide out to the right */
+@keyframes slideOutRight {
+	to 		{ transform: translateX(100%); }
+}
+@-moz-keyframes slideOutRight {	
+	to 		{ -moz-transform: translateX(100%); }
+}
+@-webkit-keyframes slideOutRight {
+	to 		{ -webkit-transform: translateX(100%); }
 }
 
-.work-page-text {
-	width: 600px;
-	margin: 0 auto;
-}
+
+
