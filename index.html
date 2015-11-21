@@ -27,11 +27,8 @@
 <a href="index.html">Portfolio</a>
 <section class="section-work">
 	<div class="work-container-image" ng-swipe-right="prev()" ng-swipe-left="next()">
-		
-			<div class="work-philips">
-			<div class="animation"   >
-				<a ng-click="next()"><div class="image-work" ng-class="contentItem.classname" ng-repeat="contentItem in contentItems" ng-show="contentItem.visible"></div></a>
-			</div>	
+			<div class="work-philips" ng-show="showImages" >
+				<a ng-click="next()"><div class="image-work" ng-class="contentItem.classname" ng-repeat="contentItem in contentItems" ng-show="contentItem.visible" on-last-repeat></div></a>
 		</div>
 	</div>
 	<div class="work-container-text">

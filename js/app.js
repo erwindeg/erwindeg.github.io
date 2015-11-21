@@ -5,6 +5,13 @@ var app = angular.module('app', ['ngResource','ngTouch','ngAnimate'], function($
                                                });
     });
  
+ app.directive('onLastRepeat', function() {
+        return function(scope, element, attrs) {
+            if (scope.$last) setTimeout(function(){
+                scope.$emit('onRepeatLast', element, attrs);
+            }, 1);
+        };
+    })
  
 app.controller('mainCtrl',function($window, $scope){
         $scope.scrollPos = 0;
@@ -15,7 +22,15 @@ app.controller('mainCtrl',function($window, $scope){
         };
     });
                
-app.controller('workCtrl',function($window, $scope, $resource,$location){
+app.controller('workCtrl',function($window, $scope, $resource,$location,$timeout){
+	$scope.showImages = false;
+	$scope.$on('onRepeatLast', function(scope, element, attrs){
+			console.log("onlast");
+          	$scope.showImages = true;
+			$scope.$apply();
+      });
+	
+	
 	var content = $resource('content/work.json').query(function(){
 		$scope.contentItems = content;
 		$scope.page = $location.search().page;
@@ -30,8 +45,7 @@ app.controller('workCtrl',function($window, $scope, $resource,$location){
 			$scope.next = function(){
 			content[$scope.index].visible = false;
 			if($scope.index < content.length-1){
-				
-            	$scope.index = $scope.index+1;
+	        	$scope.index = $scope.index+1;
             	} else {
                 $scope.index = 0;
                 }
@@ -44,7 +58,7 @@ app.controller('workCtrl',function($window, $scope, $resource,$location){
 					if($scope.index > 0){
 						$scope.index = $scope.index-1;
                         } else {
-                        $scope.index = 0;
+                        $scope.index = content.length-1;
                         }
                         //$scope.contentItem = content[$scope.index];
 						content[$scope.index].visible = true;
