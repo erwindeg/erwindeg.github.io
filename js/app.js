@@ -9,7 +9,7 @@ var app = angular.module('app', ['ngResource','ngTouch','ngAnimate'], function($
         return function(scope, element, attrs) {
             if (scope.$last) setTimeout(function(){
                 scope.$emit('onRepeatLast', element, attrs);
-            }, 1);
+            }, 300);
         };
     })
  
@@ -24,9 +24,11 @@ app.controller('mainCtrl',function($window, $scope){
                
 app.controller('workCtrl',function($window, $scope, $resource,$location,$timeout){
 	$scope.showImages = false;
+	console.log($scope.showImages);
 	$scope.$on('onRepeatLast', function(scope, element, attrs){
 			console.log("onlast");
           	$scope.showImages = true;
+			console.log($scope.showImages);
 			$scope.$apply();
       });
 	
