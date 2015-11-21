@@ -1,0 +1,1036 @@
+.clearfix:after { 
+	content: "."; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+
+.image-work.ng-hide-add,
+.image-work.ng-hide-remove {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  display: block!important;
+}
+.image-work.ng-hide-add.ng-hide-add-active,
+.image-work.ng-hide-remove {
+  opacity: 0;
+}
+.image-work.ng-hide-add,
+.image-work.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+html, body{
+  	min-height: 100%;
+}
+
+body {
+	font-family: Oswald, Verdana, sans-serif;
+	margin:0;
+	padding:0;
+	position: relative;
+}
+
+main {
+	width: 100%;
+	margin: 50px auto;
+}
+
+.dummy-nav {
+    display: none;
+    height: 100px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+	background-color: #404041;
+	height: 70px;
+	Z-index: 1;
+}
+
+nav ul {
+    position: absolute;
+    right: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 120px;
+    margin: 25px 0 0 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	font-size: 14px;
+}
+
+header {
+	height: 717px;
+	background-color: #70A9A1;
+}
+
+.nav-title {
+	color: white;
+    position: absolute;
+    top: 25px;
+    left: 50px;
+}
+
+h1,
+.text-title p {
+	color: white;
+	letter-spacing: 0.4em;
+}
+
+h1 {
+	font-family: Pacifico, Verdana, sans-serif;
+	font-size: 50px;
+	font-weight: 700;
+	margin: 0 0 40px 10px;
+}
+
+.title-container {
+	position: absolute;
+	top: 310px;
+}
+
+.title-container,
+.logo-container,
+.contact,
+.contact1 {
+	width: 100%;
+	text-align: center;
+}
+
+.text-title {
+	margin: 0 auto;
+}
+
+.text-title p {
+	font-size: 30px;
+	font-weight: 300;
+	margin: 0 0 0 10px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+h2, 
+.quote p {
+	text-align: center;
+}
+
+h2,
+h3,
+p,
+a {
+	color: #404041;
+}
+
+.h2-about {
+	margin-top: 50px;
+}
+
+.h2-work {
+	margin-bottom: 50px;
+}
+
+.wrap-experience h3 {
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+
+.wrap-experience p {
+	font-size: 12px;
+	font-weight: lighter;
+	width: 219px;
+	margin: 0 auto;
+}
+
+p {
+	line-height: 20px;
+}
+
+.contact p {
+	width: 400px;
+	margin: 50px auto 0;
+}
+
+.logo {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 10px;
+	margin-left: -25px;
+}
+
+.hr-top {
+	margin: 50px auto;
+	background-color: white;
+	width: 380px;
+}
+
+hr {
+	background-color: #404041;
+	color: #404041;
+	border-width: 0;
+	height: 2px;
+	margin-top: 20px;
+}
+
+.hr-experience {
+	width: 55px;
+}
+
+hr.hr-about-me {
+	margin: 20px 0 0 0;
+}
+
+.hr1 {
+	width: 63px;
+}
+
+.hr2 {
+	width: 68px;
+}
+
+.hr3 {
+	width: 90px;
+}
+
+.hr4 {
+	width: 77px;
+}
+
+.text-box {
+	padding: 50px 0;
+}
+
+.experience {
+	background-color: #e8e8e8;
+}
+
+.quote {
+    width: 100%;
+    height: 210px;
+    background-color: #BEE3DB;
+}
+
+.quote-container {
+	margin: 20px auto 0;
+}
+
+.quote p {
+	color: #70A9A1;
+	font-size: 16px;
+	font-style: italic;
+    line-height: 20px;
+    width: 360px;
+    margin: 0 auto;
+}
+
+#name-quote {
+	padding: 40px 0 0 0;
+	font-style: normal;
+	font-size: 12px;
+}
+
+.box-about-me {
+	width: 100%;
+	margin: 50px 0;
+	text-align: center;
+}
+
+.text-about{
+	display: inline-block;
+	width: 400px;
+	text-align: left;
+    vertical-align: top;
+}
+
+.text-about-right {
+	margin: 0 -90px 0 140px;
+}
+
+.text-about p {
+	padding: 20px 60px 0 0;
+}
+
+.profiel {
+	width: 100%;
+	text-align: center;
+}
+
+.profielfoto {
+	width: 265px;
+	height: 265px;
+}
+
+.experience-container {
+	text-align: center;
+}
+	
+.wrap {
+	display: inline-block;
+	width: 19%;
+	vertical-align: top;
+}
+
+.wrap-experience {
+	padding: 2px;
+}
+
+.wrap-experience h3 {
+    color: #70A9A1;
+}
+
+.btn {
+	text-align: center;
+}
+
+.btn-show-less {
+	text-decoration: none;
+	color: white;
+}
+
+button {
+	background-color: #70A9A1;
+	padding: 8px;
+	border-style: none;
+	font-size: 14px;
+	text-align: center;
+	width: 150px;
+	font-weight: 600;
+	color: white;
+	margin: 50px 0;
+	border-radius: 4px;
+}
+
+.go-up {
+	position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 40px;
+    height: 35px;
+    background-color: #70A9A1;
+    text-align: center;
+}
+
+.arrow {
+	width: 20px;
+	height: 20px;
+	margin: 8px;
+}
+
+.linkedin,
+.email {
+	display: inline-block;
+	width: 250px;
+	margin: 50px 0 0 0;
+}
+
+.mail-icon,
+.linkedin-icon {
+	width: 30px;
+	height: 30px;
+	margin: 0 0 25px 0;
+}
+
+.image {
+	width: 220px;
+    height: 190px;
+    background-size: cover;
+    border: 1px solid #efefef;
+}
+
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.img-list li {
+  display: inline-block;
+  height: 190px;
+  margin: 0 10px 10px 0;
+  position: relative;
+  width: 220px;
+}
+
+.text-content p {
+	color: #70A9A1;
+}
+
+span.text-content {
+  background: rgba(64,64,65,0.8);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 190px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 220px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
+
+.image1 {
+    background-image: url("../images/healthprogram-philips.jpg");
+}
+
+.image2 {
+    background-image: url("../images/applicatie-ing.png");
+}
+
+.image3 {
+    background-image: url("../images/applicatie2-ing.png");
+}
+
+.image4 {
+    background-image: url("../images/poster_lefhebbers.jpg");
+}
+
+.image5 {
+    background-image: url("../images/flyer-b.jpg");
+}
+
+.image6 {
+    background-image: url("../images/redesign-hema2.jpg");
+}
+
+.image7 {
+    background-image: url("../images/redesign-sns1.jpg");
+}
+
+.image8 {
+    background-image: url("../images/brandbook-mindful.png");
+}
+
+.image9 {
+    background-image: url("../images/brochure-b.png");
+}
+
+.image10 {
+    background-image: url("../images/brandbook-boarnster1.jpg");
+}
+
+.image11 {
+    background-image: url("../images/redesign-menzis.jpg");
+}
+
+.image12 {
+    background-image: url("../images/etiket-boen.png");
+}
+
+.image13 {
+    background-image: url("../images/logo-weeklywine.png");
+}
+
+.image14 {
+    background-image: url("../images/presentatie-george.jpg");
+}
+
+.image15 {
+    background-image: url("../images/logo-thebreakfastclub.png");
+}
+
+.image16 {
+    background-image: url("../images/website-superbrand.jpg");
+}
+
+.image17 {
+    background-image: url("../images/gamedesign-cmd.png");
+}
+
+.image18 {
+    background-image: url("../images/dinerkaart-walvis.jpg");
+}
+
+.image19 {
+    background-image: url("../images/menucard-cafelennep.png");
+}
+
+.image20 {
+    background-image: url("../images/website-jgeurts.jpg");
+}
+
+.image21 {
+    background-image: url("../images/flyer-kkk.png");
+}
+
+.image23 {
+    background-image: url("../images/game-cqthartslag1.png");
+}
+
+.image22 {
+    background-image: url("../images/menucard-katoen.png");
+}
+
+#work {
+	margin: 70px 0 0 0;
+}
+
+#main-work {
+	height: 717px;
+	margin: 0px auto 0;
+}
+
+#header-work {
+	height: 0;
+}
+
+.work-container-image,
+.work-container-text {
+	display: inline-block;
+    width: 49.8%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.section-work {
+	background-color: #e8e8e8;
+	height: 100%;
+}
+
+.work-container-image {
+	background-color: white;
+}
+
+.go-left,
+.go-right {
+	position: absolute;
+    top: 340px;
+    width: 30px;
+    height: 35px;
+    background-color: #70A9A1;
+    text-align: center;
+}
+
+.go-left {
+	left: 0;
+}
+
+.arrow-left {
+	margin: 8px 0 0 0;
+}
+
+.go-right {
+    right: 0;
+}
+
+.work-philips {
+	margin: 125px auto 0;
+	text-align: center;
+	position: absolute;
+	width: 49.8%;
+}
+
+.image-work {
+	width: 500px;
+    height: 450px;
+    border: none;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	position: absolute;
+}
+
+.text-box-work-page {
+	margin: 195px auto 0;
+}
+
+.text-box-work-page h2 {
+	font-size: 24px;
+	text-align: left;
+	margin: 0 0 10px 0;
+}
+
+.work-page-text p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+#work-text2{
+	font-style: italic;
+	font-size: 10px;
+}
+
+.title-work-page {
+	color: #70A9A1;
+	margin: 0 auto;
+	text-align: center;
+    margin: 24px;
+    font-size: 20px;
+	font-family: Pacifico, Verdana, sans-serif;
+}
+
+.second-title {
+	font-size: 24px;
+	font-weight: 300;
+	color: #70A9A1;
+	margin: 0 0 50px 0;
+}
+
+.work-page-text {
+	width: 385px;
+	margin: 0 auto;
+}
+
+.image100 {
+	background-image: url("../images/webdesign-philips-allianz.png");
+}
+
+.image101 {
+	background-image: url("../images/trading-ing.png");
+}
+
+.image102 {
+	background-image: url("../images/building-ing.png");
+}
+
+.image103 {
+	background-image: url("../images/webdesign-sns.png");
+}
+
+.image104 {
+	background-image: url("../images/webdesign-hema.png");
+}
+
+.image105 {
+	background-image: url("../images/brandbook-boarnsterhim.png");
+}
+
+.image106 {
+	background-image: url("../images/redesign-menzis.png");
+}
+
+.image107 {
+	background-image: url("../images/brochure-b.amsterdam.png");
+}
+
+.image108 {
+	background-image: url("../images/webdesign-superbrand.png");
+}
+
+.image113 {
+	background-image: url("../images/webdesign-jannekeg.png");
+}
+
+.image110 {
+	background-image: url("../images/poster-lefhebbers1.png");
+}
+
+.image111 {
+	background-image: url("../images/brandbook-mindful1.png");
+}
+
+.image109 {
+	background-image: url("../images/flyer-bamsterdam.png");
+}
+
+.image112 {
+	background-image: url("../images/brand-weeklywine.png");
+}
+
+.image114 {
+	background-image: url("../images/logo-breakfast.png");
+}
+
+.image115 {
+	background-image: url("../images/flyer-keurmerk.png");
+}
+
+.image116 {
+	background-image: url("../images/gamedesign.png");
+}
+
+.image117 {
+	background-image: url("../images/menucard-walvis.png");
+}
+
+.image118 {
+	background-image: url("../images/menucard-lennep.png");
+}
+
+.image119 {
+	background-image: url("../images/presentation-george.png");
+}
+
+.image120 {
+	background-image: url("../images/etiket-boengroen.png");
+}
+
+.image122 {
+	background-image: url("../images/game-cqthartslag.png");
+}
+
+.image121 {
+	background-image: url("../images/menucard-katoen1.png");
+}
+
+.image105,
+.image107,
+.image111{
+	height: 550px;
+	margin: -20px auto 0;
+}
+
+@media (min-width: 1681px){
+	
+	#main-work {
+		height: 1001px;
+	}
+	
+	.section-work {
+		height: 100%;
+	}
+	
+	#header-work {
+	    height: 0;
+	}
+		
+	.work-container-image {
+	    height: 100%;
+	}
+		
+	header {
+		height: 1025px;
+	}
+	
+	.title-container {
+		top: 470px;
+	}
+	
+	.work-philips {
+		margin: 265px auto 0;
+	}
+	
+	.text-box-work-page {
+	    margin: 365px auto 0;
+	}
+	
+	.go-left, 
+	.go-right {
+	    top: 520px;
+	}
+	
+	.image-work {
+	    width: 600px;
+	    height: 550px;
+	}
+	
+	.wrap-experience h3{
+		font-size: 18px;
+	}
+	
+	.wrap-experience p {
+		font-size: 15px;
+	}
+	
+	.quote p {
+		font-size: 20px;
+		width: 450px;
+	}
+	
+	#name-quote {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 1441px) and (max-width: 1680px){
+	
+	#main-work {
+		height: 951px;
+	}
+	
+	.section-work {
+		height: 100%;
+	}
+	
+	#header-work {
+	    height: 0;
+	}
+		
+	.work-container-image {
+	    height: 100%;
+	}
+	
+	header {
+		height: 867px;
+	}
+	
+	.title-container {
+		top: 400px;
+	}
+	
+	.go-left, 
+	.go-right {
+	    top: 420px;
+	}
+	
+	.text-box-work-page {
+	    margin: 355px auto 0;
+	}
+	
+	.work-philips {
+	    margin: 225px auto 0;
+	}
+}
+
+@media (min-width: 569px) and (max-width: 1100px) {
+	header{
+		height: 967px;
+	}
+		
+	.wrap {
+	    width: 33%;
+	}
+	
+	.text-about-right {
+	    margin: 0 -70px 0 10px;
+	}
+	
+	.text-about {
+		width: 320px;
+	}
+	
+	.title-container {
+	    top: 400px;
+	}
+	
+	.text-about p {
+	    padding: 20px 10px 0 0;
+	}
+	
+	.text-about {
+	    width: 340px;
+	}
+	
+	.text-about-right {
+	    margin: 0 -20px 0 40px;
+	}
+	
+	.work-container-image, .work-container-text {
+		display: block;
+		width: 100%;
+	}
+	
+	.work-philips {
+	    margin: 65px auto 0;
+	    position: initial;
+		width: 100%;
+	}
+	
+	.work-container-text {
+		background-color: #e8e8e8;
+		height: 105%;
+	}
+	
+	.text-box-work-page {
+	    margin: 45px auto 0;
+	    padding: 55px 0 0 0;
+	}
+	
+	.section-work {
+	    background-color: white;
+		height: 70%;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+	main {
+	    margin: 30px auto 10px;
+	}
+	
+	#work {
+		margin: 30px 0 0 0;
+	}
+	
+	header {
+		height: 517px;
+	}
+	
+	.hr-top {
+	    margin: 20px auto;
+	    width: 150px;
+		height: 1px;
+	}
+
+	.nav-title {
+		left: 20px;
+	}
+		
+    nav {
+	    font-size: 10px;
+	}
+
+	nav ul li {
+    	width: 65px;
+	}
+	
+	nav ul li a {
+    	font-size: 12px;
+	}
+
+	nav ul {
+    	margin-left: 22px;
+		right: 10px;
+	}
+
+	.logo {
+		margin-left: -9px;
+	}
+
+	.title-container {
+	    top: 225px;
+	}
+
+	.text-title p {
+    	font-size: 12px;
+	    margin: 0 0 0 6px;
+	}
+
+	h1 {
+	    font-size: 20px;
+	    margin: 0;
+	}
+
+    .h2-work {
+    	margin-bottom: 30px;
+	}
+
+    hr {
+    	width: 135px;
+    	margin: 20px 0 0 110px;
+	}
+
+	button {
+		margin: 30px 0;
+	}
+	
+	.quote p {
+		width: 200px;
+	}
+
+	.wrap {
+    	display: block;
+    	width: 100%;
+	}
+
+	.wrap-experience h3 {
+    	color: #70A9A1;
+	}
+
+	.hr-experience {
+		width: 55px;
+		margin: 20px 0 0 135px;
+	}
+
+	.text-about{
+		padding: 20px;
+		width: 300px;
+	}
+	
+	.text-about p {
+	    padding: 20px 0 0 0;
+	}
+		
+	.text-about-right {
+		margin: 50px 0 0 0;
+	}
+
+	.profielfoto {
+    	width: 215px;
+    	height: 215px;
+	}
+
+	.contact p {
+    	width: 280px;
+    	margin: 30px auto 0;
+	}
+
+	.mail-icon, .linkedin-icon {
+    	margin: 0 0 5px 0;
+	}
+
+	.wrap-experience p {
+    	margin: -18px auto 0;
+	}
+	
+	.work-container-image, .work-container-text {
+		display: block;
+		width: 100%;
+	}
+	
+	.work-philips {
+	    margin: 75px auto 0;
+	    position: initial;
+		width: 100%;
+	}
+	
+	.work-container-text {
+		background-color: #e8e8e8;
+		height: 105%;
+	}
+	
+	.text-box-work-page {
+	    margin: -25px auto 0;
+	    padding: 25px 0 0 0;
+	}
+	
+	.section-work {
+	    background-color: white;
+		height: 45%;
+	}
+	
+	.image-work {
+	    width: 300px;
+	    height: 250px;
+	}
+	
+	.go-left, .go-right {
+	    top: 353px;
+	}
+	
+	.work-page-text {
+	    width: 285px;
+	}
+	
+	.text-work-items {
+		font-size: 12px;
+	}
+	
+	.work-container-text {
+	    height: 104%;
+	}
+	
+	.second-title {
+	    margin: 0 0 25px 0;
+	}
+}
