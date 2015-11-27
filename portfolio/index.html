@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.lazylinepainter-1.1.min.js"></script>
+    <script src="js/raphael-min.js"></script>
+    <script src="js/main.js"></script>
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald|Pacifico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio Livia Rickli</title>
+</head>	
+<body ng-controller="mainCtrl">
+<header id="home">
+	<div class="dummy-nav"></div>
+	<nav>
+		<p class="nav-title">Portfolio</p>
+		<ul>
+  			<li><a href="#work">WORK</a></li>
+  			<li><a href="#about">ABOUT ME</a></li>
+  			<li><a href="#contact">CONTACT</a></li>
+		</ul>
+	</nav>
+	<div class="title-container">
+		<div class="text-title">
+			<div id="icons"></div>
+			<h1>I'm Livia Rickli</h1><br>
+			<p>- UX & UI Designer -</p>
+			<hr class="hr-top">
+		</div>
+	</div>
+</header>
+<main>
+<section id="work">
+		<h2 class="h2-work">WORK</h2>
+		<ul class="img-list">
+		  <li>
+		    <a href="work.html">
+		      <div class="image image1"></div>
+		      <span class="text-content"><span>Philips/Allianz<br><br><p>Web design</p></span></span>
+		    </a>
+		  </li>
+		    <li>
+		    <a href="work.html?page=2">
+		      <div class="image image2"></div>
+		      <span class="text-content"><span>ING<br><br><p>App design</p></span></span>
+		    </a>
+		  </li>
+		    <li>
+		    <a href="work.html?page=3">
+		      <div class="image image3"></div>
+		      <span class="text-content"><span>ING<br><br><p>App design</p></span></span>
+		    </a>
+		  </li>
+		</ul>
+		<ul class="img-list">
+  		  <li>
+  		    <a href="work.html?page=4">
+  		      <div class="image image7"></div>
+  		      <span class="text-content"><span>SNS Bank<br><br><p>Redesign Responsive webdesign<p></span></span>
+  		    </a>
+  		  </li>
+		  <li>
+		    <a href="work.html?page=5">
+		      <div class="image image6"></div>
+		      <span class="text-content"><span>Hema<br><br><p>Redesign Responsive webdesign</p></span></span>
+		    </a>
+		  </li>
+		  <li>
+		    <a href="work.html?page=6">
+		      <div class="image image23"></div>
+		      <span class="text-content"><span>CQT<br><br><p>UX game development</p></span></span>
+		    </a>
+		  </li>
+		</ul>
+		<ul class="img-list">
+		  <li>
+		    <a href="work.html?page=7">
+		      <div class="image image11"></div>
+		      <span class="text-content"><span>Menzis<br><br><p>Redesign App design</p></span></span>
+		    </a>
+		  </li>
+		  <li>
+		    <a href="work.html?page=8">
+		      <div class="image image9"></div>
+		      <span class="text-content"><span>B.amsterdam<br><br><p>Brochure</p></span></span>
+		    </a>
+		  </li>
+		  <li>
+		    <a href="work.html?page=9">
+		      <div class="image image16"></div>
+		      <span class="text-content"><span>SuperBrand Management<br><br><p>Repsonsive website</p></span></span>
+		    </a>
+		  </li>
+		</ul>
+		<div ng-show="showMore">
+			<ul class="img-list">
+			  <li>
+			    <a href="work.html?page=10">
+			      <div class="image image20"></div>
+			      <span class="text-content"><span>Janneke Geurts<br><br><p>Repsonsive website</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=11">
+			      <div class="image image10"></div>
+			      <span class="text-content"><span>Boarnsterhimstate<br><br><p>Brandbook</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=12">
+			      <div class="image image8"></div>
+			      <span class="text-content"><span>Mindful<br><br><p>Brandbook</p></span></span>
+			    </a>
+			  </li>
+			</ul>
+			<ul class="img-list">
+			  <li>
+			    <a href="work.html?page=13">
+			      <div class="image image13"></div>
+			      <span class="text-content"><span>Weekly Wine<br><br><p>Logo</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=14">
+			      <div class="image image4"></div>
+			      <span class="text-content"><span>Lefhebbers<br><br><p>Poster</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+	  		    <a href="work.html?page=15">
+	  		      <div class="image image5"></div>
+	  		      <span class="text-content"><span>B.amsterdam<br><br><p>Poster</p></span></span>
+	  		    </a>
+	  		  </li>
+			</ul>
+			<ul class="img-list">
+			  <li>
+			    <a href="work.html?page=16">
+			      <div class="image image21"></div>
+			      <span class="text-content"><span>Koken voor kinderen<br><br><p>Logo|Pitch|Flyer</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=17">
+			      <div class="image image15"></div>
+			      <span class="text-content"><span>B.amsterdam<br><br><p>Logo</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=18">
+			      <div class="image image17"></div>
+			      <span class="text-content"><span>Studie CMD<br><br><p>Gamedesign</p></span></span>
+			    </a>
+			  </li>
+			</ul>
+			<ul class="img-list">
+			  <li>
+			    <a href="work.html?page=19">
+			      <div class="image image19"></div>
+			      <span class="text-content"><span>Cafe Lennep<br><br><p>Design menu card</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=20">
+			      <div class="image image14"></div>
+			      <span class="text-content"><span>George<br><br><p>Presentation</p></span></span>
+			    </a>
+			  </li>
+			  <li>
+			    <a href="work.html?page=21">
+			      <div class="image image18"></div>
+			      <span class="text-content"><span>Cafe de Walvis<br><br><p>Design menu card</p></span></span>
+			    </a>
+			  </li>
+			</ul>
+			<ul class="img-list">
+			  <li>
+			    <a href="work.html?page=22">
+			      <div class="image image22"></div>
+			      <span class="text-content"><span>Katoen<br><br><p>Design menu card</p></span></span>
+			    </a>
+			  </li>
+		  	  <li>
+				  <a href="work.html?page=23">
+					  <div class="image image12"></div>
+		      		  <span class="text-content"><span>BoenGroen<br><br><p>Label</p></span></span>
+		    	  </a>
+		 	  </li>
+			  <li>
+			  </li>
+			</ul>
+		</div>
+		<div class="btn" ng-show="!showMore">
+			<button ng-click="showMore=true">Show more</button>
+		</div>
+		<div class="btn" ng-show="showMore">
+			<button ng-click="showMore=false"><a href="#work" class="btn-show-less">Show less</a></button>
+		</div>
+</section>		
+<section>
+	<div class="text-box experience">
+		<h2>SKILLS</h2>
+		<hr class="hr-experience">
+	<div class="experience-container">
+		<div class="wrap">
+			<div class="wrap-experience">
+				<div>
+					<h3>SOFTWARE<h3>
+					<p>Balsamiq, Sketch, Photoshop, Illustrator, InVision and Axure</p>
+				</div>	
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="wrap-experience">
+					<h3>MOBILE DESIGN<h3>
+					<p>iOS, Android and Windows</p>
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="wrap-experience">
+					<h3>UX & UI<h3>
+					<p>User research, Wireframing, Concept Development, Interaction design and Prototyping</p>
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="wrap-experience">
+					<h3>WEB DESIGN<h3>
+					<p>Responsive & Adaptive design, SEO, HTML5 and CSS3</p>
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="wrap-experience">
+					<h3>PRINT DESIGN<h3>
+					<p>Logos, Brand books, Flyers, Brochures, Menu cards, Writing paper and Business cards.</p>
+			</div>
+		</div>
+	</div	
+	</div>
+</section>	
+<section id="about">
+	<div class="clearfix">
+		<h2 class="h2-about">ABOUT ME</h2>
+		<div class="box-about-me">
+			<div class="text-about">
+				<h3>WHO I AM</h3>
+				<hr class="hr-about-me hr1">
+				<p>I am a UX & UI designer, currently living in Amsterdam, with 
+				a passion for creating online & offline designs that are useful, 
+				distinctive and meaningful to users.<br><br>
+				Away from designing & building things, I love watching 
+				movies based on true stories, ski holidays and hanging out 
+				with my family & friends.</p>
+			</div>
+			<div class="text-about text-about-right">
+				<h3>WHAT I DO</h3>
+				<hr class="hr-about-me hr2">
+				<p>I currently work for <a href="http://sogeti.nl" target="_blank">Sogeti</a>, a leading company which provides 
+				technology solutions, based in 15 countries and has a strong local 
+				presence in over 100 locations in Europe, USA and India.<br><br>
+				I’m always up for new challenges, so get in touch if you 
+				think we’d make wonderful things together.</p>
+			</div>
+		</div>
+		<div class="profiel">
+			<img src="images/profiel.png" alt="Profile picture" class="profielfoto">
+		</div>
+		<div class="box-about-me">
+			<div class="text-about">
+				<h3>BACKGROUND</h3>
+				<hr class="hr-about-me hr3">
+				<p>I was born in Switzerland (Lachen) and moved to the Netherlands when I was 3 years old.  I have a twin brother and a older brother, which I love very much. For me family and friends are always number one.<br><br>
+				When I was 12 I became a professional athlete (basketball), for which I trained nearly every day. Therefore I moved a lot, but because of that I got to know a lot of people and places. Eventually I ended up in Amsterdam, where I’m enjoying myself immensely.</p>
+			</div>
+			<div class="text-about text-about-right">
+				<h3>EXPERIENCE</h3>
+				<hr class="hr-about-me hr4">
+				<p>As a former professional athlete (basketball) I have a lot of experience working in teams and taking my responsibilities within a team. In addition, I also worked as a Speech therapist, for which I completed a bachelor. In this role I developed good presentation and communication skills.<br><br>
+				In 2012 I started my second bachelor Communication and Multimedia Design. I’m very happy that I made a career switch, because I think its very important to do what makes you happy.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="text-box quote">
+		<div class="quote-container">
+			<p>"Every great design begins with an even better story"</p>
+			<p id="name-quote">- Lorinda Mamo -</p>
+		</div>
+	</div>
+</section>	
+<section id="contact">
+	<div class="text-box">
+		<div class="contact">
+			<h2>CONTACT</h2>
+			<p>Whether you would like my services for a project, get extra information on any of my work, or just say hello - I would love to hear from you.</p>
+		</div>
+		<div class="contact1">
+			<div class="linkedin">
+				<img src="images/linkedin-icon.png" class="linkedin-icon">
+				<p><a href="https://nl.linkedin.com/pub/livia-rickli/20/791/858" target="_blank">Livia Rickli</a></p>
+			</div>
+			<div class="email">
+				<img src="images/mail-icon.png" class="mail-icon">
+				<p>livia.rickli@sogeti.com</p>
+			</div>
+		</div>		
+	</div>
+</section>
+<div class="go-up" ng-show="scrollPos > 800">
+  	<a href="#home"><img src="images/arrow.png" alt="arrow" class="arrow"></a>
+</div>
+</main>
+</body>
+</html>

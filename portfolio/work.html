@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald|Pacifico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio Livia Rickli</title>
+</head>	
+<body ng-controller="workCtrl">
+<header id="header-work">
+	<div class="dummy-nav"></div>
+	<nav>
+		<a href="index.html" target="_self"><p class="nav-title">Portfolio</p></a>
+		<p class="title-work-page">Livia Rickli</p>
+	</nav>
+</header>
+<main id="main-work">	
+<a href="index.html">Portfolio</a>
+<section class="section-work">
+	<div class="work-container-image" ng-swipe-right="prev()" ng-swipe-left="next()">
+		
+			<div class="work-philips">
+			<div class="animation"   >
+				<a ng-click="next()"><div class="image-work" ng-class="contentItem.classname" ng-repeat="contentItem in contentItems" ng-show="contentItem.visible"></div></a>
+			</div>	
+		</div>
+	</div>
+	<div class="work-container-text">
+		<div class="text-box-work-page">
+			<div class="work-page-text" ng-repeat="contentItem in contentItems" ng-show="contentItem.visible">
+				<h2>{{contentItem.title}}</h2>
+				<p class="second-title">{{contentItem.subtitle}}</p>
+				<p class="text-work-items">{{contentItem.text}}</p>
+				<p class="text-work-items">{{contentItem.text1}}</p>
+				<p class="text-work-items" id="work-text2">{{contentItem.text2}}</p>
+			</div>
+		</div>	
+	</div>
+
+	<div class="go-left">
+  		<a href="#"><img src="images/arrow2.png" alt="left-arrow" class="arrow arrow-left" ng-click="prev()"></a>
+	</div>
+	<div class="go-right">
+  		<a href="#"><img src="images/arrow3.png" alt="right-arrow" class="arrow" ng-click="next()"></a>
+	</div>
+</section>
+</main>
+</body>
+</html>
