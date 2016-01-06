@@ -1,0 +1,14 @@
+.reveal section img { background:none; border:none; box-shadow:none; max-height: 500px}
+
+.icon {
+	width: 20px;
+	float: left;
+}
+
+#vertx-logo{
+	width: 300px;
+}
+
+#contact-info {
+	font-size: 50%;
+}
