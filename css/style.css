@@ -22,7 +22,8 @@ img {
 }
 
 .container { 
-  margin: 100px auto 0 5px;
+  margin: 100px 0px 0px 0px;
+  padding: 0 5px 0 5px;
   max-width: 48rem;
   width: 100%;
 }
