@@ -13,7 +13,6 @@ body {
 	font-family: Coolvetica;	
 	margin:0;
 	padding:0;
-	overflow:hidden;
 }
 
 img {
@@ -23,7 +22,7 @@ img {
 
 .container { 
   margin: 100px 0px 0px 0px;
-  padding: 0 5px 0 5px;
+  padding: 0 5px 50px 5px;
   max-width: 48rem;
   width: 100%;
 }
