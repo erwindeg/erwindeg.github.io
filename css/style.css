@@ -1,0 +1,134 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url(../font/coolvetica.ttf) format("truetype");
+}
+
+body {
+	font-family: Coolvetica;	
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+img {
+  max-width: 100%; 
+  height: auto !important;
+}
+
+.container { 
+  margin: 100px auto 0 5px;
+  max-width: 48rem;
+  width: 100%;
+}
+
+.bar {
+	width: 350px;
+	height: 70px;
+}
+
+.column {
+	padding-top: 1rem;
+}
+
+#social {
+	display: none;
+}
+
+@media (min-width: 80rem) {
+  nav {
+	background-color:#fff;
+	width:300px;
+	float:left;
+ }
+ 
+ #social {
+	display: inline;
+	top: 200px;
+	margin: 0 0 0 10px;
+	position: absolute;
+ }
+
+  .column {
+    float: left;
+    padding-left: 0rem;
+    padding-right: 0rem;
+	padding-top: 6rem;
+	padding-bottom: 0rem;
+  }
+  
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.flow-opposite { float: right; }  
+  
+  .container {
+	  top: 84px;
+	  left: 405px;
+	  position:absolute; 
+	  margin: 0 auto;
+	  max-width: 80rem;
+  }
+  
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+#logo {
+	font-size: 6em;
+	font-family: Coolvetica;
+	line-height: 0.8em;
+    height: 0.8em;
+	margin:0 0 0 5px;
+}
+
+/* colors */
+.grey-text{
+	color:#777870;
+}
+.grey{
+	background-color:#777870;
+}
+.purple-text{
+	color:#DE3D83;
+}
+.purple{
+	background-color:#DE3D83;
+}
+.green-text{
+	color:#00B8B8;
+}
+.green{
+	background-color:#00B8B8;
+}
+.yellow-text{
+	color:#E4BD0B;
+}
+.yellow{
+	background-color:#E4BD0B;
+}
+.blue-text{
+	color:#37BBE4;
+}
+.blue{
+	background-color:#37BBE4;
+}
