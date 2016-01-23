@@ -7,8 +7,15 @@ var app = angular.module('app', ['ngResource', 'pascalprecht.translate']).config
 	$translateProvider.useSanitizeValueStrategy('escape');
 });
 
-app.controller('mainController', function($translate,$scope,$resource,$rootScope) {
+app.controller('mainController', function($scope,$resource) {
     $scope.content = $resource('content/content.json').query();
+});
+
+app.controller('viewController', function($scope,$document) {
+	 $document.ready(function () {
+		$scope.show = true;
+		$scope.$apply();
+	});
 });
 
 app.controller('translateController', function($translate, $scope, $rootScope) {

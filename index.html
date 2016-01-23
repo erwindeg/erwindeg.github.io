@@ -24,9 +24,9 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
-<body>
+<body ng-class="{onshow:show}" ng-controller="viewController">
 <nav>
-	<div id="logo" ng-class="{foo:true}">
+	<div id="logo">
 		<span>Erwin</span></br>
 		<span>de Gier</span>
 	</div>
@@ -43,9 +43,8 @@
 	<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>
 </div>
 <section class="container" ng-controller="mainController" ng-cloak>	
-	<h1>{{'presentations' | translate}}</h1>
 	<div ng-repeat="item in content" itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>{{item.title[key]}}</b></span></br>
+		<h2 itemprop=”name”>{{item.title[key]}}</h2>
 		{{item.text[key]}}</br>
 		<a ng-href="{{item.link}}">{{'view_presentation' | translate}} {{item.linktitle}}</a></br>
 		<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}">{{'view_source_on_github'| translate}}</a></br></span>
