@@ -39,8 +39,8 @@
 	</div>
 </nav>
 <div class="langpicker" ng-controller="translateController">
-	<a href="" ng-click="changeLanguage('nl')">NL</a>
-	<a href="" ng-click="changeLanguage('en')">EN</a>
+	<a href="" ng-click="changeLanguage('nl')" ng-show="key != 'nl'">NL</a>
+	<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>
 </div>
 <section class="container" ng-controller="mainController" ng-cloak>	
 	<h1>{{'presentations' | translate}}</h1>
