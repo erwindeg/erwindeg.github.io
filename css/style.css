@@ -36,6 +36,12 @@ img {
 	padding-top: 1rem;
 }
 
+.langpicker {
+    position: absolute;
+    top: 5px;
+    left: 300px;
+}
+
 #social {
 	display: none;
 }

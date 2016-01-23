@@ -1,56 +1,107 @@
 [
     {
-        "title": "Triodos bank technical meeting: Reactive, event-driven applications with Vert.x",
-        "text": "Presentation introducing Vert.x for building reactive, event-driven applications on the JVM in Java.",
-    	"link": "presentations/vertx-intro",
+        "link": "presentations/vertx-intro",
 		"linktitle": "vertx introduction",
-		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew"
+		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
+		"title": {
+			"nl" : "Triodos bank technische meeting: Reactive, event-driven applications with Vert.x",
+			"en" : "Triodos bank technical meeting: Reactive, event-driven applications with Vert.x"
+		},
+		"text": {
+			"nl" : "Introductie presentatie voor het bouwen van reactieve, event-driven applicaties voor de JVM met Vert.x.",
+			"en" : "Presentation introducing Vert.x for building reactive, event-driven applications on the JVM in Java."
+		}
+		
 	},
 	{
-        "title": "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability",
-        "text": "Presentation describing the changing demands for software and the reacting concepts to fulfil these demands",
-    	"link": "presentations/changes-in-software-development.pdf",
-		"linktitle": "changes in software development"
+        "link": "presentations/changes-in-software-development.pdf",
+		"linktitle": "changes in software development",
+		"title": {
+			"nl" : "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability",
+			"en" : "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability"
+		},
+		"text": {
+			"nl" : "Presentatie over de veranderende eisen aan applicaties en de nieuwe concepten binnen software development die hier op inspelen.",
+			"en" : "Presentation describing the changing demands for software and the reacting concepts to fulfil these demands."
+		}
 	},
 	{
-        "title": "JFall conference 2015: Vert.x 3: What's New",
-        "text": "Describing the new features of Vert.x 3 at the JFall conference 2015",
-    	"link": "presentations/vertx3-whatsnew.pdf",
+        "link": "presentations/vertx3-whatsnew.pdf",
 		"linktitle": "vertx3-whatsnew",
 		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
-		"video":"https://www.youtube.com/watch?v=blGAtipoh-U"
+		"video":"https://www.youtube.com/watch?v=blGAtipoh-U",
+		"title": {
+			"nl" : "JFall conference 2015: Vert.x 3: What's New",
+			"en" : "JFall conference 2015: Vert.x 3: What's New"
+		},
+		"text": {
+			"nl" : "Overzicht van de nieuwe functionaliteiten in Vert.x 3 op het JFall congres 2015",
+			"en" : "Describing the new features of Vert.x 3 at the JFall conference 2015"
+		}
 	},
 	{
-        "title": "HBO-I Event Rotterdam 2015: Graduating at Sogeti Java Netherlands",
-        "text": "Presentation introducing the interesting graduation assignments done at the Sogeti Java Business Line",
-    	"link": "presentations/afstuderen-sogeti-java.pdf",
-		"linktitle": "afstuderen bij Sogeti Java"
+        "link": "presentations/afstuderen-sogeti-java.pdf",
+		"linktitle": "afstuderen bij Sogeti Java",
+		"title": {
+			"nl" : "HBO-I Event Rotterdam 2015: Afstuderen bij Sogeti Java NL",
+			"en" : "HBO-I Event Rotterdam 2015: Graduating at Sogeti Java Netherlands"
+		},
+		"text": {
+			"nl" : "Overzicht van een aantal leuke afstudeeropdrachten van de Sogeti Java Business Line",
+			"en" : "Presentation introducing the interesting graduation assignments done at the Sogeti Java Business Line"
+		}
 	},
 	{
-        "title": "Cialdini six principles of influence",
-        "text": "Short introduction to the six principles of influence of Cialdini",
-    	"link": "presentations/invloed-principes-cialdini",
-		"linktitle": "six principles of influence"
+        "link": "presentations/invloed-principes-cialdini",
+		"linktitle": "six principles of influence",
+		"title": {
+			"nl" : "Zes beinvloedingsprincipes van Cialdini",
+			"en" : "Cialdini six principles of influence"
+		},
+		"text": {
+			"nl" : "Korte introductie in de zes beinvloedingsprincipes van Cialdini",
+			"en" : "Short introduction to the six principles of influence of Cialdini"
+		}
 	},
 	{
-        "title": "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB",
-        "text": "Building a chat application at the Leidsche Flesch with Vert.x and MongoDB",
-    	"link": "presentations/vertx3-mongo-workshop.pdf",
+        "link": "presentations/vertx3-mongo-workshop.pdf",
 		"linktitle": "Async webapps with Vert.x and MongoDB",
-		"sourcecode": "https://github.com/erwindeg/vertx3-chat"
+		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
+		"title": {
+			"nl" : "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB",
+			"en" : "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB"
+		},
+		"text": {
+			"nl" : "Workshop bij de studentenvereniging de Leidsche Flesch waar we een chat applicaties hebben gebouwd met Vert.x en MongoDB",
+			"en" : "Building a chat application at the Leidsche Flesch with Vert.x and MongoDB"
+		}
 	},
 	{
-        "title": "Workshop Sogeti Java Bootcamp 2015: Async webapps with Vert.x, AngularJS and MongoDB",
-        "text": "Building a chat application at the Sogeti Java Bootcamp with Vert.x, AngularJS and MongoDB",
+        "title": "",
+        "text": "",
     	"link": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
 		"linktitle": "Async webapps with Vert.x and MongoDB",
-		"sourcecode": "https://github.com/erwindeg/vertx3-chat"
+		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
+		"title": {
+			"nl" : "Workshop Sogeti Java Bootcamp 2015: Async webapps with Vert.x, AngularJS and MongoDB",
+			"en" : "Workshop Sogeti Java Bootcamp 2015: Async webapps with Vert.x, AngularJS and MongoDB"
+		},
+		"text": {
+			"nl" : "Realisatie van een chat applicatie met Vert.x, AngularJS en MongoDB op de Sogeti Java Bootcamp 2015.",
+			"en" : "Building a chat application at the Sogeti Java Bootcamp with Vert.x, AngularJS and MongoDB"
+		}
 	},
 	{
-        "title": "Fontys visit Sogeti 2014: Java EE vs. Spring Framework",
-        "text": "Detailed story comparing the similarities and differences between Java Enterprise Edition 6 and Spring Framework 3",
-    	"link": "presentations/JavaEEvsSpring.pdf",
+        "link": "presentations/JavaEEvsSpring.pdf",
 		"linktitle": "Java EE vs. Spring Framework",
-		"video": "https://www.youtube.com/watch?v=4M3yJV337g4"
+		"video": "https://www.youtube.com/watch?v=4M3yJV337g4",
+		"title": {
+			"nl" : "Bezoek Fontys Hogeschool aan Sogeti 2014: Java EE vs. Spring Framework",
+			"en" : "Fontys visit Sogeti 2014: Java EE vs. Spring Framework"
+		},
+		"text": {
+			"nl" : "Gedetailleerd overzicht van de verschillen en overeenkomsten tussen Java Enterprise Edition en het Spring Framework",
+			"en" : "Detailed story comparing the similarities and differences between Java Enterprise Edition 6 and Spring Framework 3"
+		}
 	}	
 ]
