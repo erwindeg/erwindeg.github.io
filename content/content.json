@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Triodos bank technical meeting: Reactive, event-driven applications with Vert.x",
+        "text": "Presentation introducing Vert.x for building reactive, event-driven applications on the JVM in Java.",
+    	"link": "presentations/vertx-intro",
+		"linktitle": "vertx introduction",
+		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew"
+	},
+	{
+        "title": "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability",
+        "text": "Presentation describing the changing demands for software and the reacting concepts to fulfil these demands",
+    	"link": "presentations/changes-in-software-development.pdf",
+		"linktitle": "changes in software development"
+	},
+	{
+        "title": "JFall conference 2015: Vert.x 3: What's New",
+        "text": "Describing the new features of Vert.x 3 at the JFall conference 2015",
+    	"link": "presentations/vertx3-whatsnew.pdf",
+		"linktitle": "vertx3-whatsnew",
+		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
+		"video":"https://www.youtube.com/watch?v=blGAtipoh-U"
+	},
+	{
+        "title": "HBO-I Event Rotterdam 2015: Graduating at Sogeti Java Netherlands",
+        "text": "Presentation introducing the interesting graduation assignments done at the Sogeti Java Business Line",
+    	"link": "presentations/afstuderen-sogeti-java.pdf",
+		"linktitle": "afstuderen bij Sogeti Java"
+	},
+	{
+        "title": "Cialdini six principles of influence",
+        "text": "Short introduction to the six principles of influence of Cialdini",
+    	"link": "presentations/invloed-principes-cialdini",
+		"linktitle": "six principles of influence"
+	},
+	{
+        "title": "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB",
+        "text": "Building a chat application at the Leidsche Flesch with Vert.x and MongoDB",
+    	"link": "presentations/vertx3-mongo-workshop.pdf",
+		"linktitle": "Async webapps with Vert.x and MongoDB",
+		"sourcecode": "https://github.com/erwindeg/vertx3-chat"
+	},
+	{
+        "title": "Workshop Sogeti Java Bootcamp 2015: Async webapps with Vert.x, AngularJS and MongoDB",
+        "text": "Building a chat application at the Sogeti Java Bootcamp with Vert.x, AngularJS and MongoDB",
+    	"link": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
+		"linktitle": "Async webapps with Vert.x and MongoDB",
+		"sourcecode": "https://github.com/erwindeg/vertx3-chat"
+	},
+	{
+        "title": "Fontys visit Sogeti 2014: Java EE vs. Spring Framework",
+        "text": "Detailed story comparing the similarities and differences between Java Enterprise Edition 6 and Spring Framework 3",
+    	"link": "presentations/JavaEEvsSpring.pdf",
+		"linktitle": "Java EE vs. Spring Framework",
+		"video": "https://www.youtube.com/watch?v=4M3yJV337g4"
+	}	
+]

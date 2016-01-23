@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,6 +9,9 @@
 	<meta name="author" content="Erwin de Gier">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.js"></script>
+	<script src="js/app.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,7 +22,7 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
-<body>
+<body ng-controller="mainController">
 <nav>
 	<div id="logo">
 		<span>Erwin</span></br>
@@ -33,63 +36,16 @@
 		<span><a href="https://twitter.com/erwindeg">twitter.com/erwindeg</a></span></br>
 	</div>
 </nav>
-<section class="container">	
+<section class="container" ng-cloak>	
 	<h1>Presentations</h1>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Triodos bank technical meeting: Reactive, event-driven applications with Vert.x</b></span></br>
-		Presentation introducing Vert.x for building reactive, event-driven applications on the JVM in Java.</br>
-		<a href="presentations/vertx-intro">View presentation vertx introduction</a></br>
-		<a href="https://github.com/erwindeg/vertx3-whatsnew">View github repostitory vertx3-whatsnew</a></br>
+	<div ng-repeat="item in content" itemscope itemtype="https://schema.org/Article">
+		<span itemprop=”name”><b>{{item.title}}</b></span></br>
+		{{item.text}}</br>
+		<a ng-href="{{item.link}}">View presentation {{item.linktitle}}</a></br>
+		<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}">View source on github</a></br></span>
+		<span ng-show="item.video" ><a ng-href="{{item.video}}">Watch presentation on Youtube</a></br></span>
+		<br></br>
 	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability</b></span></br>
-		Presentation describing the changing demands for software and the reacting concepts to fulfil these demands</br>
-		<a href="presentations/changes-in-software-development.pdf">View presentation changes in software development</a></br>
-	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>JFall conference 2015: Vert.x 3: What's New</b></span></br>
-		Describing the new features of Vert.x 3 at the JFall conference 2015</br>
-		<a href="presentations/vertx3-whatsnew.pdf">View presentation vertx3-whatsnew</a></br>
-		<a href="https://github.com/erwindeg/vertx3-whatsnew">View github repostitory vertx3-whatsnew</a></br>
-		<a href="https://www.youtube.com/watch?v=blGAtipoh-U">Watch presentation Vert.x 3 What's New on Youtube</a></br>
-	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>HBO-I Event Rotterdam 2015: Graduating at Sogeti Java Netherlands</b></span></br>
-		Presentation introducing the interesting graduation assignments done at the Sogeti Java Business Line</br>
-		<a href="presentations/afstuderen-sogeti-java.pdf">View presentation "afstuderen bij Sogeti Java"</a></br>
-	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Cialdini six principles of influence</b></span></br>
-		Short introduction to the six principles of influence of Cialdini</br>
-		<a href="presentations/invloed-principes-cialdini">View presentation six principles of influence</a></br>
-	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB</b></span></br>
-		Building a chat application at the Leidsche Flesch with Vert.x and MongoDB</br>
-		<a href="presentations/vertx3-mongo-workshop.pdf">View presentation Async webapps with Vert.x and MongoDB</a></br>
-		<a href="https://github.com/erwindeg/vertx3-chat">View github repostitory vertx3-chat</a></br>
-	</div>
-	<br></br>
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Workshop Sogeti Java Bootcamp 2015: Async webapps with Vert.x, AngularJS and MongoDB</b></span></br>
-		Building a chat application at the Sogeti Java Bootcamp with Vert.x, AngularJS and MongoDB</br>
-		<a href="presentations/vertx3-mongo-workshop-bootcamp.pdf">View presentation Async webapps with Vert.x and MongoDB</a></br>
-		<a href="https://github.com/erwindeg/vertx3-chat">View github repostitory vertx3-chat</a></br>
-	</div>
-	<br></br>
-	
-	<div itemscope itemtype="https://schema.org/Article">
-		<span itemprop=”name”><b>Fontys visit Sogeti 2014: Java EE vs. Spring Framework</b></span></br>
-		Detailed story comparing the similarities and differences between Java Enterprise Edition 6 and Spring Framework 3/4</br>
-		<a href="presentations/JavaEEvsSpring.pdf">View presentation Java EE vs. Spring Framework</a></br>
-		<a href="https://www.youtube.com/watch?v=4M3yJV337g4">Watch presentation Java EE vs. Spring Framework on Youtube</a></br>
-	</div>
-	
 </section>
 </body>
 </html>

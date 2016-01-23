@@ -1,42 +1,51 @@
-var moveUrl;
-
 function startGame() {
   var request = new Object();
   request.playerName = "Erwin";
   request.botName="jsBot",
   request.botVersion="0.1";
   sendRequest("https://antwars.azurewebsites.net/api/game/start",request,function(response){
-		console.log(response);
-		moveUrl = response.links.move.href;
-		console.log(moveUrl);  
+		log(response);
+		calculateMoves(response); 
   });
 }
 
-function move(){
-		
+function calculateMoves(response){
+	var moves = response.units.map(function(unit){
+		return {
+			unitId: unit.id,
+			order: getMove(unit)
+		};
+	});	
+	log(moves);
+	
+	if(response.state < 3){
+		sendRequest(response.links.move.href,moves,function(response){
+			log(response);
+			calculateMoves(response); 
+		});
+	} else {
+		log('DONE');
+	}
 }
 
-function Ant(id,pos) {
-	this.id = id;
-	this.pos = pos;
+function getMove(unit){
+	if(unit.type == 'AntHill'){
+		return getAntHillMove(unit);
+	} else if(unit.type == 'Ant'){
+		return getAntMove(unit);
+	}
 }
 
-function AntHill(id,pos) {
-	this.id = id;
-	this.pos = pos;
-}
-
-function pos(x,y){
-	this.x=x;
-	this.y=y;
+function log(text){
+	//document.getElementById("demo").innerHTML = text;
+	console.log(text);
 }
 
 function sendRequest(url,request,callback){
 	var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
 	 if (xhttp.readyState == 4 && xhttp.status == 200) {
-		var response = JSON.parse(xhttp.responseText);
-		callback(response);
+		callback(JSON.parse(xhttp.responseText));
 	 }
    };
     
