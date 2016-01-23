@@ -1,5 +1,18 @@
 [
     {
+        "link": "presentations/opensource-java-krant.pdf",
+		"linktitle": "Reactive, event-driven applicaties met Vert.x",
+		"title": {
+			"nl" : "Microservices, event-driven applicaties met Vert.x",
+			"en" : "Microservices, event-driven applications with Vert.x"
+		},
+		"text": {
+			"nl" : "Article in de Open Source Java krant over microservice, event-driven applicaties met Vert.x",
+			"en" : "Article in Open Source Java Newspaper about microservice, event-driven applications with Vert.x"
+		}
+		
+	},
+	{
         "link": "presentations/vertx-intro",
 		"linktitle": "vertx introduction",
 		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
