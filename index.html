@@ -59,6 +59,7 @@
 <div class="langpicker" ng-controller="translateController">
 	<a href="" ng-click="changeLanguage('nl')" ng-show="key != 'nl'">NL</a>
 	<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>
+<input type="text" ng-model="search"/>
 </div>
 <section class="container" ng-controller="mainController" ng-cloak>	
 	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item">
