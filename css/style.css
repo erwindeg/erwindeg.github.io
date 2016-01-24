@@ -267,6 +267,22 @@ a:hover {
     overflow: hidden;
 }
 
+.fadeIn {
+opacity: 1;
+-moz-transition: opacity 0.5s ease;
+
+    -o-transition: opacity 0.5s ease;
+
+    -webkit-transition: opacity 0.5s ease;
+
+    transition: opacity 0.5s ease;
+
+}
+
+.fadeIn.ng-hide {
+  opacity: 1;
+}
+
 .slideIn.ng-hide, .search.ng-hide {
     height:0px;
 }
