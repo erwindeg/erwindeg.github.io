@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Overview of my presentations about Java, Development, Open Source, Architecture, Microservices and Reactive programming">
 	<meta name="author" content="Erwin de Gier">
+	<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
@@ -31,11 +32,11 @@
 		<span>de Gier</span>
 	</div>
 	<div id="social">
-		<span><a href="mailto:erwin@edegier.nl">erwin@edegier.nl</a></span></br>
-		<span><a href="https://github.com/erwindeg">github.com/erwindeg</a></span></br>
-		<span><a href="https://nl.linkedin.com/in/erwindegier">linkedin.com/erwindegier</a></span></br>
-		<span><a href="http://stackoverflow.com/users/4685029/erwin-de-gier">stackoverflow.com/erwin-de-gier</a></span></br>
-		<span><a href="https://twitter.com/erwindeg">twitter.com/erwindeg</a></span></br>
+		<a href="mailto:erwin@edegier.nl"><img class="icon" src="img/email.svg"/></a>
+		<a href="https://github.com/erwindeg"><img class="icon" src="img/github.svg"/></a>
+		<a href="https://nl.linkedin.com/in/erwindegier"><img class="icon" src="img/linkedin.svg"/></a>
+		<a href="http://stackoverflow.com/users/4685029/erwin-de-gier"><img class="icon" src="img/stackoverflow.svg"/></a>
+		<a href="https://twitter.com/erwindeg"><img class="icon" src="img/twitter.svg"/></a>
 	</div>
 </nav>
 <div class="langpicker" ng-controller="translateController">
@@ -43,9 +44,9 @@
 	<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>
 </div>
 <section class="container" ng-controller="mainController" ng-cloak>	
-	<div ng-repeat="item in content" itemscope itemtype="https://schema.org/Article">
-		<h2 itemprop=”name”>{{item.title[key]}}</h2>
-		{{item.text[key]}}</br>
+	<div ng-repeat="item in content" itemscope itemtype="https://schema.org/Article" class="item">
+		<h2 class="text" itemprop=”name”>{{item.title[key]}}</h2>
+		<span class="text">{{item.text[key]}}</span></br>
 		<a ng-href="{{item.link}}">{{'view_presentation' | translate}} {{item.linktitle}}</a></br>
 		<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}">{{'view_source_on_github'| translate}}</a></br></span>
 		<span ng-show="item.video" ><a ng-href="{{item.video}}">{{'view_presentation_on_youtube'| translate}}</a></br></span>

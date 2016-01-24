@@ -9,8 +9,8 @@
   src: url(../font/coolvetica.ttf) format("truetype");
 }
 
-body {
-	font-family: Coolvetica;	
+body {	
+	font-family: 'Merriweather', serif;
 	margin:0;
 	padding:0;
 	opacity: 0;
@@ -30,11 +30,10 @@ img {
 }
 
 .container { 
-  margin: 100px 0px 0px 0px;
+  margin: 130px 0px 0px 0px;
   padding: 0 5px 50px 5px;
   max-width: 48rem;
   width: 100%;
-  font-size: 1.5em;
 }
 
 .bar {
@@ -61,6 +60,7 @@ img {
 	background-color:#fff;
 	width:300px;
 	float:left;
+	margin: 10px 30px;
  }
  
  #social {
@@ -87,10 +87,23 @@ img {
   
   .container {
 	  top: 84px;
-	  left: 405px;
+	  left: 420px;
 	  position:absolute; 
 	  margin: 0 auto;
+	  width: 70%;
 	  max-width: 80rem;
+	  font-size: 1.5em;
+  }
+  
+  .item{
+	 padding-bottom: 10px;
+     padding-top: 10px;
+     white-space: nowrap;
+	 display: inline-block;	
+  }
+
+  .text {
+	 white-space: normal;
   }
   
 }
@@ -115,6 +128,12 @@ img {
 	line-height: 0.8em;
     height: 0.8em;
 	margin:0 0 0 5px;
+}
+
+.icon{
+	width: 30px;
+	float: left;
+	margin: 0 10px;
 }
 
 /* colors */
