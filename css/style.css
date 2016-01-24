@@ -243,7 +243,7 @@ a:hover {
 
 /** animations  **/
 .slideIn {
-	transition: .5s linear all;
+	transition: .3s linear all;
     height: 50px;
     overflow: hidden;
 }
