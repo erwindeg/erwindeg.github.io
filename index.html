@@ -66,7 +66,7 @@
 	</div>	
 </div>
 <div class="search" ng-show="showSearch">
-	<input class="search-input" type="text" ng-model="search" />
+	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
 </div>	
 	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item">
 		<a ng-href="{{item.link}}"><h2 class="text" itemprop=”name”>{{item.title[key]}}</h2></a>
