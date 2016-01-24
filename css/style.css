@@ -53,11 +53,8 @@ a:hover {
 	padding-top: 1rem;
 }
 
-.langpicker {
+.controls {
 	display: none;
-    position: absolute;
-    top: 5px;
-    left: 300px;
 }
 
 #menu-icon {
@@ -78,8 +75,19 @@ a:hover {
 	margin: 10px 30px;
  }
  
- .langpicker{
+ .controls {
 	display: inline;
+	position: absolute;
+	right: 25px;
+    top: 5px;
+ }
+ 
+ .langpicker{
+	float:left;
+ }
+ 
+ .search-icon {
+	float:left;
  }
  
  #menu-icon{
@@ -113,7 +121,7 @@ a:hover {
   .column.flow-opposite { float: right; }  
   
   .container {
-	  top: 84px;
+	  top: 10px;
 	  left: 420px;
 	  position:absolute; 
 	  margin: 0 auto;
@@ -241,6 +249,17 @@ a:hover {
     text-align: center;
 }
 
+.search {
+	width: 100%;
+	transition: .3s linear all;
+    height: 50px;
+    overflow: hidden;
+}
+
+.search-input {
+	width: 70%
+}
+
 /** animations  **/
 .slideIn {
 	transition: .3s linear all;
@@ -248,7 +267,7 @@ a:hover {
     overflow: hidden;
 }
 
-.slideIn.ng-hide {
+.slideIn.ng-hide, .search.ng-hide {
     height:0px;
 }
 
