@@ -280,7 +280,7 @@ opacity: 1;
 }
 
 .fadeIn.ng-hide {
-  opacity: 1;
+  opacity: 0;
 }
 
 .slideIn.ng-hide, .search.ng-hide {
