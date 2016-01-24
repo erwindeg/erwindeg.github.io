@@ -46,13 +46,24 @@ img {
 }
 
 .langpicker {
+	display: none;
     position: absolute;
     top: 5px;
     left: 300px;
 }
 
+#menu-icon {
+    position: absolute;
+    top: 8px;
+    left: 310px;
+}
+
 #social {
 	display: none;
+}
+
+#menu {
+	
 }
 
 @media (min-width: 80rem) {
@@ -61,6 +72,18 @@ img {
 	width:300px;
 	float:left;
 	margin: 10px 30px;
+ }
+ 
+ .langpicker{
+	display: inline;
+ }
+ 
+ #menu-icon{
+	display: none;
+ }
+ 
+ #menu {
+	display: none;
  }
  
  #social {

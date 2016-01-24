@@ -27,11 +27,22 @@
 </head>
 <body ng-class="{onshow:show}" ng-controller="viewController">
 <nav>
+	<div id="menu-icon" ng-click="showMenu=!showMenu">
+		<img class="icon" src="img/menu.svg"/>
+	</div>
 	<div id="logo">
 		<span>Erwin</span></br>
 		<span>de Gier</span>
 	</div>
 	<div id="social">
+		<a href="mailto:erwin@edegier.nl"><img class="icon" src="img/email.svg"/></a>
+		<a href="https://github.com/erwindeg"><img class="icon" src="img/github.svg"/></a>
+		<a href="https://nl.linkedin.com/in/erwindegier"><img class="icon" src="img/linkedin.svg"/></a>
+		<a href="http://stackoverflow.com/users/4685029/erwin-de-gier"><img class="icon" src="img/stackoverflow.svg"/></a>
+		<a href="https://twitter.com/erwindeg"><img class="icon" src="img/twitter.svg"/></a>
+	</div>
+	
+	<div id="menu" ng-show="showMenu">
 		<a href="mailto:erwin@edegier.nl"><img class="icon" src="img/email.svg"/></a>
 		<a href="https://github.com/erwindeg"><img class="icon" src="img/github.svg"/></a>
 		<a href="https://nl.linkedin.com/in/erwindegier"><img class="icon" src="img/linkedin.svg"/></a>
