@@ -27,7 +27,7 @@
 	</script>
 </head>
 <body ng-class="{onshow:show}" ng-controller="viewController">
-<nav>
+<nav id="home">
 	<div id="menu-icon" ng-click="showMenu=!showMenu">
 		<img class="icon" ng-show="!showMenu" src="img/menu.svg"/>
 		<img class="icon" ng-show="showMenu" src="img/close.svg"/>
@@ -67,6 +67,10 @@
 		<span ng-show="item.video" ><a ng-href="{{item.video}}">{{'view_presentation_on_youtube'| translate}}</a></br></span>
 		<br></br>
 	</div>
+	<div class="go-up" ng-show="scrollPos > 400">
+		<a href="#home"><img src="img/arrow.svg" alt="arrow" class="arrow"></a>
+	</div>
 </section>
+
 </body>
 </html>

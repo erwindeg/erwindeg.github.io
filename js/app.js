@@ -7,8 +7,14 @@ var app = angular.module('app', ['ngResource','ngAnimate', 'pascalprecht.transla
 	$translateProvider.useSanitizeValueStrategy('escape');
 });
 
-app.controller('mainController', function($scope,$resource) {
+app.controller('mainController', function($scope,$resource,$window) {
     $scope.content = $resource('content/content.json').query();
+	$scope.scrollPos = 0;
+ 
+	$window.onscroll = function(){
+		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+		$scope.$apply(); //or simply $scope.$digest();
+	};
 });
 
 app.controller('viewController', function($scope,$document) {
