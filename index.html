@@ -27,7 +27,8 @@
 	</script>
 </head>
 <body ng-class="{onshow:show}" ng-controller="viewController">
-<nav id="home">
+<header id="home">
+<nav>
 	<div id="menu-icon" ng-click="showMenu=!showMenu">
 		<img class="icon" ng-show="!showMenu" src="img/menu.svg"/>
 		<img class="icon" ng-show="showMenu" src="img/close.svg"/>
@@ -54,6 +55,7 @@
 		<a href="https://twitter.com/erwindeg"><img class="icon" src="img/twitter.svg"/></a>
 	</div>	
 </nav>
+</header>
 <div class="langpicker" ng-controller="translateController">
 	<a href="" ng-click="changeLanguage('nl')" ng-show="key != 'nl'">NL</a>
 	<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>
