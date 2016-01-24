@@ -62,10 +62,6 @@ img {
 	display: none;
 }
 
-#menu {
-	
-}
-
 @media (min-width: 80rem) {
   nav {
 	background-color:#fff;
@@ -151,6 +147,7 @@ img {
 	line-height: 0.8em;
     height: 0.8em;
 	margin:0 0 0 5px;
+	/*position: relative;*/
 }
 
 .icon{
@@ -189,4 +186,45 @@ img {
 }
 .blue{
 	background-color:#37BBE4;
+}
+
+#menu {
+  width: 100%;
+  top: 0px;
+ /* padding: 10px 0px;*/
+  /*position: absolute;*/
+  z-index: 200;
+  background-color: #fff;
+}
+
+.menu-icon {
+	width: 30px;
+	float: left;
+	margin: 10px 10px;
+}
+
+.menu-text {
+	width: 30px;
+	float: left;
+	margin: 10px 10px;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #000;
+}
+
+/** animations  **/
+.slideIn {
+	transition: .5s linear all;
+    height: 50px;
+    overflow: hidden;
+}
+
+.slideIn.ng-hide {
+    height:0px;
+}
+
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
 }

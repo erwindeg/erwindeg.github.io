@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'pascalprecht.translate']).config(function($translateProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate', 'pascalprecht.translate']).config(function($translateProvider) {
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/',
 	    suffix: '.json'
