@@ -29,6 +29,14 @@ img {
   height: auto !important;
 }
 
+a {
+	text-decoration: none; 
+	color: #000;
+}
+a:hover {
+	color: grey;
+}
+
 .container { 
   margin: 130px 0px 0px 0px;
   padding: 0 5px 50px 5px;
@@ -150,10 +158,16 @@ img {
 	/*position: relative;*/
 }
 
+
 .icon{
 	width: 30px;
 	float: left;
 	margin: 0 10px;
+}
+
+.itemicon{
+	width: 40px;
+	margin: 10px 10px 0 0;
 }
 
 /* colors */
