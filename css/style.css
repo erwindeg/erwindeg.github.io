@@ -67,6 +67,15 @@ a:hover {
 	display: none;
 }
 
+.title {
+	margin-bottom: 0px;
+  }
+  
+.date {
+	font-size: 0.7em;
+	color: grey;
+}
+
 @media (min-width: 80rem) {
   nav {
 	background-color:#fff;
@@ -122,7 +131,7 @@ a:hover {
   
   .container {
 	  top: 10px;
-	  left: 420px;
+	  left: 380px;
 	  position:absolute; 
 	  margin: 0 auto;
 	  width: 70%;

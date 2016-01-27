@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource','ngAnimate', 'pascalprecht.translate']).config(function($translateProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate']).config(function($translateProvider) {
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/',
 	    suffix: '.json'
@@ -8,7 +8,7 @@ var app = angular.module('app', ['ngResource','ngAnimate', 'pascalprecht.transla
 });
 
 app.controller('mainController', function($scope,$resource,$window) {
-    $scope.content = $resource('content/content.json').query();
+	$scope.content = $resource('content/content.json').query();
 	$scope.scrollPos = 0;
  
 	$window.onscroll = function(){

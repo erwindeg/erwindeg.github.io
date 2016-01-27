@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.8.1/angular-translate.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
@@ -69,10 +70,12 @@
 	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
 </div>	
 	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item">
-		<a ng-href="{{item.link}}"><h2 class="text" itemprop=”name”>{{item.title[key]}}</h2></a>
+		<a ng-href="{{item.link}}"><h2 class="text title" itemprop=”name”>{{item.title[key]}}</h2></a>
+		<span class="date">{{item.date}}</span> <br></br>
 		<span class="text">{{item.text[key]}}</span></br>
 		<div class="icons">
-			<a ng-href="{{item.link}}"><img class="itemicon" src="img/presentation.svg"/></a>
+			<span ng-show="item.presentation" ><a ng-href="{{item.presentation}}"><img class="itemicon" src="img/presentation.svg"/></a></span>
+			<span ng-show="item.article" ><a ng-href="{{item.article}}"><img class="itemicon" src="img/article.svg" /></a></span>
 			<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}"><img class="itemicon" src="img/github.svg"/></a></span>
 			<span ng-show="item.video" ><a ng-href="{{item.video}}"><img class="itemicon" src="img/youtube.svg"/></a></span>
 		</div>
