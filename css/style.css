@@ -82,6 +82,7 @@ a:hover {
 	width:300px;
 	float:left;
 	margin: 10px 30px;
+	position: fixed;
  }
  
  .controls {
@@ -119,7 +120,7 @@ a:hover {
     padding-left: 0rem;
     padding-right: 0rem;
 	padding-top: 6rem;
-	padding-bottom: 0rem;
+	padding-bottom: 0rem; 
   }
   
   .column.full { width: 100%; }

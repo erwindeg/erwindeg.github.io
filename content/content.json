@@ -27,6 +27,19 @@
 		"date":"12-01-2016"		
 	},
 	{
+        "presentation": "presentations/workshop-app-development.pdf",
+		"linktitle": "Workshop App development",
+		"title": {
+			"nl" : "Symposium beroepsorientatie Hogeschool van Amsterdam: 'Mobile Design: Every great design begins with an even better story'",
+			"en" : "Workshop Amsterdam University of Applied Sciences: 'Mobile Design: Every great design begins with an even better story'"
+		},
+		"text": {
+			"nl" : "Workshop op de HVA voor eerstejaars studenten over het maken van wireframes als methode voor het uitwerken van een concept voor een mobiele applicatie.",
+			"en" : "Workshop at the Amsterdam University of Applied Sciences which shows wireframing as a powerfull tool for creating mobile application concepts."
+		},
+		"date":"11-12-2015"
+	},
+	{
         "presentation": "presentations/changes-in-software-development.pdf",
 		"linktitle": "changes in software development",
 		"title": {
@@ -34,8 +47,8 @@
 			"en" : "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability"
 		},
 		"text": {
-			"nl" : "Presentatie over de veranderende eisen aan applicaties en de nieuwe concepten binnen software development die hier op inspelen.",
-			"en" : "Presentation describing the changing demands for software and the reacting concepts to fulfil these demands."
+			"nl" : "Presentatie over de veranderende eisen aan applicaties en de nieuwe concepten binnen software development die hier op inspelen. Deze presentatie werd gegeven als introductie tot de Vert.x 3 presentatie van Paolo Lopes",
+			"en" : "Presentation describing the changing demands for software and the reacting concepts to fulfil these demands. This presentation was an introduction to the Vert.x 3 presentation of Paolo Lopes."
 		},
 		"date":"16-11-2015"
 	},
@@ -81,9 +94,20 @@
 		"date":"02-10-2015"
 	},
 	{
-        "title": "",
-        "text": "",
-    	"presentation": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
+        "presentation": "presentations/vertx-mongo-stages.pdf",
+		"sourcecode": "https://github.com/erwindeg/vertx3-stages",
+		"title": {
+			"nl" : "Bezoek Fontys Hogeschool aan Sogeti 2015: Realisatie van een realtime webapplicatie met Vert.x en MongoDB",
+			"en" : "Fontys visit Sogeti 2015: Realisation of a realtime webapplication with Vert.x and MongoDB"
+		},
+		"text": {
+			"nl" : "In deze live coding presentatie werd een realtime webapplicatie voor het inschrijven op stage opdrachten gebouwd met behulp van Vert.x, MongoDB, AngularJS en websockets.",
+			"en" : "In this live coding demo a realtime webapplication was build with Vert.x, MongoDB, AngularJS and websockets."
+		},
+		"date":"08-06-2015"
+	},
+	{
+        "presentation": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
 		"linktitle": "Async webapps with Vert.x and MongoDB",
 		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
 		"title": {
@@ -101,14 +125,26 @@
 		"linktitle": "Async webapps with Vert.x and MongoDB",
 		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
 		"title": {
-			"nl" : "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB",
-			"en" : "Workshop Leidsche Flesch 2015: Async webapps with Vert.x and MongoDB"
+			"nl" : "Workshop Leidsche Flesch: Async webapps with Vert.x and MongoDB",
+			"en" : "Workshop Leidsche Flesch: Async webapps with Vert.x and MongoDB"
 		},
 		"text": {
 			"nl" : "Workshop bij de studentenvereniging de Leidsche Flesch waar we een chat applicatie hebben gebouwd met Vert.x en MongoDB",
 			"en" : "Building a chat application at the Leidsche Flesch with Vert.x and MongoDB"
 		},
 		"date":"08-04-2015"
+	},
+	{
+        "presentation": "presentations/sso-jee.pdf",
+		"title": {
+			"nl" : "Implementatie van een Single Sign On oplossing op basis van Redhat JBoss EAP met picketlink",
+			"en" : "Implementation of a Single Sign On solution based on Redhat JBoss EAP with picketlink"
+		},
+		"text": {
+			"nl" : "Korte beschrijving van een SSO implementatie op basis van Redhat JBoss EAP met picketlink. Deze presentatie werd gegeven als introductie voor de presentatie van Arun Gupta bij de ING over Java Enterprise Edition 7",
+			"en" : "Short description of a Single Sign On implemenation based on Redhat JBoss EAP and picketlink. This presentation was an introduction to the Java Enterprise Edition 7 presentation of Arun Gupta."
+		},
+		"date":"20-09-2014"
 	},
 	{
         "presentation": "presentations/JavaEEvsSpring.pdf",
