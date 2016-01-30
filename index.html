@@ -29,7 +29,7 @@
 	</script>
 </head>
 <body ng-class="{onshow:show}" ng-controller="viewController">
-<header id="home">
+<header>
 <nav>
 	<div id="menu-icon" ng-click="showMenu=!showMenu">
 		<img class="icon" ng-show="!showMenu" src="img/menu.svg"/>
@@ -58,6 +58,8 @@
 	</div>	
 </nav>
 </header>
+<div ng-view></div>
+<!--
 <section class="container" ng-controller="mainController" ng-cloak>
 <div class="controls">
 	<a href="" ng-click="showSearch=!showSearch"><img class="icon" src="img/search.svg"/></a>
@@ -85,6 +87,6 @@
 		<a href="#home"><img src="img/arrow.svg" alt="arrow" class="arrow"></a>
 	</div>
 </section>
-
+-->
 </body>
 </html>

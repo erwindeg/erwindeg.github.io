@@ -1,4 +1,22 @@
-var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate']).config(function($translateProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate']).config(function($translateProvider, $routeProvider) {
+	$routeProvider
+    	.when('/', {
+    		templateUrl: 'home.html',
+            controller: ''
+    	})
+		.when('/home', {
+    		templateUrl: 'home.html',
+            controller: ''
+    	})
+		.when('/blog', {
+    		templateUrl: 'blog.html',
+            controller: ''
+    	})
+		.otherwise({
+			redirectTo: '/'
+		});
+
+
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/',
 	    suffix: '.json'
@@ -32,5 +50,13 @@ app.controller('translateController', function($translate, $scope, $rootScope) {
   $rootScope.key = $translate.proposedLanguage() || $translate.use();
 });
 
-
-$(function() { $('a[href*=#]:not([href=#])').click(function() { if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) { var target = $(this.hash); target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); if (target.length) { $('html,body').animate({ scrollTop: target.offset().top - 100 }, 700); return false; } } });});
+app.directive('scrollOnClick', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, $elm) {
+      $elm.on('click', function() {
+        $("body").animate({scrollTop: 0}, "slow");
+      });
+    }
+  }
+});
