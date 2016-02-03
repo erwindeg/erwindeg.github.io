@@ -1,6 +1,7 @@
 [
     {
         "article": "presentations/opensource-java-krant.pdf",
+		"link": "presentations/opensource-java-krant.pdf",
 		"linktitle": "Reactive, event-driven applicaties met Vert.x",
 		"title": {
 			"nl" : "Microservices, event-driven applicaties met Vert.x",
@@ -14,6 +15,7 @@
 	},
 	{
         "presentation": "presentations/vertx-intro",
+		"link": "presentations/vertx-intro",
 		"linktitle": "vertx introduction",
 		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
 		"title": {
@@ -28,6 +30,7 @@
 	},
 	{
         "presentation": "presentations/workshop-app-development.pdf",
+		"link": "presentations/workshop-app-development.pdf",
 		"linktitle": "Workshop App development",
 		"title": {
 			"nl" : "Symposium beroepsorientatie Hogeschool van Amsterdam: 'Mobile Design: Every great design begins with an even better story'.",
@@ -41,6 +44,7 @@
 	},
 	{
         "presentation": "presentations/changes-in-software-development.pdf",
+		"link": "presentations/changes-in-software-development.pdf",
 		"linktitle": "changes in software development",
 		"title": {
 			"nl" : "Sogeti Guru night 2015: Changes in software development: microservices, event-driven, scalability",
@@ -54,6 +58,7 @@
 	},
 	{
         "presentation": "presentations/invloed-principes-cialdini",
+		"link": "presentations/invloed-principes-cialdini",
 		"linktitle": "six principles of influence",
 		"title": {
 			"nl" : "Zes beinvloedingsprincipes van Cialdini",
@@ -67,6 +72,7 @@
 	},
 	{
         "presentation": "presentations/vertx3-whatsnew.pdf",
+		"link": "presentations/vertx3-whatsnew.pdf",
 		"linktitle": "vertx3-whatsnew",
 		"sourcecode": "https://github.com/erwindeg/vertx3-whatsnew",
 		"video":"https://www.youtube.com/watch?v=blGAtipoh-U",
@@ -82,6 +88,7 @@
 	},
 	{
         "presentation": "presentations/afstuderen-sogeti-java.pdf",
+		"link": "presentations/afstuderen-sogeti-java.pdf",
 		"linktitle": "afstuderen bij Sogeti Java",
 		"title": {
 			"nl" : "HBO-I Event Rotterdam 2015: Afstuderen bij Sogeti Java NL",
@@ -95,6 +102,7 @@
 	},
 	{
         "presentation": "presentations/vertx-mongo-stages.pdf",
+		"link": "presentations/vertx-mongo-stages.pdf",
 		"sourcecode": "https://github.com/erwindeg/vertx3-stages",
 		"title": {
 			"nl" : "Bezoek Fontys Hogeschool aan Sogeti 2015: Realisatie van een realtime webapplicatie met Vert.x en MongoDB",
@@ -108,6 +116,7 @@
 	},
 	{
         "presentation": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
+		"link": "presentations/vertx3-mongo-workshop-bootcamp.pdf",
 		"linktitle": "Async webapps with Vert.x and MongoDB",
 		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
 		"title": {
@@ -122,6 +131,7 @@
 	},
 	{
         "presentation": "presentations/vertx3-mongo-workshop.pdf",
+		"link": "presentations/vertx3-mongo-workshop.pdf",
 		"linktitle": "Async webapps with Vert.x and MongoDB",
 		"sourcecode": "https://github.com/erwindeg/vertx3-chat",
 		"title": {
@@ -136,6 +146,7 @@
 	},
 	{
         "presentation": "presentations/sso-jee.pdf",
+		"link": "presentations/sso-jee.pdf",
 		"title": {
 			"nl" : "Implementatie van een Single Sign On oplossing op basis van Redhat JBoss EAP met picketlink",
 			"en" : "Implementation of a Single Sign On solution based on Redhat JBoss EAP with picketlink"
@@ -148,6 +159,7 @@
 	},
 	{
         "presentation": "presentations/JavaEEvsSpring.pdf",
+		"link": "presentations/JavaEEvsSpring.pdf",
 		"linktitle": "Java EE vs. Spring Framework",
 		"video": "https://www.youtube.com/watch?v=4M3yJV337g4",
 		"title": {
