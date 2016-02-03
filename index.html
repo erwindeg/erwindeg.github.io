@@ -70,7 +70,7 @@
 <div class="search" ng-show="showSearch">
 	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
 </div>	
-	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item fadein" ng-class="{onfade:showitem}" elem-ready="showitem=true">
+	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item" animate-on-load>
 		<a ng-href="{{item.link}}"><h2 class="text title" itemprop=”name”>{{item.title[key]}}</h2></a>
 		<span class="date">{{item.date}}</span> <br></br>
 		<span class="text">{{item.text[key]}}</span></br>
