@@ -1,5 +1,5 @@
-<section class="container" ng-controller="mainController" ng-cloak ng-class="{onshow:show}">
-<div class="controls">
+<section class="container" ng-controller="mainController">
+<div class="controls fadein" ng-class="{onfade:showcontrols}" elem-ready="showcontrols=true">
 	<a href="" ng-click="showSearch=!showSearch"><img class="icon" src="img/search.svg"/></a>
 	<div class="langpicker" ng-controller="translateController">
 		<a href="" ng-click="changeLanguage('nl')" ng-show="key != 'nl'">NL</a>
@@ -9,7 +9,7 @@
 <div class="search" ng-show="showSearch">
 	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
 </div>	
-	<div itemscope itemtype="https://schema.org/Article" class="item">
+	<div itemscope itemtype="https://schema.org/Article" class="item" animate-on-load>
 		<a ng-href="#/" ng-click="show=false"><h2 class="text title" itemprop=”name”>Article title</h2></a>
 		<span class="date">01-01-2016</span> <br></br>
 		<span class="text">{{item.text[key]}}</span></br>
