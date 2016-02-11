@@ -287,14 +287,18 @@ a:hover {
 
 .fadein {
 	opacity: 0;
-	-moz-transition: opacity 0.5s linear all;
+    -moz-transition: opacity 0.5s linear all;
     -o-transition: opacity 0.5s linear all;
-    -webkit-transition: opacity 0.5s linear all;
-    transition: opacity 0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
 }
 
 .onfade {
 	opacity: 1;
+	-moz-transition: opacity 0.5s linear all;
+    -o-transition: opacity 0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+   transition: 0.5s linear all;
 }
 
 .item.ng-enter{
