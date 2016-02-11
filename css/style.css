@@ -9,22 +9,11 @@
   src: url(../font/coolvetica.ttf) format("truetype");
 }
 
-body, section {	
+body {	
 	font-family: 'Merriweather', serif;
 	margin:0;
 	padding:0;
-	opacity: 0;
-    -moz-transition: opacity 0.5s ease;
-    -o-transition: opacity 0.5s ease;
-    -webkit-transition: opacity 0.5s ease;
-    transition: opacity 0.5s ease;
 }
-
-body.onshow, section.onshow {
-	opacity: 1;
-}
-
-
 
 img {
   max-width: 100%; 
@@ -293,4 +282,44 @@ a:hover {
 .ng-hide-add, .ng-hide-remove {
     /* ensure visibility during the transition */
     display: block !important; /* yes, important */
+}
+
+
+.fadein {
+	opacity: 0;
+	-moz-transition: opacity 0.5s linear all;
+    -o-transition: opacity 0.5s linear all;
+    -webkit-transition: opacity 0.5s linear all;
+    transition: opacity 0.5s linear all;
+}
+
+.onfade {
+	opacity: 1;
+}
+
+.item.ng-enter{
+  /* standard transition code */
+  -moz-transition: opacity 0.5s linear all;
+   -o-transition: opacity 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity:0;
+}
+.item.ng-leave{
+  /* standard transition code */
+  -moz-transition: opacity 0.5s linear all;
+   -o-transition: opacity 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity:1;
+}
+
+.item.ng-enter.ng-enter-active  {
+  /* standard transition styles */
+  opacity:1;
+}
+
+.item.ng-leave.ng-leave-active  {
+  /* standard transition styles */
+  opacity:0;
 }

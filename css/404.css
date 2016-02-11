@@ -1,0 +1,27 @@
+html, body{
+  min-height: 100%;
+  background: #000;
+}
+body{
+  position: relative;
+}
+
+
+.overlay{
+  font-size: 8em;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  /*
+  width: 100%;
+  height: 100%;*/
+  z-index: 10;
+  /*background-color: rgba(0,0,0,0.5); dim the background*/
+}
+
+@media (min-width: 80rem) {
+	.overlay{
+		font-size: 10em;
+		left: 20%;
+	}
+}

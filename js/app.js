@@ -31,15 +31,8 @@ app.controller('mainController', function($scope,$resource,$window) {
  
 	$window.onscroll = function(){
 		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
-		$scope.$apply(); //or simply $scope.$digest();
-	};
-});
-
-app.controller('viewController', function($scope,$document) {
-	 $document.ready(function () {
-		$scope.show = true;
 		$scope.$apply();
-	});
+	};
 });
 
 app.controller('translateController', function($translate, $scope, $rootScope) {
@@ -48,6 +41,21 @@ app.controller('translateController', function($translate, $scope, $rootScope) {
 	$rootScope.key = langKey;
   };
   $rootScope.key = $translate.proposedLanguage() || $translate.use();
+});
+
+
+app.directive( 'elemReady', function( $parse ) {
+   return {
+       restrict: 'A',
+       link: function( $scope, elem, attrs ) {    
+          elem.ready(function(){
+            $scope.$apply(function(){
+                var func = $parse(attrs.elemReady);
+                func($scope);
+            })
+          })
+       }
+    }
 });
 
 app.directive('scrollOnClick', function() {
@@ -60,3 +68,16 @@ app.directive('scrollOnClick', function() {
     }
   }
 });
+
+app.directive('animateOnLoad',['$animateCss', function($animateCss) {
+  return {
+    'link': function(scope, element) {
+      $animateCss(element, {
+          'event': 'enter',
+           structural: true
+      }).start();
+    }
+  };
+}]);
+
+$(function() { $('a[href*=#]:not([href=#])').click(function() { if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) { var target = $(this.hash); target = target.length ? target : $('[name=' + this.hash.slice(1) +']'); if (target.length) { $('html,body').animate({ scrollTop: target.offset().top - 100 }, 700); return false; } } });});
