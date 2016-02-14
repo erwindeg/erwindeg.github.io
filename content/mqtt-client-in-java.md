@@ -25,30 +25,67 @@ When you use Maven for your project, use the following to add the Paho dependenc
 ```
 
 ### Publisher
-The Publisher class implements the MqttCallback interface. This allows us to implement methods which are called when the connection is lost or when messages arrive. Since this class is a publisher, we only implement the connectionLost method.
-The fi
+The Publisher class implements the MqttCallback interface. This allows us to implement methods which are called when the connection is lost or when messages arrive. 
+The first step is to make a connection with the broker. The URL of the mqttdashboard.com public broker is used. We also pass a CLIENT_ID, which must be unique per broker. Finally we specify an in-memory persistence mechanism.
+On the MqttConnectOptions, we specify a last will. This is a message that is send by the broker, to the specified last will topic, when this client disconnects. We pass an instance of the Publisher to the setCallback method to make use of the connectionLost callback.
 
 ```java
-this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
+private static final String LAST_WILL_TOPIC = "erwindeg/last_will_topic";
+private static final String CLIENT_ID = UUID.randomUUID().toString();
 
-final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
-mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
+public Publisher() throws MqttException {
+	this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
 
-this.client.connect(mqttConnectOptions);
-this.client.setCallback(this);
-this.client.subscribe(TOPIC);
+	final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
+	mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
+	this.client.setCallback(this);
+	this.client.connect(mqttConnectOptions);
+}
 ```
+
+Now that we have a connection with the broker, we can start sending messages. We construct a MqttMessage with as payload a json message with a latitude and a longitude. On the message, we specify a Quality of Service level of 2, which means a message should be delivered exactly once. The other levels are 0 (at most once) and 1 (at least once). For sending messages, the QoS level is between the client and the broker. For delivering messages, the QoS can be set on the subscription. A higher level will negatively impact performance.
+
+```java
+public void publishData() throws MqttException, UnsupportedEncodingException {
+	String payload = "{\"lat\": \"52.3667\", \"lon\": \"4.9000\"}";
+	MqttMessage message = new MqttMessage(payload.getBytes("UTF-8"));
+	message.setQos(2);
+	this.client.publish(TOPIC, message);
+}
+```
+
+Finally we implement the connectionLost method.
+```java
+public void connectionLost(Throwable ex) {
+	ex.printStackTrace();
+}
+```
+
+Start the Publisher and go to the [MQTT dashboard](http://mqtt-dashboard.com/dashboard) page. If all is well, you will see your topic in the recently used topics list!
 
 ### Consumer
-We create a Consumer class which, like the publisher, implements the MqttCallback interface. Creating the connection with the broker happens in the same way as with the publisher. We will be using the messageArrived method to receive messages. The first step 
+Like the publisher, the Consumer implements the MqttCallback interface. Creating the connection with the broker happens in the same way as with the publisher. The only extra step is that we subscribe to the same topic that is used by the Publisher.
 
 ```java
-this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
+public Consumer() throws MqttException {
+	this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
 
-final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
-mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
+	final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
+	mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
 
-this.client.connect(mqttConnectOptions);
-this.client.setCallback(this);
-this.client.subscribe(TOPIC);
+	this.client.connect(mqttConnectOptions);
+	this.client.setCallback(this);
+	this.client.subscribe(TOPIC);
+}
 ```
+
+We will be using the messageArrived method to receive messages.
+```java
+public void messageArrived(String arg0, MqttMessage message) throws Exception {
+	System.out.println(new String(message.getPayload(), "UTF-8"));
+}
+```
+
+Start your Consumer, if the Publisher is still running, the Consumer will now log the messages to the console. 
+
+Congratulations, you have build your first MQTT clients! The full source is available on [Github](https://github.com/erwindeg/mqtt-example).
