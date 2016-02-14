@@ -1,25 +1,9 @@
-<section class="container" ng-controller="mainController">
-<div class="controls fadein" ng-class="{onfade:showcontrols}" elem-ready="showcontrols=true">
-	<a href="" ng-click="showSearch=!showSearch"><img class="icon" src="img/search.svg"/></a>
-	<div class="langpicker" ng-controller="translateController">
-		<a href="" ng-click="changeLanguage('nl')" ng-show="key != 'nl'">NL</a>
-		<a href="" ng-click="changeLanguage('en')" ng-show="key != 'en'">EN</a>	
-	</div>	
-</div>
-<div class="search" ng-show="showSearch">
-	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
-</div>	
-	<div itemscope itemtype="https://schema.org/Article" class="item" animate-on-load>
-		<a ng-href="#/" ng-click="show=false"><h2 class="text title" itemprop=”name”>Article title</h2></a>
-		<span class="date">01-01-2016</span> <br></br>
-		<span class="text">{{item.text[key]}}</span></br>
-		<div class="icons">
-			<span ng-show="item.presentation" ><a ng-href="{{item.presentation}}"><img class="itemicon" src="img/presentation.svg"/></a></span>
-			<span ng-show="item.article" ><a ng-href="{{item.article}}"><img class="itemicon" src="img/article.svg" /></a></span>
-			<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}"><img class="itemicon" src="img/github.svg"/></a></span>
-			<span ng-show="item.video" ><a ng-href="{{item.video}}"><img class="itemicon" src="img/youtube.svg"/></a></span>
-		</div>
-		<br></br>
+<head>
+	<link rel="stylesheet" href="css/blog.css">
+</head>
+<section class="container" ng-controller="blogController">
+	<div itemscope itemtype="https://schema.org/Article" class="fadein" ng-class="{onfade:showblog}" elem-ready="showblog=true">
+		<md ng-model="text"></md>
 	</div>
 	<div class="go-up" ng-show="scrollPos > 200">
 		<a href="#home"><img src="img/arrow.svg" alt="arrow" class="arrow"></a>

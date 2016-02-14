@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate']).config(function($translateProvider, $routeProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate', 'yaru22.md']).config(function($translateProvider, $routeProvider) {
 	$routeProvider
     	.when('/', {
     		templateUrl: 'home.html',
@@ -8,10 +8,15 @@ var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprec
     		templateUrl: 'home.html',
             controller: ''
     	})
-		.when('/blog', {
+		.when('/blog/:id', {
     		templateUrl: 'blog.html',
             controller: ''
     	})
+		.when('/404', {
+			redirectTo: function(){
+				window.location = "/404.html";
+			}
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -41,6 +46,14 @@ app.controller('translateController', function($translate, $scope, $rootScope) {
 	$rootScope.key = langKey;
   };
   $rootScope.key = $translate.proposedLanguage() || $translate.use();
+});
+
+app.controller('blogController', function($scope,$routeParams,$location,$http){
+	$http.get('content/'+$routeParams.id+'.md').then(function(data) {
+		$scope.text = data.data;
+	},function(error){
+		$location.url('/404');
+	});	
 });
 
 

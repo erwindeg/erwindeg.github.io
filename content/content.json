@@ -1,4 +1,17 @@
 [
+	{
+		"link": "/#/blog/mqtt-client-in-java",
+		"bloglink": "/#/blog/mqtt-client-in-java",
+		"title": {
+			"nl" : "MQTT Client in Java",
+			"en" : "MQTT Client in Java"
+		},
+		"text": {
+			"nl" : "Starting text of blog",
+			"en" : "Starting text of blog"
+		},
+		"date":"15-02-2016"
+	},
     {
         "article": "presentations/opensource-java-krant.pdf",
 		"link": "presentations/opensource-java-krant.pdf",

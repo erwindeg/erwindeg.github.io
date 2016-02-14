@@ -9,11 +9,11 @@
 <div class="search" ng-show="showSearch">
 	<input class="search-input" type="text" ng-model="search" placeholder="{{'search_query' | translate}}" />
 </div>	
-	<a href="#blog" ng-click="show=false">blog</a>
 	<div ng-repeat="item in content | filter:search" itemscope itemtype="https://schema.org/Article" class="item" animate-on-load>
 		<a ng-href="{{item.link}}"><h2 class="text title" itemprop=”name”>{{item.title[key]}}</h2></a>
 		<span class="date">{{item.date}}</span> <br></br>
 		<span class="text">{{item.text[key]}}</span></br>
+		<span class="readmore" ng-show="item.bloglink"><a ng-href="{{item.bloglink}}">{{'read_more' | translate}}</a></span></br>
 		<div class="icons">
 			<span ng-show="item.presentation" ><a ng-href="{{item.presentation}}"><img class="itemicon" src="img/presentation.svg"/></a></span>
 			<span ng-show="item.article" ><a ng-href="{{item.article}}"><img class="itemicon" src="img/article.svg" /></a></span>
