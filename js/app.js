@@ -1,4 +1,27 @@
-var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate']).config(function($translateProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate', 'yaru22.md']).config(function($translateProvider, $routeProvider) {
+	$routeProvider
+    	.when('/', {
+    		templateUrl: 'home.html',
+            controller: ''
+    	})
+		.when('/home', {
+    		templateUrl: 'home.html',
+            controller: ''
+    	})
+		.when('/blog/:id', {
+    		templateUrl: 'blog.html',
+            controller: ''
+    	})
+		.when('/404', {
+			redirectTo: function(){
+				window.location = "/404.html";
+			}
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+
+
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/',
 	    suffix: '.json'
@@ -25,6 +48,20 @@ app.controller('translateController', function($translate, $scope, $rootScope) {
   $rootScope.key = $translate.proposedLanguage() || $translate.use();
 });
 
+app.controller('blogController', function($scope,$routeParams,$location,$http,$window){
+	$http.get('content/'+$routeParams.id+'.md').then(function(data) {
+		$scope.text = data.data;
+	},function(error){
+		$location.url('/404');
+	});	
+	
+	$scope.scrollPos = 0;
+	$window.onscroll = function(){
+		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+		$scope.$apply();
+	};
+});
+
 
 app.directive( 'elemReady', function( $parse ) {
    return {
@@ -38,6 +75,17 @@ app.directive( 'elemReady', function( $parse ) {
           })
        }
     }
+});
+
+app.directive('scrollOnClick', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, $elm) {
+      $elm.on('click', function() {
+        $("body").animate({scrollTop: 0}, "slow");
+      });
+    }
+  }
 });
 
 app.directive('animateOnLoad',['$animateCss', function($animateCss) {
