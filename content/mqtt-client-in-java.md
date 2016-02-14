@@ -12,3 +12,16 @@ sending them to the clients subscribed to the messages. Topics are used to publi
 
 ![MQTT broker client](content/img/mqtt-broker-client.svg)
 
+### Eclipse Paho
+Eclipse Paho is an open source client implementation for the MQTT protocol. It provides implementations in multiple languages like Java, JavaScript, Python, etc. 
+When you use Maven for your project, use the following to add the Paho dependency to your application.
+
+```xml
+<dependency>
+    <groupId>org.eclipse.paho</groupId>
+	<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+	<version>1.0.2</version>
+</dependency>
+```
+
+### Publisher
