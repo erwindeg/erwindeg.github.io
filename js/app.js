@@ -48,12 +48,18 @@ app.controller('translateController', function($translate, $scope, $rootScope) {
   $rootScope.key = $translate.proposedLanguage() || $translate.use();
 });
 
-app.controller('blogController', function($scope,$routeParams,$location,$http){
+app.controller('blogController', function($scope,$routeParams,$location,$http,$window){
 	$http.get('content/'+$routeParams.id+'.md').then(function(data) {
 		$scope.text = data.data;
 	},function(error){
 		$location.url('/404');
 	});	
+	
+	$scope.scrollPos = 0;
+	$window.onscroll = function(){
+		$scope.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+		$scope.$apply();
+	};
 });
 
 
