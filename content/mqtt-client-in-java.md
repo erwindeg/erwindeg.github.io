@@ -25,3 +25,30 @@ When you use Maven for your project, use the following to add the Paho dependenc
 ```
 
 ### Publisher
+The Publisher class implements the MqttCallback interface. This allows us to implement methods which are called when the connection is lost or when messages arrive. Since this class is a publisher, we only implement the connectionLost method.
+The fi
+
+```java
+this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
+
+final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
+mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
+
+this.client.connect(mqttConnectOptions);
+this.client.setCallback(this);
+this.client.subscribe(TOPIC);
+```
+
+### Consumer
+We create a Consumer class which, like the publisher, implements the MqttCallback interface. Creating the connection with the broker happens in the same way as with the publisher. We will be using the messageArrived method to receive messages. The first step 
+
+```java
+this.client = new MqttClient("tcp://broker.mqttdashboard.com", CLIENT_ID, new MemoryPersistence());
+
+final MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
+mqttConnectOptions.setWill(LAST_WILL_TOPIC, "client offline".getBytes(), 2, true);
+
+this.client.connect(mqttConnectOptions);
+this.client.setCallback(this);
+this.client.subscribe(TOPIC);
+```
