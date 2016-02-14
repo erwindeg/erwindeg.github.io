@@ -62,6 +62,12 @@ app.controller('blogController', function($scope,$routeParams,$location,$http,$w
 	};
 });
 
+app.controller('gaController', function($scope, $location, $window) {
+  $scope.$on('$viewContentLoaded', function(event) {
+	$window.ga('send', 'pageview', { page: $location.url() });
+  });
+});
+
 
 app.directive( 'elemReady', function( $parse ) {
    return {
