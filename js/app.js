@@ -68,7 +68,6 @@ app.controller('gaController', function($scope, $location, $window) {
   });
 });
 
-
 app.directive( 'elemReady', function( $parse ) {
    return {
        restrict: 'A',
