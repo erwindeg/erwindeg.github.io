@@ -20,6 +20,12 @@ img {
   height: auto !important;
 }
 
+#links {
+	top: -999px;
+	left: -999px;
+	position: relative;
+}
+
 a {
 	text-decoration: none; 
 	color: #000;
