@@ -1,0 +1,14 @@
+http://edegier.nl/
+http://edegier.nl/blog/mqtt-client-in-java/
+http://edegier.nl/presentations/opensource-java-krant.pdf
+http://edegier.nl/presentations/vertx-intro/
+http://edegier.nl/presentations/workshop-app-development.pdf
+http://edegier.nl/presentations/changes-in-software-development.pdf
+http://edegier.nl/presentations/invloed-principes-cialdini/
+http://edegier.nl/presentations/vertx3-whatsnew.pdf
+http://edegier.nl/presentations/afstuderen-sogeti-java.pdf
+http://edegier.nl/presentations/vertx-mongo-stages.pdf
+http://edegier.nl/presentations/vertx3-mongo-workshop-bootcamp.pdf
+http://edegier.nl/presentations/vertx3-mongo-workshop.pdf
+http://edegier.nl/presentations/sso-jee.pdf
+http://edegier.nl/presentations/JavaEEvsSpring.pdf
