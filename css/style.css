@@ -57,7 +57,7 @@ a:hover {
 #menu-icon {
     position: absolute;
     top: 8px;
-    left: 310px;
+    right: 10px;
 }
 
 #social {
