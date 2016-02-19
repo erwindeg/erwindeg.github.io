@@ -1,7 +1,7 @@
 [
 	{
-		"link": "/#/blog/mqtt-client-in-java",
-		"bloglink": "/#/blog/mqtt-client-in-java",
+		"link": "/blog/mqtt-client-in-java/",
+		"bloglink": "/blog/mqtt-client-in-java/",
 		"sourcecode": "https://github.com/erwindeg/mqtt-example",
 		"title": {
 			"nl" : "MQTT Client in Java",

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate', 'yaru22.md']).config(function($translateProvider, $routeProvider) {
+var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprecht.translate', 'yaru22.md']).config(function($translateProvider, $routeProvider, $locationProvider) {
 	$routeProvider
     	.when('/', {
     		templateUrl: 'home.html',
@@ -21,7 +21,7 @@ var app = angular.module('app', ['ngResource','ngAnimate','ngRoute', 'pascalprec
 			redirectTo: '/'
 		});
 
-
+  $locationProvider.html5Mode(true);
 	$translateProvider.useStaticFilesLoader({
 		prefix: '/languages/',
 	    suffix: '.json'
