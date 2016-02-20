@@ -1,0 +1,231 @@
+#speaking {
+    font-family: "Apple Chancery";
+    top: 143px;
+    left: 64px;
+    font-size: 33px;
+    position: absolute;
+}
+
+#geek {
+    font-family: "Georgia";
+    top: 191px;
+    left: 64px;
+    font-size: 46px;
+    position: absolute;
+}
+#glasses {
+    position: relative;
+    top: -114px;
+    left: 105px;
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: black;
+}
+
+#glasses:before,#glasses:after {
+	width: 50px;
+    height: 50px; /* as the half of the width */
+    border-bottom-left-radius: 15px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 15px; /* 100px of height + 10px of border */
+    border-top-left-radius: 15px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 15px; /* 100px of height + 10px of border */
+    border: 5px solid black;
+    position: absolute;
+    content: "";
+    top: -20px;
+    left: -60px;
+}
+
+#glasses:after{
+	top: -20px;
+    left: 28px;
+}
+
+#lefteye, #righteye{
+    position: relative;
+    left: 64px;
+    top: -119px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#lefteye:after, #righteye:after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: white;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+#righteye {
+    left: 153px;
+    top: -139px;
+}
+
+
+
+#container{
+	
+}
+
+#hair {
+      position: relative;
+    top: 50px;
+    left: 50px;
+    width: 138px;
+    height: 150px;
+    background: white;
+    border-radius: 25%;
+ 
+}
+
+#hair:after {
+    left: -10px;
+    top: 0px;
+    z-index: -99;
+    position: absolute;
+    content: "";
+    width: 157px;
+    height: 136px;
+    border-radius: 50%;
+    box-shadow: 0px 40px 0 0 black;
+    -webkit-transform: rotate(180deg);
+}
+
+#hair:before{
+    position: absolute;
+    border: 0px solid transparent;
+    border-top: 7px solid black;
+    border-radius: 37px 0px 0 0;
+    top: -53px;
+    left: 59px;
+    width: 43px;
+    height: 29px;
+    content: "";
+    -webkit-transform: rotate(49deg);
+}
+#pony {
+    position: relative;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 20px 0 0 0;
+    top: -122px;
+    left: 95px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(327deg) scaleY(-1);
+}
+#pony:after {
+    content: "";
+    position: absolute;
+    border: 0px solid transparent;
+    border-top: 7px solid black;
+    border-radius: 37px 0px 0 0;
+    top: -17px;
+    left: 17px;
+    width: 35px;
+    height: 23px;
+    -webkit-transform: rotate(400deg) scaleY(1);
+}
+
+#crown {
+    position: relative;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 20px 0 0 0;
+    top: -180px;
+    left: 130px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(130deg) scaleY(1);
+}
+#crown:after  {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 3px solid black;
+    border-radius: 20px 0 0 0;
+    top: -27px;
+    left: -2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(0deg) scaleY(-1);
+}
+
+#mic {
+    position: absolute;
+    top: 130px;
+    left: 205px;
+    display: block;
+    width: 40px;
+    height: 78px;
+    background-color: black;
+    /* -webkit-border-radius: 72px 72px 108px 108px / 108px 108px 72px 72px; */
+    border-radius: 65% 65% 65% 65% / 30% 30% 30% 30%;
+}
+
+#mic:before {
+    width: 50px;
+    height: 25px; /* as the half of the width */
+    /*background-color: white;*/
+    border-bottom-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
+    border: 4px solid black;
+    border-top: 0;
+    position: absolute;
+    content: "";
+    top: 58px;
+    left: -10px;
+}
+
+#mic:after{
+    width: 4px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    left: 18px;
+    top: 86px;
+    content: "";
+}
+
+/*animations*/
+.animate {
+   
+}
+
+#hair.animate.is-active:after {
+     transition: all ease 300ms;
+    box-shadow: 0px 40px 0 0 red;
+}
+
+#mic.animate.is-active {
+  transition: all ease 300ms;
+  transform: rotate(360deg);
+}
+
+#righteye.animate.is-active,#lefteye.animate.is-active  {
+  animation: blink 100ms 1;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    transform: scale(1,1);
+  }
+  50% {
+    transform: scale(1,0);
+  }
+  100% {
+   transform: scale(1,1);
+  }
+}
+
