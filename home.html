@@ -15,10 +15,10 @@
 		<span class="text">{{item.text[key]}}</span></br>
 		<span class="readmore" ng-show="item.bloglink"><a ng-href="{{item.bloglink}}">{{'read_more' | translate}}</a></span></br>
 		<div class="icons">
-			<span ng-show="item.presentation" ><a ng-href="{{item.presentation}}"><img class="itemicon" src="img/presentation.svg"/></a></span>
-			<span ng-show="item.article" ><a ng-href="{{item.article}}"><img class="itemicon" src="img/article.svg" /></a></span>
-			<span ng-show="item.sourcecode" ><a ng-href="{{item.sourcecode}}"><img class="itemicon" src="img/github.svg"/></a></span>
-			<span ng-show="item.video" ><a ng-href="{{item.video}}"><img class="itemicon" src="img/youtube.svg"/></a></span>
+			<span ng-show="item.presentation" ><a target="_self" ng-href="{{item.presentation}}"><img class="itemicon" src="img/presentation.svg"/></a></span>
+			<span ng-show="item.article" ><a target="_self" ng-href="{{item.article}}"><img class="itemicon" src="img/article.svg" /></a></span>
+			<span ng-show="item.sourcecode" ><a target="_self" ng-href="{{item.sourcecode}}"><img class="itemicon" src="img/github.svg"/></a></span>
+			<span ng-show="item.video" ><a target="_self" ng-href="{{item.video}}"><img class="itemicon" src="img/youtube.svg"/></a></span>
 		</div>
 		<br></br>
 	</div>
