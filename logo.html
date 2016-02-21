@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="logo.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<main>
+<div id="container" class="animate">
+  <div id="hair" class="animate"></div>
+  <div id="pony"></div>
+  <div id="crown"></div>
+  <div id="glasses" class="animate"></div>
+  <div id="lefteye" class="animate"></div>
+  <div id="righteye" class="animate"></div>
+  <div id="mic" class="animate"></div>
+  <span id="speaking">Speaking</span>
+  <span id="geek">GEEK</span>
+ </div>
+</main>
+<script>
+  (function() {
+    "use strict";
+    var toggles = document.querySelectorAll(".animate");
+    for (var i = toggles.length - 1; i >= 0; i--) {
+      var toggle = toggles[i];
+      toggleHandler(toggle);
+    };
+    function toggleHandler(toggle) {
+      toggle.addEventListener( "click", function(e) {
+        e.preventDefault();
+        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+        	var classes = this.classList;
+	        setTimeout(function(){
+	        	classes.remove("is-active");
+	        	console.log('time');
+	        },500);
+      });
+    }
+  })();
+</script>
+</body>
+</html>

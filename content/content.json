@@ -11,7 +11,8 @@
 			"nl" : "In this example we will build two MQTT clients in Java, one publishing messages and one consuming messages. We will make use of the public broker MQTT Dashboard.",
 			"en" : "In this example we will build two MQTT clients in Java, one publishing messages and one consuming messages. We will make use of the public broker MQTT Dashboard."
 		},
-		"date":"15-02-2016"
+		"date":"15-02-2016",
+		"blog":"true"
 	},
     {
         "article": "presentations/opensource-java-krant.pdf",
