@@ -1,10 +1,10 @@
-## MQTT Client in Java
+# MQTT Client in Java
 <span class="date">15-02-2016</span> <br></br>
 <a href="https://github.com/erwindeg/mqtt-example"><img class="article-icon" src="http://edegier.nl/img/github.svg"/></a>
 
 In this example we will build two MQTT clients in Java, one publishing messages and one consuming messages. We will make use of the public broker [MQTT Dashboard](http://mqtt-dashboard.com/dashboard).
 
-### What is MQTT?
+## What is MQTT?
 MQTT is a lightweight publish-subscribe protocol on top of TCP/IP. Its lightweight properties make it ideal for Internet of Things (IoT) scenario's,
 where battery, cpu and memory resources are often limited. However the protocol can also be used on more powerful devices. MQTT requires low bandwidth and has facilities for unreliable networks.
 In MQTT we distinguish clients and brokers. A client can publish and/or consume messages. A broker is responsible for receiving messages from the clients and 
@@ -12,7 +12,7 @@ sending them to the clients subscribed to the messages. Topics are used to publi
 
 ![MQTT broker client](http://edegier.nl/content/img/mqtt-broker-client.svg)
 
-### Eclipse Paho
+## Eclipse Paho
 Eclipse Paho is an open source client implementation for the MQTT protocol. It provides implementations in multiple languages like Java, JavaScript, Python, etc. 
 When you use Maven for your project, use the following to add the Paho dependency to your application.
 
@@ -24,7 +24,7 @@ When you use Maven for your project, use the following to add the Paho dependenc
 </dependency>
 ```
 
-### Publisher
+## Publisher
 The Publisher class implements the MqttCallback interface. This allows us to implement methods which are called when the connection is lost or when messages arrive. 
 The first step is to make a connection with the broker. The URL of the mqttdashboard.com public broker is used. We also pass a CLIENT_ID, which must be unique per broker. Finally we specify an in-memory persistence mechanism.
 On the MqttConnectOptions, we specify a last will. This is a message that is send by the broker, to the specified last will topic, when this client disconnects. We pass an instance of the Publisher to the setCallback method to make use of the connectionLost callback.
@@ -63,7 +63,7 @@ public void connectionLost(Throwable ex) {
 
 Start the Publisher and go to the [MQTT dashboard](http://mqtt-dashboard.com/dashboard) page. If all is well, you will see your topic in the recently used topics list!
 
-### Consumer
+## Consumer
 Like the publisher, the Consumer implements the MqttCallback interface. Creating the connection with the broker happens in the same way as with the publisher. The only extra step is that we subscribe to the same topic that is used by the Publisher.
 
 ```java
