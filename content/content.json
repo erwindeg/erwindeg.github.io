@@ -1,7 +1,22 @@
 [
 	{
-		"link": "/blog/mqtt-client-in-java/",
-		"bloglink": "/blog/mqtt-client-in-java/",
+		"link": "/blog/why-use-kotlin-instead-of-java",
+		"bloglink": "/blog/why-use-kotlin-instead-of-java",
+		"sourcecode": "https://github.com/erwindeg/kotlin-example",
+		"title": {
+			"nl" : "Why use Kotlin instead of Java",
+			"en" : "Why use Kotlin instead of Java"
+		},
+		"text": {
+			"nl" : "This month, the 1.0 version of the new JVM language Kotlin was released. Kotlin is 100% compatible with Java and can be used along side it. It is an object oriented language with functional properties. There are plenty of quick starts, but what are the killer features that would make you choose it over the trusty old Java?",
+			"en" : "This month, the 1.0 version of the new JVM language Kotlin was released. Kotlin is 100% compatible with Java and can be used along side it. It is an object oriented language with functional properties. There are plenty of quick starts, but what are the killer features that would make you choose it over the trusty old Java?"
+		},
+		"date":"29-02-2016",
+		"blog":"true"
+	},
+	{
+		"link": "/blog/mqtt-client-in-java",
+		"bloglink": "/blog/mqtt-client-in-java",
 		"sourcecode": "https://github.com/erwindeg/mqtt-example",
 		"title": {
 			"nl" : "MQTT Client in Java",
