@@ -1,5 +1,6 @@
 # Why use Kotlin instead of Java for your JVM projects
 <span class="date">29-02-2016</span> <br></br>
+<a href="https://github.com/erwindeg/kotlin-example"><img class="article-icon" src="http://edegier.nl/img/github.svg"/></a>
 
 This month, the 1.0 version of the new JVM language "Kotlin" was [released](http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/). Kotlin is 100% compatible with Java and can be used along side it. It is an object oriented language with functional properties.
 There are plenty of [quick starts](https://kotlinlang.org/docs/tutorials/getting-started.html) available, but what are the killer features that would make you choose it over the trusty old Java?
