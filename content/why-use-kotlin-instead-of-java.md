@@ -18,7 +18,7 @@ The Kotlin compiler is able to derive (infer) the type of a variable from the co
 ## Lambda's and more in Java 6 
 Kotlin runs from Java 6 and up. Which means you can start using it in your existing code bases which haven't been upgrade or even for Android development. It allows us to use for example Lambda expressions and function references.
 
-### Lambda expression
+### Lambda expressions
 Like in Java, a Lambda expression is a literal function, which can be passed as an expression. It is not declared in a function statement.
 
 ```java
@@ -54,7 +54,8 @@ Like in Java, functions can be referenced by their name.
 		println(total(2,2)) //prints 4
 	}
 	
-	fun calculateTotal(x: Int, y: Int) = x + y //Example of an inline function, where the curly braces, return type and return statement can be ommitted.
+	fun calculateTotal(x: Int, y: Int) = x + y //Example of an inline function,
+											   //where the curly braces, return type and return statement can be ommitted.
 ```
 
 ## Null safety
@@ -101,7 +102,7 @@ A when expression is like a Java switch, but much more powerful. First of all, c
 	}
 ```
 
-The argument is matched against the conditions, unit the first one matches. 
+The argument is matched against the conditions, until the first one matches. 
 
 When can also be used to directly asign a value to a variable.
 
@@ -113,7 +114,7 @@ When can also be used to directly asign a value to a variable.
 	}
 ```
 
-Or for type checking. We can directly use the properties of type String in the first condition. This is called Smart Casting.
+Or we can use it for type checking. We can directly use the properties of type String in the first condition. This is called Smart Casting.
 
 ```java
 	when(y) {
