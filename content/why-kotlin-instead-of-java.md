@@ -16,9 +16,9 @@ The Kotlin compiler is able to derive (infer) the type of a variable from the co
 
 
 ## Lambda's and more in Java 6 
-Kotlin runs from Java 6 and up. Which means you can start using it in your existing code bases which haven't been upgrade or even for Android development. It allows us to use for example Lambda expressions and function references.
+Kotlin runs from Java 6 and up. Which means you can start using it in your existing code bases which haven't been upgrade or even for Android development. This allows us to use Lambda expressions and function references in pre Java 8 environments.
 
-### Lambda expression
+### Lambda expressions
 Like in Java, a Lambda expression is a literal function, which can be passed as an expression. It is not declared in a function statement.
 
 ```java
@@ -26,14 +26,15 @@ Like in Java, a Lambda expression is a literal function, which can be passed as 
 	println(total(1,2)); //prints 3
 ```
 
-The parameter declaration can be left out, when there is only one parameter.
+The parameter declaration can be left out, when there is only one parameter. This parameter will be called 'it'.
 
 ```java
 	val list = listOf(-2,-1,0,1,2)
 	list.filter { it > 0 }.forEach { println(it) } // prints 1 and 2
 ```
 
-In contrast to Java, it is possible to use non final (mutable) variables declared in the outer scope of the Lamba expression. This is called it's closure.
+In contrast to Java, it is possible to use non final (mutable) variables declared in the outer scope (closure) of the Lamba expression.
+
 ```java
 	fun closure() {
 		val list = listOf(-2,-1,0,1,2)
@@ -47,14 +48,14 @@ In contrast to Java, it is possible to use non final (mutable) variables declare
 
 
 ### Function references
-Like in Java, functions can be referenced by their name.
+Like in Java, functions can be referenced and passed around by their name.
 ```java
 	fun main(args: Array<String>) : Unit {
 		val total = ::calculateTotal
 		println(total(2,2)) //prints 4
 	}
 	
-	fun calculateTotal(x: Int, y: Int) = x + y //Example of an inline function, where the curly braces, return type and return statement can be ommitted.
+	fun calculateTotal(x: Int, y: Int) = x + y //Example of a single expression function, where the curly braces, return type and return statement can be ommitted.
 ```
 
 ## Null safety
