@@ -1,4 +1,4 @@
-# MQTT Client in Java
+# MQTT Client with Java
 <span class="date">15-02-2016</span> <br></br>
 <a href="https://github.com/erwindeg/mqtt-example"><img class="article-icon" src="http://edegier.nl/img/github.svg"/></a>
 

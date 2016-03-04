@@ -1,6 +1,6 @@
 http://edegier.nl
-http://edegier.nl/blog/why-use-kotlin-instead-of-java
-http://edegier.nl/blog/mqtt-client-in-java
+http://edegier.nl/blog/why-kotlin-instead-of-java
+http://edegier.nl/blog/mqtt-client-with-java
 http://edegier.nl/presentations/opensource-java-krant.pdf
 http://edegier.nl/presentations/vertx-intro
 http://edegier.nl/presentations/workshop-app-development.pdf
