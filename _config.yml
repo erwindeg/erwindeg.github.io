@@ -6,8 +6,8 @@ title:               Erwin de Gier
 tagline:             Speaking Geek
 url:                 http://edegier.nl
 paginate:            1
-baseurl:             http://edegier.nl
-
+baseurl:             ""
+analytics_id:		 UA-72478077-1
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
