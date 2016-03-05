@@ -3,7 +3,7 @@ layout: post
 title: MQTT Client with Java
 permalink: /blog/mqtt-client-with-java
 ---
-[<img src="{{ site.baseurl }}/img/github.svg">](https://github.com/erwindeg/mqtt-example)
+[<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/mqtt-example)
 In this example we will build two MQTT clients in Java, one publishing messages and one consuming messages. We will make use of the public broker [MQTT Dashboard](http://mqtt-dashboard.com/dashboard).
 
 ## What is MQTT?
@@ -12,7 +12,7 @@ where battery, cpu and memory resources are often limited. However the protocol 
 In MQTT we distinguish clients and brokers. A client can publish and/or consume messages. A broker is responsible for receiving messages from the clients and 
 sending them to the clients subscribed to the messages. Topics are used to publish messages and indicate in which messages a client is interested.
 
-![MQTT broker client]({{ site.baseurl }}/img/mqtt-broker-client.svg)
+![MQTT broker client]({{ site.url }}/img/mqtt-broker-client.svg)
 
 ## Eclipse Paho
 Eclipse Paho is an open source client implementation for the MQTT protocol. It provides implementations in multiple languages like Java, JavaScript, Python, etc. 
