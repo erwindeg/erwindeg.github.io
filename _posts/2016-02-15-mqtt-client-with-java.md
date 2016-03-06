@@ -1,6 +1,7 @@
 ---
 layout: post
 title: MQTT Client with Java
+comments: true
 permalink: /blog/mqtt-client-with-java
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/mqtt-example)

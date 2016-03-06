@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why use Kotlin instead of Java
+comments: true
 permalink: /blog/why-use-kotlin-instead-of-java
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/kotlin-example)
