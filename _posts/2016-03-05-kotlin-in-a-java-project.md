@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Using Kotlin in a Java project
+comments: true
 permalink: /blog/kotlin-in-a-java-project
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/kotlin-example)
