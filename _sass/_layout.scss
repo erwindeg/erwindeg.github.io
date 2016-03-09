@@ -8,7 +8,7 @@
   padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
-  margin-top: 3em;
+  margin-top: 4em;
 }
 
 footer {
@@ -20,4 +20,49 @@ footer {
 	float: left;
 	margin-right:0.5em;
 	width: 35px;
+}
+
+.feature{
+  height: 32rem;
+  text-align: center;
+}
+
+img[src*="svg"]{
+  display:none;
+}
+
+.feature-text{
+  color: #000;
+  max-width: 60%;
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 10em;
+}
+
+a.feature-link:hover {
+  text-decoration: none;
+}
+
+.feature-img {
+  position: absolute;
+  width: 100%;
+    height: auto;
+    
+  top: 2rem;
+  left: 0;
+  z-index: -99;
+  opacity: 0.6;
+}
+
+#readnow{
+  background-color: $gray-3;
+  color: #fff;
+  width: 6rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  margin-left:  auto;
+  margin-right: auto;
+  top: 50%;
+  verticle-align:middle;
 }

@@ -2,17 +2,36 @@
 layout: default
 title: Home
 ---
+<div class="feature">
+	{% assign post = site.posts.first %}
+
+	<div class="feature-text">
+		<time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+		<h1>{{ post.title }}</h1>
+		{{ post.excerpt }}
+	</div>
+	<div class="layer">
+		<img class="feature-img" src="img/desk.jpg">
+	</div>
+	<a class="feature-link" href="{{ site.baseurl }}{{ post.url }}">
+		<div id="readnow">Read Now</div>
+	</a>
+</div>
+
 <div>
 {% for post in site.posts %}
-	<h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-	
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-	{{ post.excerpt }}
+	{% if forloop.index > 1 %}
+		<h1 class="post-title">
+	      <a href="{{ site.baseurl }}{{ post.url }}">
+	        {{ post.title }}
+	      </a>
+	    </h1>
+		
+	    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+		{{ post.excerpt }}
 	<hr>
+	{% endif %}	
+	
 {% endfor %}
 </div>
 
