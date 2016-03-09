@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vert.x with Kotlin getting started
+title: Getting started with Vert.x and Kotlin 
 comments: true
 permalink: /blog/kotlin-vertx-getting-started
 ---
