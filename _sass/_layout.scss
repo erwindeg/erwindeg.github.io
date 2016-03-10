@@ -34,8 +34,20 @@ img[src*="svg"]{
   display:none;
 }
 
+.feature-title{
+  color: #fff;
+}
+
+.feature-post-date{
+    display: block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+
+}
+
 .feature-text{
-  color: #000;
+  color: #fff;
   max-width: 60%;
   margin-left:  auto;
   margin-right: auto;
@@ -51,13 +63,13 @@ a.feature-link:hover {
   max-width: 1700px;
  
   overflow: hidden;
-  height: auto;
+  height: 821px;
     
-  top: 2rem;
+  top: 2.5em;
   left: 50%;
   margin-left: -850px;
   z-index: -99;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 #readnow{
@@ -71,4 +83,51 @@ a.feature-link:hover {
   margin-right: auto;
   top: 50%;
   verticle-align:middle;
+}
+
+.layer{
+    width: 100%;
+    color: #FFF;
+}
+
+.after {
+    top: 2.5rem;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 821px;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    z-index:-90;
+}
+
+//animation
+.movetxt {
+    position: relative;
+    -webkit-animation: fadein 2s, moving 2s;
+    animation: fadein 2s, moving 2s;
+}
+    
+@-webkit-keyframes moving {
+    0% {top: -50px;}
+    100% {top: 0px;}
+}
+
+@keyframes moving {
+    0%  {top: -50px;}
+    100%  {top: 0px;}
+}
+
+@keyframes fadein {
+    0%  { opacity: 0; }
+    10%  { opacity: 0; }
+    100%    { opacity: 1; }
+}
+
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    0%  { opacity: 0; }
+    10%  { opacity: 0; }
+    100%   { opacity: 1; }
 }

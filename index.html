@@ -5,13 +5,14 @@ title: Home
 <div class="feature">
 	{% assign post = site.posts.first %}
 
-	<div class="feature-text">
-		<time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-		<h1>{{ post.title }}</h1>
+	<div class="feature-text movetxt">
+		<time datetime="{{ post.date | date_to_xmlschema }}" class="feature-post-date">{{ post.date | date_to_string }}</time>
+		<h1 class="feature-title">{{ post.title }}</h1>
 		{{ post.excerpt }}
 	</div>
 	<div class="layer">
 		<img class="feature-img" src="img/desk2.jpg">
+		<div class="after"></div>
 	</div>
 	<a class="feature-link" href="{{ site.baseurl }}{{ post.url }}">
 		<div id="readnow">Read Now</div>
