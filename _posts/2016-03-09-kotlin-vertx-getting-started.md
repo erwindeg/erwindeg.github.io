@@ -14,8 +14,6 @@ Example:
 
 fun main(args: Array<String>) {
     DefaultVertx {
-        deployVerticle(Receiver())
-        deployVerticle(Sender())
         httpServer(8080) { request ->
             bodyJson {
                 object_(
