@@ -23,8 +23,11 @@ footer {
 }
 
 .feature{
-  height: 32rem;
+  height: 45rem;
   text-align: center;
+   @media (min-width: $large-breakpoint) {
+     height: 35rem;
+  }
 }
 
 img[src*="svg"]{
@@ -45,11 +48,14 @@ a.feature-link:hover {
 
 .feature-img {
   position: absolute;
-  width: 100%;
-    height: auto;
+  max-width: 1700px;
+ 
+  overflow: hidden;
+  height: auto;
     
   top: 2rem;
-  left: 0;
+  left: 50%;
+  margin-left: -850px;
   z-index: -99;
   opacity: 0.6;
 }
