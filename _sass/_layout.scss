@@ -30,7 +30,7 @@ footer {
   }
 }
 
-img[src*="svg"]{
+.feature-text img{
   display:none;
 }
 
@@ -60,7 +60,7 @@ a.feature-link:hover {
 
 .feature-img {
   position: absolute;
-  max-width: 1700px;
+  max-width: 1570px;
  
   overflow: hidden;
   height: 821px;
