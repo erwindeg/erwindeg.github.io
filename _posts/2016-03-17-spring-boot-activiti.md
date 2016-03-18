@@ -98,21 +98,21 @@ public class MyApplication {
 Finally, we can programmatically start a process instance to test that this setup actually works:
 
 ```java
- @Bean
-    public CommandLineRunner init(final RepositoryService repositoryService,
-                                  final RuntimeService runtimeService,
-                                  final TaskService taskService) {
+@Bean
+public CommandLineRunner init(final RepositoryService repositoryService,
+                              final RuntimeService runtimeService,
+                              final TaskService taskService) {
 
-        return new CommandLineRunner() {
-            @Override
-            public void run(String... strings) throws Exception {
-                Map<String, Object> inputVariables = new HashMap<>();
-                inputVariables.put("text", "intial text");
-                runtimeService.startProcessInstanceByKey("oneTaskProcess", inputVariables);            
-            }
-        };
+    return new CommandLineRunner() {
+        @Override
+        public void run(String... strings) throws Exception {
+            Map<String, Object> inputVariables = new HashMap<>();
+            inputVariables.put("text", "intial text");
+            runtimeService.startProcessInstanceByKey("oneTaskProcess", inputVariables);            
+        }
+    };
 
-    }
+}
 ```
 
 This will give the following output:
