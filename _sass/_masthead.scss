@@ -58,13 +58,12 @@
 }
 
 .nav-trigger:checked ~ .navigation {
-    height: 160px;
+    height: 130px;
     display: block;
 }
 
 label[for="nav-trigger"] {
     position: fixed;
-    top: 15px;
     z-index: 999;
     background-size: contain;
     overflow: hidden;
@@ -76,7 +75,11 @@ label[for="nav-trigger"] {
     font-size: 0;
     text-indent: -9999px;
     cursor: pointer;
+    top:5px;
     background-color: transparent;
+     @media (min-width: $large-breakpoint) {
+      top: 15px;
+    }
 }
 
 label[for="nav-trigger"] span {
@@ -115,17 +118,28 @@ label[for="nav-trigger"] span::after {
     width: 140px;
     height: 0px;
     position: fixed;
-    top: 51px;
-    right: 5%;
+    top: 41px;
+    right: 0%;
     bottom: 0;
     z-index: 0;
     opacity: 0.8;
     color: white;
     -webkit-transition: height 0.4s;
-    overflow: hidden
+    overflow: hidden;
+    padding: 0px;
+    font-size: 75%;
+    font-weight: 400;
+    @media (min-width: $large-breakpoint) {
+      top: 51px;
+       right: 5%;
+    }
 }
 
-.navigation a:visited{
+.navigation li {
+  padding: 5px;
+}
+
+.navigation a:link,a:active,a:visited{
   color: white;
 }
 
