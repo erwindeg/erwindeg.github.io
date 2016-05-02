@@ -132,17 +132,14 @@ label[for="nav-trigger"] span::after {
     padding: 0px;
     font-size: 75%;
     font-weight: 400;
-    @media (min-width: $large-breakpoint) {
-      top: 51px;
-       right: 5%;
-    }
+   
 }
 
 .navigation li {
   padding: 5px;
 }
 
-.navigation a:link,a:active,a:visited{
+a.nav-link:link,a.nav-link:active,a.nav-link:visited {
   color: white;
 }
 

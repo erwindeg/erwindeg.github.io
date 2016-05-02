@@ -23,6 +23,7 @@ footer {
 }
 
 .feature{
+  position:relative;
   height: 45rem;
   text-align: center;
    @media (min-width: $large-breakpoint) {
@@ -62,7 +63,7 @@ a.feature-link:hover {
   position: absolute;
   max-width: 1570px;
   height: 821px;
-  top: 2.5em;
+  top: -7em;
   left: 50%;
   margin-left: -850px;
   z-index: -99;
@@ -82,6 +83,10 @@ a.feature-link:hover {
   border-radius: 5px;
   border: 2px solid #fff; 
   z-index:9;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
 }
 
 #readnow:hover{
@@ -95,14 +100,15 @@ a.feature-link:hover {
 }
 
 .after {
-    top: 2.5rem;
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 821px;
-    left: 0;
-    background: rgba(0, 0, 0, .3);
-    z-index:-90;
+  top: -7rem;
+  display: block;
+  position: absolute;
+  width: 1570px;
+  height: 821px;
+  left: 50%;
+  margin-left: -850px;
+  background: rgba(0, 0, 0, .3);
+  z-index:-90;
 }
 
 //animation
