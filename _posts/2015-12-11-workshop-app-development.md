@@ -4,6 +4,6 @@ title: Workshop Amsterdam University of Applied Sciences&#58; 'Mobile Design, Ev
 permalink: /presentations/workshop-app-development
 ---
 [<img src="{{ site.url }}/img/presentation.svg">]({{site.url}}/presentations/workshop-app-development.pdf)
-Workshop at the Amsterdam University of Applied Sciences which shows wireframing as a powerfull tool for creating mobile application concepts.
+Workshop at the Amsterdam University of Applied Sciences with [Livia Rickli](http://liviarickli.nl) which shows wireframing as a powerfull tool for creating mobile application concepts.
 
 ![HVA]({{ site.url }}/img/hva.jpg)
