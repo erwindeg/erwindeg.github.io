@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Presentation at Equens&#58; Devops, microservices, containers & cloud
+title: Presentation at Equens&#58; DevOps, microservices, containers & cloud
 permalink: /presentations/equens-devops-microservices-containers-cloud
 ---
 <a href="{{site.url}}/presentations/equens-devops.pdf"><img src="{{site.url}}/img/presentation.svg"/></a>
