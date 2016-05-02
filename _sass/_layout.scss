@@ -61,10 +61,7 @@ a.feature-link:hover {
 .feature-img {
   position: absolute;
   max-width: 1570px;
- 
-  overflow: hidden;
   height: 821px;
-    
   top: 2.5em;
   left: 50%;
   margin-left: -850px;
@@ -83,7 +80,8 @@ a.feature-link:hover {
   top: 50%;
   verticle-align:middle;
   border-radius: 5px;
-  border: 2px solid #fff;
+  border: 2px solid #fff; 
+  z-index:9;
 }
 
 #readnow:hover{
