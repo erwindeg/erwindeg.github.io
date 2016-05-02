@@ -9,7 +9,7 @@ By Livia Rickli & Erwin de Gier
 ## What is this talk about?
 In this presentation we talk about design for developers. It is mainly intended for anyone who isn't a designer, but runs into design related work during his or her job. We give practical tips for developers, architects and projects managers, to give them insight into design principles which they can directly apply. This tips will help them by designing websites, building apps, creating presentations, drawing diagrams or changing existing designs.
 
-## Where did this idea came from?
+## Where did this idea come from?
 The key to a good design is actually pretty simple, however how knows the universal principles? This is something we ran into last year, we met each other during the development of a web application for one of our clients. Erwin helped me with the implementation of the front-end and I told him about the design principles which I used. Since then, Erwin is not only a great Software Architect, but his work is also "pixel perfect". After this project we frequently worked together on presentations, papers and workshops. Erwin became more enthusiastic about the implementation of good designs and shares his work with me for feedback. When we recognized that Erwin's visual presentations were improving, we thought that it would be a nice idea to inspire others with these design principles. By using a few simple rules, you can make a big difference in your design.
 
 ## What is your personal link with design?
