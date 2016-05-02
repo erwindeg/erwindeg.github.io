@@ -5,3 +5,5 @@ permalink: /presentations/workshop-app-development
 ---
 [<img src="{{ site.url }}/img/presentation.svg">]({{site.url}}/presentations/workshop-app-development.pdf)
 Workshop at the Amsterdam University of Applied Sciences which shows wireframing as a powerfull tool for creating mobile application concepts.
+
+![HVA]({{ site.url }}/img/hva.jpg)
