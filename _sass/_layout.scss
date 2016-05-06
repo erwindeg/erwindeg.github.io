@@ -2,6 +2,13 @@
 //
 // Styles for managing the structural hierarchy of the site.
 
+.centerembed {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
 .container {
   max-width: 50rem;
   padding-left:  1rem;
@@ -71,6 +78,7 @@ a.feature-link:hover {
   z-index: -99;
   opacity: 1;
 }
+
 
 #readnow{
   color: #fff;
