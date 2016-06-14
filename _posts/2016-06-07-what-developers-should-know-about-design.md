@@ -6,6 +6,8 @@ permalink: /presentations/what-developers-should-know-about-design
 ---
 By Livia Rickli & Erwin de Gier
 
+[Download slides](what-developers-should-know-about-design.pdf)
+
 ## What is this talk about?
 In this presentation we talk about design for developers. It is mainly intended for anyone who isn't a designer, but runs into design related work during his or her job. We give practical tips for developers, architects and projects managers, to give them insight into design principles which they can directly apply. This tips will help them by designing websites, building apps, creating presentations, drawing diagrams or changing existing designs.
 
@@ -17,4 +19,4 @@ Erwin&#58; As software developer and speaker I frequently ran into the problem t
 
 Livia&#58; As a UX Designer I am continuously involved into the realization of online & offline designs which are useful, unique and meaningful for the users. However, I am not alone in this. When my designs are ready, they are passed on to the developers. Efficient communication in this handover really contributes to success. For developers it is useful that a designer has some knowledge of coding, vice versa it is of added benefit for a designer when a developers knows about design principles. This enhances the communication and helps with implementing the design faster and more complete. I also like to design logo's, brand books, flyers and more. I like the fact that each design has an even better story behind it.
 
-This talk will presented by [Erwin de Gier](http://edegier.nl) and [Livia Rickli](http://liviarickli.nl) at [GOTO Amsterdam 2016](http://gotocon.com/amsterdam-2016/speaker/Erwin+de+Gier) on June 14th 2016.
+This talk was presented by [Erwin de Gier](http://edegier.nl) and [Livia Rickli](http://liviarickli.nl) at [GOTO Amsterdam 2016](http://gotocon.com/amsterdam-2016/speaker/Erwin+de+Gier) on June 14th 2016.
