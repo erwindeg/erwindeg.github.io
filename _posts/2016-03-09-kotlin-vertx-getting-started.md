@@ -3,6 +3,7 @@ layout: post
 title: Getting started with Vert.x and Kotlin 
 comments: true
 permalink: /blog/kotlin-vertx-getting-started
+category: blog
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/kotlin-example)
 Vert.x is my favorite JVM framework of recent years. And since I discovered Kotlin, it's becoming my favorite JVM language. So you can probably guess how happy I was when I discovered the [kotlin language bindings](https://github.com/cy6erGn0m/vertx3-lang-kotlin) for Vert.x!

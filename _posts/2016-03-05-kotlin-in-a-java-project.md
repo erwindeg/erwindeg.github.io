@@ -3,6 +3,7 @@ layout: post
 title: Using Kotlin in a Java project
 comments: true
 permalink: /blog/kotlin-in-a-java-project
+category: blog
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/kotlin-example)
 You want to start using the hot new JVM language Kotlin today, but you are knee-deep in a Java project and you cannot switch languages. Why not start using Kotlin for writing unit tests? Kotlin is Java compatible and can be used together with Java in the same project. Let's have a look at how to accomplish this.

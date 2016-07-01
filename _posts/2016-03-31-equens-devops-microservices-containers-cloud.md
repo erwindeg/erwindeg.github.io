@@ -2,6 +2,7 @@
 layout: post
 title: Presentation at Equens&#58; DevOps, microservices, containers & cloud
 permalink: /presentations/equens-devops-microservices-containers-cloud
+category: presentation
 ---
 <a href="{{site.url}}/presentations/equens-devops.pdf"><img src="{{site.url}}/img/presentation.svg"/></a>
 Presentation at Equens about the interrelations and benefits of DevOps, Microservices, containers and cloud.

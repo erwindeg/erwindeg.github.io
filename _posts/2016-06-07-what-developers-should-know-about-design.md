@@ -3,6 +3,7 @@ layout: post
 title:  GOTO Amsterdam 2016&#58; "What developers should know about design"
 comments: true
 permalink: /presentations/what-developers-should-know-about-design
+category: presentation
 ---
 By Livia Rickli & Erwin de Gier
 

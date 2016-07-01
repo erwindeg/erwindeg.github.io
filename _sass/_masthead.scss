@@ -53,16 +53,17 @@
 .nav-trigger {
     position: fixed;
     clip: rect(0, 0, 0, 0);
-
 }
 
-.nav-trigger:checked + label {
-    /*left: 215px;*/
-}
+
 
 .nav-trigger:checked ~ .navigation {
-    height: 130px;
+    width: 100%;
     display: block;
+
+     @media (min-width: $large-breakpoint) {
+        width: 230px;
+     }
 }
 
 label[for="nav-trigger"] {
@@ -105,6 +106,8 @@ label[for="nav-trigger"] span::after {
   height: 3px;
   background-color: #fff;
   content: "";
+  transition-duration: 0.3s, 0.3s;
+ 
 }
 
 label[for="nav-trigger"] span::before {
@@ -115,24 +118,53 @@ label[for="nav-trigger"] span::after {
   bottom: -7px;
 }
 
+.nav-trigger:checked + label {
+
+}
+
+.nav-trigger:checked + label span {
+  background: none;
+}
+
+.nav-trigger:checked + label span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-trigger:checked + label span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.nav-trigger:checked + label span::before,
+.nav-trigger:checked + label span::after {
+  transition-delay: 0s, 0.3s;
+}
+
 .navigation {
     list-style: none;
     background: #000;
-    width: 140px;
-    height: 0px;
+    opacity: 0.8;
+    width: 0px;
+    height: 163px;
     position: fixed;
     top: 41px;
     right: 0%;
     bottom: 0;
-    z-index: 0;
+    z-index: 999;
     opacity: 0.8;
     color: white;
-    -webkit-transition: height 0.4s;
+    -webkit-transition: width 0.4s;
     overflow: hidden;
     padding: 0px;
-    font-size: 75%;
+    font-size: 120%;
     font-weight: 400;
-   
+    text-align: center;
+
+     @media (min-width: $large-breakpoint) {
+        font-size: $large-font-size;
+        top:51px;
+     }
 }
 
 .navigation li {

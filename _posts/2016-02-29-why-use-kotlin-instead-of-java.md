@@ -3,6 +3,7 @@ layout: post
 title: Why use Kotlin instead of Java
 comments: true
 permalink: /blog/why-use-kotlin-instead-of-java
+category: blog
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/kotlin-example)
 This month, the 1.0 version of the new JVM language "Kotlin" was [released](http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/). Kotlin is 100% compatible with Java and can be used along side it. It is an object oriented language with functional properties.

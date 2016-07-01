@@ -3,6 +3,7 @@ layout: post
 title: Spring Boot and Activiti 
 comments: true
 permalink: /blog/spring-boot-activiti
+category: blog
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/activiti-examples)
 Activiti is an open source workflow and BPM platform built in Java. In has a BPMN engine which allows you to create business flows in diagrams and execute them as part of your application. Activiti integrates really well with the Spring Framework. Combining it with Spring Boot allows you to build micro business process applications really quickly.

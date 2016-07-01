@@ -3,6 +3,7 @@ layout: post
 title: MQTT Client with Java
 comments: true
 permalink: /blog/mqtt-client-with-java
+category: blog
 ---
 [<img src="{{ site.url }}/img/github.svg">](https://github.com/erwindeg/mqtt-example)
 In this example we will build two MQTT clients in Java, one publishing messages and one consuming messages. We will make use of the public broker [MQTT Dashboard](http://mqtt-dashboard.com/dashboard).
