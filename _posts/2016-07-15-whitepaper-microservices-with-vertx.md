@@ -28,4 +28,4 @@ Systems approach.
 
 ![Connections]({{ site.url }}/img/whitepaper-vertx-01.jpg)
 
-Download the whitepaper from [sogeti.nl](https://www.sogeti.nl/updates/blogs/hoe-vereenvoudig-je-de-implementatie-van-microservices-met-vertx-white-paper)
+Download the whitepaper from [sogeti.nl](https://www.sogeti.nl/updates/blogs/hoe-vereenvoudig-je-de-implementatie-van-microservices-met-vertx-white-paper).
