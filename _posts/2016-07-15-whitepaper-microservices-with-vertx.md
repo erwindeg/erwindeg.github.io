@@ -8,8 +8,6 @@ category: presentation
 
 In this whitepaper we discuss the specific advantages of Vert.x and present an overview of the different functionalities of the framework.
 
-Vert.x is a polyglot event-driven application framework for the Java Virtual Machine. 
-It aims to solve many of the challenges we face when implementing Microservice architectures. 
 
 ## Changes in software development
 
