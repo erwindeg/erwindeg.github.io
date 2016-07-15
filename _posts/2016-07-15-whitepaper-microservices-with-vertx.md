@@ -8,7 +8,6 @@ category: presentation
 
 In this whitepaper we discuss the specific advantages of Vert.x and present an overview of the different functionalities of the framework.
 
-
 ## Changes in software development
 
 According to Gartner (http://www.gartner.com/newsroom/id/3165317), the
