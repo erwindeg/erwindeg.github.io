@@ -2,7 +2,7 @@
 layout: post
 title:  Whitepaper&#58; Microservices with Vert.x
 comments: true
-permalink: /presentations/what-developers-should-know-about-design
+permalink: /presentations/whitepaper-microservices-with-vertx
 category: presentation
 ---
 
