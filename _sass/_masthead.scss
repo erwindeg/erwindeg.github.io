@@ -138,7 +138,7 @@ label[for="nav-trigger"] span::after {
 
 .nav-trigger:checked + label span::before,
 .nav-trigger:checked + label span::after {
-  transition-delay: 0s, 0.3s;
+  transition-delay: 0.0s, 0.0s;
 }
 
 .navigation {
