@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  JavaOne 2016&#58; Creating a polyglot test framework with reactive technology
+title:  Creating a polyglot test framework with reactive technology
 comments: true
 permalink: /presentations/creating-a-polyglot-test-framework
 category: presentation
