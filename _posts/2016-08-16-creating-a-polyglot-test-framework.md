@@ -6,7 +6,7 @@ permalink: /presentations/creating-a-polyglot-test-framework
 category: presentation
 ---
 ![JavaOne]({{ site.url }}/img/javaone.jpg)
-JavaOne 2016 
+JavaOne 2016: Wednesday, Sep 21, 8:30 a.m. - 9:30 a.m. 
 
 JavaOne is an annual conference organized by Oracle to discuss Java technologies among Java developers. JavaOne is held in San Francisco, California. This year I will be one of the speakers at this conference.
 
