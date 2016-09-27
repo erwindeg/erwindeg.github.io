@@ -25,3 +25,5 @@ A lot of teams that want to implement test automation tend to reinvent the wheel
 
 ## What is your personal link with test automation and the technology used?
 As a developer, I think that automation is a really important aspect of software development. The realization of this framework came as a challenge for me in which I could leverage the various features of modern approaches to software development and new technologies like Vert.x, MongoDB and AngularJS.
+
+<iframe class="centerembed" src="//www.slideshare.net/slideshow/embed_code/key/Cm3Cbotimap5b" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
