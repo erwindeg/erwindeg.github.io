@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  Creating a polyglot test framework with reactive technology
+title:  JavaOne&#58; Creating a polyglot test framework with reactive technology
 comments: true
 permalink: /presentations/creating-a-polyglot-test-framework
 category: presentation
 ---
-![JavaOne]({{ site.url }}/img/javaone.jpg)
 JavaOne 2016: Wednesday, Sep 21, 8:30 a.m. - 9:30 a.m. 
 
 [Download Slides](CreatingAPolyglotTestFramework.pdf)
