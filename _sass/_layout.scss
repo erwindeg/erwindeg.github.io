@@ -43,7 +43,7 @@ footer {
 }
 
 .feature-title{
-  color: #fff;
+  color: #000;
 }
 
 .feature-post-date{
@@ -53,11 +53,11 @@ footer {
       margin-top: -.5rem;
     }
     margin-bottom: 1rem;
-    color: #fff;
+    color: #000;
 }
 
 .feature-text{
-  color: #fff;
+  color: #000;
   max-width: 60%;
   margin-left:  auto;
   margin-right: auto;
@@ -81,7 +81,7 @@ a.feature-link:hover {
 
 
 #readnow{
-  color: #fff;
+  color: #000;
   width: 6rem;
   height: 2.5rem;
   line-height: 2.2rem;
@@ -91,7 +91,7 @@ a.feature-link:hover {
   top: 50%;
   verticle-align:middle;
   border-radius: 5px;
-  border: 2px solid #fff; 
+  border: 2px solid #000; 
   z-index:9;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
@@ -100,7 +100,7 @@ a.feature-link:hover {
 }
 
 #readnow:hover{
-    background-color: #fff;
+    background-color: #000;
     color: $gray-3;
 }
 
