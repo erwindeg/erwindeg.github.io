@@ -14,7 +14,7 @@ title: Home
 		<div id="readnow">Read Now</div>
 	</a>
 	<div class="layer">
-		<img class="feature-img" src="img/sf.jpg" />
+		<img class="feature-img" src="img/leaves.jpg" />
 		<!--<div class="after"></div>-->
 	</div>
 </div>
@@ -27,12 +27,12 @@ title: Home
 	        {{ post.title }}
 	      </a>
 	    </h1>
-		
+
 	    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 		{{ post.excerpt }}
 	<hr>
-	{% endif %}	
-	
+	{% endif %}
+
 {% endfor %}
 </div>
 
@@ -43,4 +43,3 @@ title: Home
 	<a href="http://stackoverflow.com/users/4685029/erwin-de-gier"><img class="menu-icon" src="img/stackoverflow.svg"/></a>
 	<a href="https://twitter.com/erwindeg"><img class="menu-icon" src="img/twitter.svg"/></a>
 </div>
-	
