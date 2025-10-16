@@ -1572,7 +1572,7 @@
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
-				border: 0;
+				border: 3px solid #1f2224;
 				height: 100%;
 				left: 0;
 				position: absolute;
@@ -1988,11 +1988,39 @@
 
 /* Footer */
 
-	#footer .copyright {
-		color: #505051;
-		font-size: 0.9em;
-	}
+#footer .copyright {
+	color: #505051;
+	font-size: 0.9em;
+}
 
-		#footer .copyright a {
-			color: inherit;
-		}
+#footer .copyright a {
+	color: inherit;
+}
+
+/* body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  max-width: 400px; 
+  margin: 2rem auto; 
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ddd;
+  margin-bottom: 1rem;
+} */
