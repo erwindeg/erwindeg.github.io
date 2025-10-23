@@ -2,84 +2,126 @@
 layout: default
 ---
 
-<!-- Wrapper -->
-<div id="wrapper">
-    <!-- <div id="profile-header">
-        <img src="assets/profile.jpeg" class="profile-photo">
-        <h1><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</h1>
-    </div> -->
-    <!-- Header -->
-    <header id="header">
-        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
-        <link rel="icon" href="./assets/cam.png" type="image/png">
-        <nav>
-            <ul>
-                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
-            </ul>
+{% assign portfolio_images = site.static_files | where_exp: "file", "file.path contains 'fulls'" %}
+{% assign hero_image = portfolio_images | first %}
+{% assign contact_email = site.contact_email | default: '' %}
+
+<div id="top" class="site">
+    <header class="site-header">
+        <div class="site-header__branding">
+            <a class="site-header__logo" href="/">
+                <span class="site-header__title">{{ site.title }}</span>
+                <span class="site-header__subtitle">{{ site.footer.bio }}</span>
+            </a>
+        </div>
+        <nav class="site-header__nav" aria-label="Primary">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="{% if contact_email != '' %}mailto:{{ contact_email }}{% else %}#about{% endif %}">Contact</a>
         </nav>
     </header>
 
-    <!-- Main -->
-    <div id="main">
-        {% for image in site.static_files %}
-        {% if image.path contains 'fulls' %}
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"  /></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% endfor %}
-    </div>
+    <main>
+        <section class="hero" {% if hero_image %}style="background-image: url('{{ site.baseurl }}{{ hero_image.path }}');"{% endif %}>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <p class="hero__eyebrow">Motorsport · Travel · Street</p>
+                <h1 class="hero__heading">Capturing velocity, light, and the stories between.</h1>
+                <p class="hero__body">
+                    From the adrenaline of the paddock to the quiet poetry of everyday streets, Erwin de Gier creates images that
+                    feel cinematic yet deeply human.
+                </p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="#portfolio">View the portfolio</a>
+                    <a class="button button--ghost" href="{% if contact_email != '' %}mailto:{{ contact_email }}{% else %}#about{% endif %}">Work together</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer id="footer" class="panel">
-        <div class="inner split">
-            <div>
-                <section>
-                    <h2>{{ site.footer.name }}</h2>
-                    <p>{{ site.footer.bio }}</p>
-                    <p>{{ site.footer.github }}</p>
-                </section>
-                <section>
-                    <h2>Follow me on ...</h2>
-                    <ul class="icons">
-                        {% if site.social_urls.github %}
-                            <li>
-                                <a href="{{ site.social_urls.github }}" class="icon fa-github">
-                                    <span class="label">GitHub</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if site.social_urls.twitter %}
-                            <li>
-                                <a href="{{ site.social_urls.twitter }}" class="icon fa-twitter">
-                                    <span class="label">Twitter</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if site.social_urls.instagram %}
-                            <li>
-                                <a href="{{ site.social_urls.instagram }}" class="icon fa-instagram">
-                                    <span class="label">Instagram</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if site.social_urls.linkedin %}
-                            <li>
-                                <a href="{{ site.social_urls.linkedin }}" class="icon fa-linkedin">
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </section>
-                <p class="copyright">
-                    &copy; {{ site.author }}
+        <section id="portfolio" class="portfolio">
+            <div class="section-heading">
+                <span class="section-heading__eyebrow">Featured Collections</span>
+                <h2 class="section-heading__title">Immersive stories told through stills</h2>
+                <p class="section-heading__body">
+                    A curated selection of recent assignments and personal studies. Each frame is crafted to evoke motion, atmosphere,
+                    and the emotion of being on location.
                 </p>
             </div>
-        </div>
+            <div class="portfolio__grid" data-gallery>
+                {% for image in portfolio_images %}
+                    {% assign image_label = image.name | split: '.' | first | replace: '-', ' ' | replace: '_', ' ' %}
+                    <article class="portfolio-card" data-gallery-item>
+                        <a class="portfolio-card__link"
+                           href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
+                           data-full="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
+                           data-caption="Photo: {{ image_label }}"
+                           data-index="{{ forloop.index0 }}">
+                            <div class="portfolio-card__image">
+                                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}"
+                                     alt="Photo {{ image_label }}"
+                                     loading="lazy"
+                                     width="600"
+                                     height="400">
+                            </div>
+                            <div class="portfolio-card__overlay">
+                                <span>View photo</span>
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about__media">
+                <div class="about__portrait" role="presentation"></div>
+            </div>
+            <div class="about__content">
+                <span class="section-heading__eyebrow">About</span>
+                <h2 class="section-heading__title">Erwin de Gier</h2>
+                <p class="about__lead">
+                    {{ site.footer.bio }}
+                </p>
+                <p>
+                    Erwin partners with teams, brands, and publications to deliver high-impact visuals across trackside coverage,
+                    editorial features, and bespoke campaigns. The portfolio blends editorial storytelling with a designer’s eye for
+                    composition and detail.
+                </p>
+                <div class="about__actions">
+                    <a class="button button--primary" href="{% if contact_email != '' %}mailto:{{ contact_email }}{% else %}#about{% endif %}">Start a project</a>
+                    {% if site.social_urls.instagram %}
+                        <a class="button button--ghost" href="{{ site.social_urls.instagram }}" target="_blank" rel="noreferrer">
+                            Follow on Instagram
+                        </a>
+                    {% endif %}
+                </div>
+                <ul class="social-list">
+                    {% if site.social_urls.instagram %}
+                        <li><a href="{{ site.social_urls.instagram }}" target="_blank" rel="noreferrer">Instagram</a></li>
+                    {% endif %}
+                    {% if site.social_urls.twitter %}
+                        <li><a href="{{ site.social_urls.twitter }}" target="_blank" rel="noreferrer">Twitter</a></li>
+                    {% endif %}
+                    {% if site.social_urls.linkedin %}
+                        <li><a href="{{ site.social_urls.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; {{ site.author }}. Crafted for those who chase light.</p>
+        <a class="site-footer__top" href="#top">Back to top</a>
     </footer>
+</div>
+
+<div class="lightbox" data-lightbox hidden>
+    <button class="lightbox__close" type="button" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photo">&#8592;</button>
+    <figure class="lightbox__figure">
+        <img class="lightbox__image" src="" alt="">
+        <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">&#8594;</button>
 </div>
