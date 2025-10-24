@@ -9,6 +9,8 @@
     const imageEl = lightbox.querySelector(".lightbox__image");
     const captionEl = lightbox.querySelector(".lightbox__caption");
     const closeBtn = lightbox.querySelector(".lightbox__close");
+    const prevBtn = lightbox.querySelector(".lightbox__nav--prev");
+    const nextBtn = lightbox.querySelector(".lightbox__nav--next");
     const collectionDataNodes = document.querySelectorAll(".portfolio-collection-data");
 
     const collections = new Map();
@@ -125,6 +127,8 @@
     });
 
     closeBtn?.addEventListener("click", closeLightbox);
+    prevBtn?.addEventListener("click", showPrev);
+    nextBtn?.addEventListener("click", showNext);
 
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {

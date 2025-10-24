@@ -1,16 +1,19 @@
 /* Modern portfolio presentation layer */
 
 :root {
-    --page-bg: #04060a;
-    --page-gradient: radial-gradient(circle at 20% 20%, rgba(88, 125, 255, 0.12), transparent 55%), radial-gradient(circle at 80% 10%, rgba(255, 128, 88, 0.18), transparent 50%), #04060a;
+    --page-bg: #05070d;
+    --page-gradient:
+        radial-gradient(circle at 18% 18%, rgba(47, 123, 255, 0.16), transparent 58%),
+        radial-gradient(circle at 78% 12%, rgba(255, 176, 70, 0.12), transparent 54%),
+        linear-gradient(180deg, #05070d 0%, #02040a 100%);
     --text-primary: #f8f8fb;
-    --text-muted: rgba(248, 248, 251, 0.72);
-    --accent: #ff6f61;
-    --accent-strong: #ff9276;
-    --surface: rgba(255, 255, 255, 0.04);
-    --surface-strong: rgba(255, 255, 255, 0.08);
-    --border: rgba(255, 255, 255, 0.08);
-    --shadow-color: rgba(8, 12, 20, 0.65);
+    --text-muted: rgba(248, 248, 251, 0.7);
+    --accent: #243AAB; 
+    --accent-strong: #3B51BF;
+    --surface: rgba(255, 255, 255, 0.035);
+    --surface-strong: rgba(255, 255, 255, 0.075);
+    --border: rgba(255, 255, 255, 0.06);
+    --shadow-color: rgba(5, 8, 18, 0.7);
     font-size: 16px;
 }
 
@@ -488,6 +491,10 @@ main {
     pointer-events: auto;
 }
 
+.lightbox[data-open="true"] .lightbox__controls-desktop {
+    display: flex;
+}
+
 .lightbox__figure {
     width: min(92vw, 1280px);
     margin: clamp(2rem, 6vh, 4rem) auto;
@@ -519,8 +526,8 @@ main {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(4, 6, 10, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(4, 6, 10, 0.55);
     color: var(--text-primary);
     font-size: 1.4rem;
     cursor: pointer;
@@ -528,6 +535,61 @@ main {
     place-items: center;
 }
 
+.lightbox__close:hover {
+    background: rgba(4, 6, 10, 0.75);
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.lightbox__close:active {
+    transform: translateY(0);
+}
+
+.lightbox__controls-desktop {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+    pointer-events: none;
+}
+
+
+
+.lightbox__nav {
+    pointer-events: auto;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(5, 7, 13, 0.55);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox__nav:hover {
+    background: rgba(5, 7, 13, 0.75);
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+}
+
+.lightbox__nav:active {
+    transform: translateY(0);
+}
+
+.lightbox__nav[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.lightbox__nav-label {
+    position: relative;
+}
 @media (max-width: 960px) {
     .site-header {
         flex-direction: column;
