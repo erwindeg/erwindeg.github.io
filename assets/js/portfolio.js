@@ -9,44 +9,63 @@
     const imageEl = lightbox.querySelector(".lightbox__image");
     const captionEl = lightbox.querySelector(".lightbox__caption");
     const closeBtn = lightbox.querySelector(".lightbox__close");
-    const prevBtn = lightbox.querySelector(".lightbox__nav--prev");
-    const nextBtn = lightbox.querySelector(".lightbox__nav--next");
-    const triggers = Array.from(gallery.querySelectorAll("[data-gallery-item] a"));
+    const collectionDataNodes = document.querySelectorAll(".portfolio-collection-data");
+
+    const collections = new Map();
+    collectionDataNodes.forEach((node) => {
+        const key = node.dataset.collection;
+        if (!key) {
+            return;
+        }
+        try {
+            const parsed = JSON.parse(node.textContent.trim());
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                collections.set(key, parsed);
+            }
+        } catch (error) {
+            console.error(`Failed to parse collection data for ${key}`, error);
+        }
+    });
 
     let currentIndex = 0;
+    let currentCollectionKey = "";
+    let currentCollection = [];
     let lightboxOpen = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchActive = false;
+    let swipeHandled = false;
 
     const updateSlide = (index) => {
-        const item = triggers[index];
+        if (!currentCollection.length) {
+            return;
+        }
+
+        const boundedIndex = Math.max(0, Math.min(index, currentCollection.length - 1));
+        const item = currentCollection[boundedIndex];
         if (!item) {
             return;
         }
 
-        const fullSrc = item.dataset.full || item.getAttribute("href");
-        const caption = item.dataset.caption || "";
-        const alt = item.querySelector("img")?.getAttribute("alt") || "Gallery image";
+        const fullSrc = item.src;
+        const caption = item.caption || "";
+        const alt = item.alt || "Gallery image";
 
         imageEl.src = fullSrc;
         imageEl.alt = alt;
         captionEl.textContent = caption;
-        currentIndex = index;
-        toggleNavDisabled();
+        currentIndex = boundedIndex;
     };
 
-    const toggleNavDisabled = () => {
-        const isFirst = currentIndex === 0;
-        const isLast = currentIndex === triggers.length - 1;
-
-        prevBtn.disabled = isFirst;
-        nextBtn.disabled = isLast;
-        prevBtn.setAttribute("aria-disabled", String(isFirst));
-        nextBtn.setAttribute("aria-disabled", String(isLast));
-    };
-
-    const openLightbox = (index) => {
-        if (triggers.length === 0) {
+    const openLightbox = (collectionKey, index) => {
+        const items = collections.get(collectionKey);
+        if (!items || items.length === 0) {
             return;
         }
+
+        currentCollectionKey = collectionKey;
+        currentCollection = items;
+        touchActive = false;
 
         lightbox.hidden = false;
         requestAnimationFrame(() => {
@@ -54,6 +73,7 @@
         });
         document.body.classList.add("lightbox-open");
         lightboxOpen = true;
+        swipeHandled = false;
         updateSlide(index);
     };
 
@@ -61,6 +81,12 @@
         lightbox.dataset.open = "false";
         document.body.classList.remove("lightbox-open");
         lightboxOpen = false;
+        currentCollection = [];
+        currentCollectionKey = "";
+        currentIndex = 0;
+        captionEl.textContent = "";
+        touchActive = false;
+        swipeHandled = false;
         setTimeout(() => {
             lightbox.hidden = true;
             imageEl.src = "";
@@ -68,15 +94,19 @@
     };
 
     const showNext = () => {
-        if (currentIndex < triggers.length - 1) {
-            updateSlide(currentIndex + 1);
+        if (currentCollection.length <= 1) {
+            return;
         }
+        const nextIndex = (currentIndex + 1) % currentCollection.length;
+        updateSlide(nextIndex);
     };
 
     const showPrev = () => {
-        if (currentIndex > 0) {
-            updateSlide(currentIndex - 1);
+        if (currentCollection.length <= 1) {
+            return;
         }
+        const prevIndex = (currentIndex - 1 + currentCollection.length) % currentCollection.length;
+        updateSlide(prevIndex);
     };
 
     gallery.addEventListener("click", (event) => {
@@ -84,16 +114,17 @@
         if (!anchor) {
             return;
         }
-        event.preventDefault();
-        const index = triggers.indexOf(anchor);
-        if (index >= 0) {
-            openLightbox(index);
+        const collectionKey = anchor.dataset.collection;
+        if (!collectionKey || !collections.has(collectionKey)) {
+            return;
         }
+        event.preventDefault();
+        const rawIndex = Number.parseInt(anchor.dataset.collectionIndex ?? "", 10);
+        const startIndex = Number.isNaN(rawIndex) ? 0 : rawIndex;
+        openLightbox(collectionKey, startIndex);
     });
 
     closeBtn?.addEventListener("click", closeLightbox);
-    prevBtn?.addEventListener("click", showPrev);
-    nextBtn?.addEventListener("click", showNext);
 
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {
@@ -118,5 +149,74 @@
         default:
             break;
         }
+    });
+
+    const handleTouchStart = (event) => {
+        if (!lightboxOpen) {
+            return;
+        }
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        touchActive = true;
+        swipeHandled = false;
+    };
+
+    const handleTouchMove = (event) => {
+        if (!touchActive) {
+            return;
+        }
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        if (Math.abs(deltaX) > Math.abs(deltaY) && event.cancelable) {
+            event.preventDefault();
+        }
+    };
+
+    const handleTouchEnd = (event) => {
+        if (!touchActive) {
+            return;
+        }
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX < 0) {
+                showNext();
+            } else {
+                showPrev();
+            }
+            swipeHandled = true;
+        }
+        touchActive = false;
+    };
+
+    lightbox.addEventListener("touchstart", handleTouchStart, { passive: true });
+    lightbox.addEventListener("touchmove", handleTouchMove, { passive: false });
+    lightbox.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    imageEl?.addEventListener("click", (event) => {
+        if (!lightboxOpen || currentCollection.length <= 1) {
+            return;
+        }
+
+        if (swipeHandled) {
+            swipeHandled = false;
+            return;
+        }
+
+        const rect = imageEl.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const ratio = rect.width > 0 ? x / rect.width : 0.5;
+
+        if (ratio <= 0.35) {
+            showPrev();
+        } else if (ratio >= 0.65) {
+            showNext();
+        }
+
+        event.stopPropagation();
     });
 })();

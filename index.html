@@ -2,8 +2,27 @@
 layout: default
 ---
 
-{% assign portfolio_images = site.static_files | where_exp: "file", "file.path contains 'fulls'" %}
-{% assign hero_image = portfolio_images | first %}
+{% assign portfolio_assets = site.static_files | where_exp: "file", "file.path contains '/images/fulls/'" | sort: "path" %}
+{% assign hero_candidates = portfolio_assets | where_exp: "file", "file.path contains '-hero'" %}
+{% assign feature_candidates = portfolio_assets | where_exp: "file", "file.path contains '-feature'" %}
+{% assign hero_image = feature_candidates | first %}
+{% if hero_image == nil %}
+    {% assign hero_image = hero_candidates | first %}
+{% endif %}
+{% if hero_image == nil %}
+    {% assign hero_image = portfolio_assets | first %}
+{% endif %}
+{% if hero_image %}
+    {% assign hero_collection = hero_image.path | split: '/images/fulls/' | last | split: '/' | first %}
+    {% assign hero_collection_parts = hero_collection | split: '-' %}
+    {% if hero_collection_parts.size > 1 %}
+        {% assign hero_prefix_candidate = hero_collection_parts[0] | append: '-' %}
+        {% assign hero_collection_display = hero_collection | remove_first: hero_prefix_candidate %}
+    {% else %}
+        {% assign hero_collection_display = hero_collection %}
+    {% endif %}
+{% endif %}
+{% assign portfolio_collections = portfolio_assets | group_by_exp: "file", "file.path | split: '/images/fulls/' | last | split: '/' | first" | sort: "name" %}
 {% assign contact_email = site.contact_email | default: '' %}
 
 <div id="top" class="site">
@@ -25,10 +44,12 @@ layout: default
         <section class="hero" {% if hero_image %}style="background-image: url('{{ site.baseurl }}{{ hero_image.path }}');"{% endif %}>
             <div class="hero__overlay"></div>
             <div class="hero__content">
-                <p class="hero__eyebrow">Motorsport · Travel · Street</p>
+                <p class="hero__eyebrow">
+                    {% if hero_collection %}Featured: {{ hero_collection_display | default: hero_collection }}{% else %}Motorsport · Travel · Street{% endif %}
+                </p>
                 <h1 class="hero__heading">Capturing velocity, light, and the stories between.</h1>
                 <p class="hero__body">
-                    From the adrenaline of the paddock to the quiet poetry of everyday streets, Erwin de Gier creates images that
+                    From the adrenaline of the paddock to the quiet poetry of everyday streets, Erwin creates images that
                     feel cinematic yet deeply human.
                 </p>
                 <div class="hero__actions">
@@ -48,26 +69,113 @@ layout: default
                 </p>
             </div>
             <div class="portfolio__grid" data-gallery>
-                {% for image in portfolio_images %}
-                    {% assign image_label = image.name | split: '.' | first | replace: '-', ' ' | replace: '_', ' ' %}
-                    <article class="portfolio-card" data-gallery-item>
+                {% assign gallery_index = 0 %}
+                {% for collection in portfolio_collections %}
+                    {% assign collection_items = collection.items | sort: "path" %}
+                    {% assign hero_frame = collection_items | where_exp: "img", "img.path contains '-hero'" | first %}
+                    {% if hero_frame == nil %}
+                        {% assign hero_frame = collection_items | first %}
+                    {% endif %}
+                    {% if hero_frame == nil %}
+                        {% continue %}
+                    {% endif %}
+                    {% assign support_frames = collection_items | where_exp: "img", "img.path contains '-support'" %}
+                    {% if support_frames == empty %}
+                        {% assign support_frames = collection_items | where_exp: "img", "img.path != hero_frame.path" %}
+                    {% endif %}
+                    {% assign collection_raw_name = collection.name %}
+                    {% assign collection_parts = collection_raw_name | split: '-' %}
+                    {% if collection_parts.size > 1 %}
+                        {% assign prefix_candidate = collection_parts[0] | append: '-' %}
+                        {% assign collection_title = collection_raw_name | remove_first: prefix_candidate %}
+                    {% else %}
+                        {% assign collection_title = collection_raw_name %}
+                    {% endif %}
+                    {% assign collection_slug = collection_title | slugify: 'pretty' %}
+                    {% capture thumb_candidate_path %}{{ site.image_thumbs_loc }}/{{ hero_frame.name }}{% endcapture %}
+                    {% assign thumb_candidate = site.static_files | where: "path", thumb_candidate_path | first %}
+                    {% if thumb_candidate %}
+                        {% assign hero_thumb_url = thumb_candidate_path %}
+                    {% else %}
+                        {% assign hero_thumb_url = hero_frame.path %}
+                    {% endif %}
+                    {% assign collection_title_json = collection_title | replace: '"', '\"' %}
+                    {% capture collection_alt_text %}{{ collection_title }} photograph{% endcapture %}
+                    {% assign collection_alt_json = collection_alt_text | replace: '"', '\"' %}
+                    {% capture collection_json %}
+                    [{"src":"{{ site.baseurl }}{{ hero_frame.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_alt_json }}"}{% for image in collection_items %}{% if image.path == hero_frame.path %}{% continue %}{% endif %},{"src":"{{ site.baseurl }}{{ image.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_alt_json }}"}{% endfor %}]
+                    {% endcapture %}
+                    <article class="portfolio-card portfolio-card--hero" data-gallery-item>
                         <a class="portfolio-card__link"
-                           href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
-                           data-full="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}"
-                           data-caption="Photo: {{ image_label }}"
-                           data-index="{{ forloop.index0 }}">
+                           href="{{ site.baseurl }}{{ hero_frame.path }}"
+                           data-full="{{ site.baseurl }}{{ hero_frame.path }}"
+                           data-caption="{{ collection_title }}"
+                           data-index="{{ gallery_index }}"
+                           data-collection="{{ collection_slug }}"
+                           data-collection-index="0">
                             <div class="portfolio-card__image">
-                                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}"
-                                     alt="Photo {{ image_label }}"
+                                <img src="{{ site.baseurl }}{{ hero_thumb_url }}"
+                                     alt="{{ collection_title }} hero frame"
                                      loading="lazy"
-                                     width="600"
-                                     height="400">
+                                     width="960"
+                                     height="600">
+                                <div class="portfolio-card__overlay">
+                                    <span>View {{ collection_title }}</span>
+                                </div>
                             </div>
-                            <div class="portfolio-card__overlay">
-                                <span>View photo</span>
+                            <div class="portfolio-card__details">
+                                <h3 class="portfolio-card__title">{{ collection_title }}</h3>
                             </div>
                         </a>
+                        <script type="application/json"
+                                class="portfolio-collection-data"
+                                data-collection="{{ collection_slug }}">{{ collection_json | strip }}</script>
                     </article>
+                    {% assign gallery_index = gallery_index | plus: 1 %}
+                    {% assign supporting_items = support_frames | where_exp: "img", "img.path != hero_frame.path" | slice: 0, 1 %}
+                    {% for image in supporting_items %}
+                        {% capture supporting_thumb_path %}{{ site.image_thumbs_loc }}/{{ image.name }}{% endcapture %}
+                        {% assign supporting_thumb = site.static_files | where: "path", supporting_thumb_path | first %}
+                        {% if supporting_thumb %}
+                            {% assign supporting_thumb_url = supporting_thumb_path %}
+                        {% else %}
+                            {% assign supporting_thumb_url = image.path %}
+                        {% endif %}
+                        {% assign preceding_non_hero = 0 %}
+                        {% for candidate in collection_items %}
+                            {% if candidate.path == hero_frame.path %}
+                                {% continue %}
+                            {% endif %}
+                            {% if candidate.path == image.path %}
+                                {% break %}
+                            {% endif %}
+                            {% assign preceding_non_hero = preceding_non_hero | plus: 1 %}
+                        {% endfor %}
+                        {% assign collection_index_value = preceding_non_hero | plus: 1 %}
+                        <article class="portfolio-card portfolio-card--support" data-gallery-item>
+                            <a class="portfolio-card__link"
+                               href="{{ site.baseurl }}{{ image.path }}"
+                               data-full="{{ site.baseurl }}{{ image.path }}"
+                               data-caption="{{ collection_title }}"
+                               data-index="{{ gallery_index }}"
+                               data-collection="{{ collection_slug }}"
+                               data-collection-index="{{ collection_index_value }}">
+                                <span class="sr-only">More from {{ collection_title }}</span>
+                                <div class="portfolio-card__image">
+                                    <img src="{{ site.baseurl }}{{ supporting_thumb_url }}"
+                                         alt="{{ collection_title }} supporting frame"
+                                         loading="lazy"
+                                         width="720"
+                                         height="480">
+                                    <div class="portfolio-card__overlay">
+                                        <span>More from this collection</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__details portfolio-card__details--support"></div>
+                            </a>
+                        </article>
+                        {% assign gallery_index = gallery_index | plus: 1 %}
+                    {% endfor %}
                 {% endfor %}
             </div>
         </section>
@@ -88,7 +196,7 @@ layout: default
                     composition and detail.
                 </p>
                 <div class="about__actions">
-                    <a class="button button--primary" href="{% if contact_email != '' %}mailto:{{ contact_email }}{% else %}#about{% endif %}">Start a project</a>
+                    <a class="button button--primary" href="mailto:{{ contact_email }}">Start a project</a>
                     {% if site.social_urls.instagram %}
                         <a class="button button--ghost" href="{{ site.social_urls.instagram }}" target="_blank" rel="noreferrer">
                             Follow on Instagram
@@ -118,10 +226,8 @@ layout: default
 
 <div class="lightbox" data-lightbox hidden>
     <button class="lightbox__close" type="button" aria-label="Close lightbox">&times;</button>
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photo">&#8592;</button>
     <figure class="lightbox__figure">
         <img class="lightbox__image" src="" alt="">
         <figcaption class="lightbox__caption"></figcaption>
     </figure>
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">&#8594;</button>
 </div>
