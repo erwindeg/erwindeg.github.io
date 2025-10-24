@@ -463,14 +463,16 @@ main {
     position: relative;
     display: flex;
     justify-content: center;
+    padding: 1.5rem 0;
 }
 
 .about__portrait {
-    width: min(420px, 100%);
-    aspect-ratio: 3 / 3.2;
-    border-radius: 28px;
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent), url("../profile.jpeg") center/cover;
-    box-shadow: 0 30px 70px -30px rgba(9, 11, 16, 0.9);
+    width: min(160px, 35vw);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 55%), url("../profile.jpeg") center/cover;
+    box-shadow: 0 20px 40px -20px rgba(9, 11, 16, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .about__content {
