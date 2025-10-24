@@ -622,6 +622,19 @@ main {
 }
 
 @media (max-width: 640px) {
+    .lightbox__controls-desktop {
+        display: none !important;
+    }
+
+    .lightbox__nav {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.6rem 1.1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
     .site-header__nav {
         gap: 1rem;
         flex-wrap: wrap;
@@ -654,5 +667,9 @@ main {
 
     .lightbox__image {
         max-height: 90vh;
+    }
+
+    .lightbox__controls-desktop {
+        display: none !important;
     }
 }
