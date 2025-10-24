@@ -191,40 +191,109 @@ main {
     flex-wrap: wrap;
 }
 
+.button,
+.lightbox__nav,
+.lightbox__close {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid transparent;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--text-primary);
+}
+
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.8rem;
+    padding: 0.9rem 1.85rem;
     border-radius: 999px;
-    border: 1px solid transparent;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-size: 0.85rem;
-    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+:is(.button, .lightbox__nav, .lightbox__close)::before,
+:is(.button, .lightbox__nav, .lightbox__close)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+:is(.button, .lightbox__nav, .lightbox__close)::before {
+    padding: 1px;
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12) 45%, rgba(0, 0, 0, 0.25) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.95;
+    z-index: -2;
+}
+
+:is(.button, .lightbox__nav, .lightbox__close)::after {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
+    z-index: -3;
+    opacity: 0.85;
+}
+
+.button:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 22px 50px -22px rgba(20, 32, 56, 0.7);
 }
 
 .button--primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-    box-shadow: 0 20px 40px -20px rgba(255, 145, 123, 0.6);
-    color: #0a0506;
+    color: #07111a;
 }
 
-.button--primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 25px 50px -20px rgba(255, 145, 123, 0.75);
+.button--primary::after {
+    background: linear-gradient(145deg, var(--accent) 0%, var(--accent-strong) 100%);
 }
 
-.button--ghost {
-    border-color: rgba(255, 255, 255, 0.25);
+.button--ghost::after {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.button--ghost:hover::after {
+    opacity: 1;
+}
+
+.lightbox__nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    transform: translateY(0);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     color: var(--text-primary);
-    background: transparent;
 }
 
-.button--ghost:hover {
-    border-color: rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.08);
+
+.lightbox__nav::after {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+}
+
+.lightbox__nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 60px -32px rgba(8, 18, 36, 0.55);
+}
+
+.lightbox__nav:active {
+    transform: translateY(0);
+}
+
+.lightbox__nav[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .section-heading {
@@ -526,19 +595,19 @@ main {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(4, 6, 10, 0.55);
-    color: var(--text-primary);
     font-size: 1.4rem;
     cursor: pointer;
     display: grid;
     place-items: center;
 }
 
+.lightbox__close::after {
+    background: rgba(5, 7, 13, 0.6);
+}
+
 .lightbox__close:hover {
-    background: rgba(4, 6, 10, 0.75);
-    border-color: rgba(255, 255, 255, 0.28);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -22px rgba(5, 8, 16, 0.65);
 }
 
 .lightbox__close:active {
