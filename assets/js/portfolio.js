@@ -1,6 +1,7 @@
 (() => {
     const gallery = document.querySelector("[data-gallery]");
     const lightbox = document.querySelector("[data-lightbox]");
+    const photogrid = document.querySelector("[data-photogrid]");
 
     if (!gallery || !lightbox) {
         return;
@@ -33,6 +34,7 @@
     let currentCollectionKey = "";
     let currentCollection = [];
     let lightboxOpen = false;
+    let photogridOpen = false;
     let touchStartX = 0;
     let touchStartY = 0;
     let touchActive = false;
@@ -95,6 +97,57 @@
         }, 250);
     };
 
+    const openPhotoGrid = (collectionKey, startIndex) => {
+        const items = collections.get(collectionKey);
+        if (!items || items.length === 0) {
+            return;
+        }
+
+        const gridEl = photogrid.querySelector(".photogrid__grid");
+        const titleEl = photogrid.querySelector(".photogrid__title");
+
+        // Clear and populate grid
+        gridEl.innerHTML = "";
+        items.forEach((item, index) => {
+            // Thumbs are flat in /images/thumbs/ with .webp extension
+            const thumbSrc = item.src.replace(/\/images\/fulls\/[^/]+\//, "/images/thumbs/")
+                .replace(/\.[^.]+$/, ".webp");
+            const btn = document.createElement("button");
+            btn.className = "photogrid__item";
+            btn.dataset.gridIndex = index;
+            btn.innerHTML = `<img src="${siteBaseurl()}${thumbSrc}" alt="${item.alt || ""}" loading="lazy">`;
+            btn.addEventListener("click", () => {
+                closePhotoGrid();
+                setTimeout(() => openLightbox(collectionKey, index), 200);
+            });
+            gridEl.appendChild(btn);
+        });
+
+        // Set title from first item caption
+        if (items.length > 0 && items[0].caption) {
+            titleEl.textContent = items[0].caption;
+        }
+
+        photogrid.hidden = false;
+        requestAnimationFrame(() => {
+            photogrid.dataset.open = "true";
+        });
+        photogridOpen = true;
+    };
+
+    const closePhotoGrid = () => {
+        photogrid.dataset.open = "false";
+        photogridOpen = false;
+        setTimeout(() => {
+            photogrid.hidden = true;
+        }, 250);
+    };
+
+    const siteBaseurl = () => {
+        const base = document.querySelector('base');
+        return base ? base.getAttribute("href") : "";
+    };
+
     const showNext = () => {
         if (currentCollection.length <= 1) {
             return;
@@ -121,14 +174,16 @@
             return;
         }
         event.preventDefault();
-        const rawIndex = Number.parseInt(anchor.dataset.collectionIndex ?? "", 10);
-        const startIndex = Number.isNaN(rawIndex) ? 0 : rawIndex;
-        openLightbox(collectionKey, startIndex);
+
+        openPhotoGrid(collectionKey, 0);
     });
 
     closeBtn?.addEventListener("click", closeLightbox);
     prevBtn?.addEventListener("click", showPrev);
     nextBtn?.addEventListener("click", showNext);
+
+    // Close photogrid button
+    photogrid?.querySelector(".photogrid__close")?.addEventListener("click", closePhotoGrid);
 
     lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox) {
@@ -136,7 +191,21 @@
         }
     });
 
+    // Close photogrid on backdrop click
+    photogrid?.addEventListener("click", (event) => {
+        if (event.target === photogrid) {
+            closePhotoGrid();
+        }
+    });
+
     document.addEventListener("keydown", (event) => {
+        if (photogridOpen) {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closePhotoGrid();
+            }
+            return;
+        }
         if (!lightboxOpen) {
             return;
         }

@@ -336,10 +336,7 @@ main {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: 0 25px 40px -35px var(--shadow-color);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 .portfolio-card__link {
@@ -362,7 +359,6 @@ main {
     flex-direction: column;
     gap: 0.4rem;
     padding: 1.25rem 1.5rem 1.6rem;
-    border-top: 1px solid var(--border);
 }
 
 .portfolio-card__details--support {
@@ -414,7 +410,6 @@ main {
 
 .portfolio-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 35px 60px -35px rgba(12, 17, 27, 0.85);
 }
 
 .portfolio-card:hover .portfolio-card__image img {
@@ -661,6 +656,135 @@ main {
 .lightbox__nav-label {
     position: relative;
 }
+
+/* Photo Grid */
+.photogrid {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 5vw, 3rem);
+    background: radial-gradient(circle at top, rgba(15, 20, 32, 0.94), rgba(4, 6, 10, 0.97));
+    backdrop-filter: blur(18px);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    overflow-y: auto;
+}
+
+.photogrid[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.photogrid__close {
+    position: absolute;
+    top: clamp(1rem, 6vw, 2rem);
+    right: clamp(1rem, 6vw, 2rem);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.photogrid__close::after {
+    background: rgba(5, 7, 13, 0.6);
+}
+
+.photogrid__close:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -22px rgba(5, 8, 16, 0.65);
+}
+
+.photogrid__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: clamp(1.5rem, 6vw, 2.5rem) clamp(1.5rem, 8vw, 6.5rem);
+    background: linear-gradient(180deg, rgba(4, 6, 10, 0.9) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.photogrid__title {
+    margin: 0;
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.photogrid__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+    max-width: min(92vw, 1200px);
+    margin: 0 auto;
+    padding: clamp(5rem, 12vw, 7rem) 0 clamp(2rem, 6vw, 3rem);
+}
+
+.photogrid__item {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photogrid__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.photogrid__item:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 36px -16px rgba(12, 17, 27, 0.85);
+}
+
+.photogrid__item:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 960px) {
+    .photogrid__grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .photogrid {
+        padding: 0.75rem;
+    }
+
+    .photogrid__grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.4rem;
+        padding-top: 5rem;
+    }
+
+    .photogrid__title {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 960px) {
     .site-header {
         flex-direction: column;
