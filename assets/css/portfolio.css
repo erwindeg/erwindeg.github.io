@@ -600,6 +600,7 @@ main {
 
 .lightbox__close::after {
     background: rgba(5, 7, 13, 0.6);
+    pointer-events: none;
 }
 
 .lightbox__close:hover {
@@ -693,6 +694,7 @@ main {
 
 .photogrid__close::after {
     background: rgba(5, 7, 13, 0.6);
+    pointer-events: none;
 }
 
 .photogrid__close:hover {
