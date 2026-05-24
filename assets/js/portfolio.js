@@ -109,8 +109,8 @@
         // Clear and populate grid
         gridEl.innerHTML = "";
         items.forEach((item, index) => {
-            // Thumbs are flat in /images/thumbs/ with .webp extension
-            const thumbSrc = item.src.replace(/\/images\/fulls\/[^/]+\//, "/images/thumbs/")
+            // Thumbs mirror fulls structure in /images/thumbs/COLLECTION/ with .webp extension
+            const thumbSrc = item.src.replace(/\/images\/fulls\/([^/]+)\//, "/images/thumbs/$1/")
                 .replace(/\.[^.]+$/, ".webp");
             const btn = document.createElement("button");
             btn.className = "photogrid__item";

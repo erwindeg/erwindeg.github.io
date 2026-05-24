@@ -92,7 +92,8 @@ layout: default
                         {% assign collection_title = collection_raw_name %}
                     {% endif %}
                     {% assign collection_slug = collection_title | slugify: 'pretty' %}
-                    {% capture thumb_candidate_path %}{{ site.image_thumbs_loc }}/{{ hero_frame.name | split: '.' | first }}.webp{% endcapture %}
+                    {% assign thumb_collection = hero_frame.path | replace: '/images/fulls/', '' | split: '/' | first %}
+                    {% capture thumb_candidate_path %}{{ site.image_thumbs_loc }}/{{ thumb_collection }}/{{ hero_frame.name | split: '.' | first }}.webp{% endcapture %}
                     {% assign thumb_candidate = site.static_files | where: "path", thumb_candidate_path | first %}
                     {% if thumb_candidate %}
                         {% assign hero_thumb_url = thumb_candidate_path %}
@@ -134,7 +135,8 @@ layout: default
                     {% assign gallery_index = gallery_index | plus: 1 %}
                     {% assign supporting_items = support_frames | where_exp: "img", "img.path != hero_frame.path" | slice: 0, 1 %}
                     {% for image in supporting_items %}
-                        {% capture supporting_thumb_path %}{{ site.image_thumbs_loc }}/{{ image.name | split: '.' | first }}.webp{% endcapture %}
+                        {% assign supporting_thumb_collection = image.path | replace: '/images/fulls/', '' | split: '/' | first %}
+                        {% capture supporting_thumb_path %}{{ site.image_thumbs_loc }}/{{ supporting_thumb_collection }}/{{ image.name | split: '.' | first }}.webp{% endcapture %}
                         {% assign supporting_thumb = site.static_files | where: "path", supporting_thumb_path | first %}
                         {% if supporting_thumb %}
                             {% assign supporting_thumb_url = supporting_thumb_path %}
