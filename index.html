@@ -79,10 +79,6 @@ layout: default
                     {% if hero_frame == nil %}
                         {% continue %}
                     {% endif %}
-                    {% assign support_frames = collection_items | where_exp: "img", "img.path contains '-support'" %}
-                    {% if support_frames == empty %}
-                        {% assign support_frames = collection_items | where_exp: "img", "img.path != hero_frame.path" %}
-                    {% endif %}
                     {% assign collection_raw_name = collection.name %}
                     {% assign collection_parts = collection_raw_name | split: '-' %}
                     {% if collection_parts.size > 1 %}
@@ -92,21 +88,11 @@ layout: default
                         {% assign collection_title = collection_raw_name %}
                     {% endif %}
                     {% assign collection_slug = collection_title | slugify: 'pretty' %}
-                    {% assign thumb_collection = hero_frame.path | replace: '/images/fulls/', '' | split: '/' | first %}
-                    {% capture thumb_candidate_path %}{{ site.image_thumbs_loc }}/{{ thumb_collection }}/{{ hero_frame.name | split: '.' | first }}.webp{% endcapture %}
-                    {% assign thumb_candidate = site.static_files | where: "path", thumb_candidate_path | first %}
-                    {% if thumb_candidate %}
-                        {% assign hero_thumb_url = thumb_candidate_path %}
-                    {% else %}
-                        {% assign hero_thumb_url = hero_frame.path %}
-                    {% endif %}
                     {% assign collection_title_json = collection_title | replace: '"', '\"' %}
-                    {% capture collection_alt_text %}{{ collection_title }} photograph{% endcapture %}
-                    {% assign collection_alt_json = collection_alt_text | replace: '"', '\"' %}
                     {% capture collection_json %}
-                    [{"src":"{{ site.baseurl }}{{ hero_frame.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_alt_json }}"}{% for image in collection_items %}{% if image.path == hero_frame.path %}{% continue %}{% endif %},{"src":"{{ site.baseurl }}{{ image.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_alt_json }}"}{% endfor %}]
+                    [{"src":"{{ site.baseurl }}{{ hero_frame.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_title_json }}"}{% for image in collection_items %}{% if image.path == hero_frame.path %}{% continue %}{% endif %},{"src":"{{ site.baseurl }}{{ image.path }}","caption":"{{ collection_title_json }}","alt":"{{ collection_title_json }}"}{% endfor %}]
                     {% endcapture %}
-                    <article class="portfolio-card portfolio-card--hero" data-gallery-item>
+                    <article class="portfolio-card" data-gallery-item>
                         <a class="portfolio-card__link"
                            href="{{ site.baseurl }}{{ hero_frame.path }}"
                            data-full="{{ site.baseurl }}{{ hero_frame.path }}"
@@ -115,17 +101,14 @@ layout: default
                            data-collection="{{ collection_slug }}"
                            data-collection-index="0">
                             <div class="portfolio-card__image">
-                                <img src="{{ site.baseurl }}{{ hero_thumb_url }}"
-                                     alt="{{ collection_title }} hero frame"
+                                <img src="{{ site.baseurl }}{{ hero_frame.path }}"
+                                     alt="{{ collection_title }}"
                                      loading="lazy"
                                      width="960"
                                      height="600">
                                 <div class="portfolio-card__overlay">
-                                    <span>View {{ collection_title }}</span>
+                                    <span>{{ collection_title }}</span>
                                 </div>
-                            </div>
-                            <div class="portfolio-card__details">
-                                <h3 class="portfolio-card__title">{{ collection_title }}</h3>
                             </div>
                         </a>
                         <script type="application/json"
@@ -133,51 +116,6 @@ layout: default
                                 data-collection="{{ collection_slug }}">{{ collection_json | strip }}</script>
                     </article>
                     {% assign gallery_index = gallery_index | plus: 1 %}
-                    {% assign supporting_items = support_frames | where_exp: "img", "img.path != hero_frame.path" | slice: 0, 1 %}
-                    {% for image in supporting_items %}
-                        {% assign supporting_thumb_collection = image.path | replace: '/images/fulls/', '' | split: '/' | first %}
-                        {% capture supporting_thumb_path %}{{ site.image_thumbs_loc }}/{{ supporting_thumb_collection }}/{{ image.name | split: '.' | first }}.webp{% endcapture %}
-                        {% assign supporting_thumb = site.static_files | where: "path", supporting_thumb_path | first %}
-                        {% if supporting_thumb %}
-                            {% assign supporting_thumb_url = supporting_thumb_path %}
-                        {% else %}
-                            {% assign supporting_thumb_url = image.path %}
-                        {% endif %}
-                        {% assign preceding_non_hero = 0 %}
-                        {% for candidate in collection_items %}
-                            {% if candidate.path == hero_frame.path %}
-                                {% continue %}
-                            {% endif %}
-                            {% if candidate.path == image.path %}
-                                {% break %}
-                            {% endif %}
-                            {% assign preceding_non_hero = preceding_non_hero | plus: 1 %}
-                        {% endfor %}
-                        {% assign collection_index_value = preceding_non_hero | plus: 1 %}
-                        <article class="portfolio-card portfolio-card--support" data-gallery-item>
-                            <a class="portfolio-card__link"
-                               href="{{ site.baseurl }}{{ image.path }}"
-                               data-full="{{ site.baseurl }}{{ image.path }}"
-                               data-caption="{{ collection_title }}"
-                               data-index="{{ gallery_index }}"
-                               data-collection="{{ collection_slug }}"
-                               data-collection-index="{{ collection_index_value }}">
-                                <span class="sr-only">More from {{ collection_title }}</span>
-                                <div class="portfolio-card__image">
-                                    <img src="{{ site.baseurl }}{{ supporting_thumb_url }}"
-                                         alt="{{ collection_title }} supporting frame"
-                                         loading="lazy"
-                                         width="720"
-                                         height="480">
-                                    <div class="portfolio-card__overlay">
-                                        <span>More from this collection</span>
-                                    </div>
-                                </div>
-                                <div class="portfolio-card__details portfolio-card__details--support"></div>
-                            </a>
-                        </article>
-                        {% assign gallery_index = gallery_index | plus: 1 %}
-                    {% endfor %}
                 {% endfor %}
             </div>
         </section>
